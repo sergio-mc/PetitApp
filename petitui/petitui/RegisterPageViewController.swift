@@ -31,19 +31,19 @@ class RegisterPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //Displays an alert with a message depending on the string passed through parameters
     func displayMyAlertMessage(userMessage:String)
     {
-        
-        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertController.Style.alert);
-        
-        let okAction = UIAlertAction(title:"Ok", style:UIAlertAction.Style.default, handler:nil);
-        
-        myAlert.addAction(okAction);
-        
-        self.present(myAlert, animated:true, completion:nil);
+        let alertDisapperTimeInSeconds = 2.0
+        let alert = UIAlertController(title: nil, message: userMessage, preferredStyle: .actionSheet)
+        self.present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + alertDisapperTimeInSeconds) {
+            alert.dismiss(animated: true)
+        }
         
     }
     
+    //
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
@@ -51,6 +51,7 @@ class RegisterPageViewController: UIViewController {
         return emailPred.evaluate(with: email)
     }
     
+    //
     func isValidPassword(_ password: String) -> Bool {
         let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
         
@@ -58,24 +59,35 @@ class RegisterPageViewController: UIViewController {
         return passPred.evaluate(with: password)
     }
     
+    //
+    func isValidPhone(_ phone: String) -> Bool {
+        let phoneRegEx = "(6|7)[ -]*([0-9][ -]*){8}"
+        
+        let phonePred = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
+        return phonePred.evaluate(with: phone)
+    }
+
+    //
     @IBAction func signUpButton(_ sender: Any) {
     
         let userEmail = userEmailTF.text
         let userPassword = userPasswordTF.text
+        let userName = userCompleteNameTF.text
+        let address = userAddressTF.text
+        let phone = userPhoneNumberTF.text
+        
         /*let userRepeatPassword = repeatPasswordTextField.text;*/
         
         // Check for empty fields
-        if(userEmail!.isEmpty || userPassword!.isEmpty)
+        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || address!.isEmpty || phone!.isEmpty )
         {
-            
-            // Display alert message
-            
-            displayMyAlertMessage(userMessage: "All fields are required");
-            
+            // Alert message
+            displayMyAlertMessage(userMessage: "All fields are required!");
             return;
-        }else {
             
-            if(isValidEmail(userEmail!) && isValidPassword(userPassword!)){
+        } else {
+            
+            if(isValidEmail(userEmail!) && isValidPassword(userPassword!) && isValidPhone(phone!)){
                 print("OLEEE")
             }else{
                 displayMyAlertMessage(userMessage: "mimimimimi");
