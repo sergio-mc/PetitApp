@@ -13,6 +13,7 @@
 		7F0802AE23C8CE36008A640A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AD23C8CE36008A640A /* Assets.xcassets */; };
 		7F0802B123C8CE36008A640A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */; };
 		7F0802B923C8D197008A640A /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0802B823C8D197008A640A /* UiViewController.swift */; };
+		7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7F0802B023C8CE36008A640A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0802B223C8CE36008A640A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F0802B823C8D197008A640A /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
+		7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				7F0802B223C8CE36008A640A /* Info.plist */,
 				7F0802B823C8D197008A640A /* UiViewController.swift */,
+				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
 			);
 			path = petitui;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */,
 				7F0802A923C8CE34008A640A /* ViewController.swift in Sources */,
 				7F0802B923C8D197008A640A /* UiViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
