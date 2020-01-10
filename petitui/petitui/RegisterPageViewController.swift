@@ -11,6 +11,7 @@ import Foundation
 
 class RegisterPageViewController: UIViewController {
     
+    
     @IBOutlet weak var usernameTF: UITextField!
     
     @IBOutlet weak var userEmailTF: UITextField!
@@ -29,10 +30,11 @@ class RegisterPageViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
     func displayMyAlertMessage(userMessage:String)
     {
         
-        var myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertController.Style.alert);
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertController.Style.alert);
         
         let okAction = UIAlertAction(title:"Ok", style:UIAlertAction.Style.default, handler:nil);
         
@@ -41,10 +43,25 @@ class RegisterPageViewController: UIViewController {
         self.present(myAlert, animated:true, completion:nil);
         
     }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        
+        let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
+        return passPred.evaluate(with: password)
+    }
+    
     @IBAction func signUpButton(_ sender: Any) {
     
-        let userEmail = userEmailTF.text;
-        let userPassword = userPasswordTF.text;
+        let userEmail = userEmailTF.text
+        let userPassword = userPasswordTF.text
         /*let userRepeatPassword = repeatPasswordTextField.text;*/
         
         // Check for empty fields
@@ -56,6 +73,13 @@ class RegisterPageViewController: UIViewController {
             displayMyAlertMessage(userMessage: "All fields are required");
             
             return;
+        }else {
+            
+            if(isValidEmail(userEmail!) && isValidPassword(userPassword!)){
+                print("OLEEE")
+            }else{
+                displayMyAlertMessage(userMessage: "mimimimimi");
+            }
         }
         
         //Check if passwords match
@@ -103,23 +127,6 @@ class RegisterPageViewController: UIViewController {
         
     }
     
-    
-    func displayMyAlertMessage(userMessage:String)
-    {
-        
-        var myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default, handler:nil);
-        
-        myAlert.addAction(okAction);
-        
-        self.presentViewController(myAlert, animated:true, completion:nil);
-        
-    }
-    
-    @IBAction func iHaveAnAccountButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 */
     
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e0L-rp-dFy">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -192,7 +192,7 @@
         <!--Register Page View Controller-->
         <scene sceneID="yi8-uL-MNO">
             <objects>
-                <viewController id="e0L-rp-dFy" customClass="RegisterPageViewController" sceneMemberID="viewController">
+                <viewController id="e0L-rp-dFy" customClass="RegisterPageViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HJh-jl-9Jp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,9 +214,6 @@
                                                 <state key="normal">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="Jc8-hZ-79j" kind="unwind" unwindAction="unwind:" id="9yz-mT-F4A"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -394,16 +391,15 @@
                         <viewLayoutGuide key="safeArea" id="v6i-24-nwW"/>
                     </view>
                     <connections>
-                        <outlet property="userAddress" destination="4Gb-yh-Fgb" id="1Z3-h4-4mF"/>
-                        <outlet property="userCompleteName" destination="VTF-L9-oTK" id="q67-RV-wGv"/>
-                        <outlet property="userEmail" destination="wyY-HW-nNP" id="gbK-e4-RF5"/>
-                        <outlet property="userPassword" destination="hWU-gX-1Dn" id="P3a-HH-dd2"/>
-                        <outlet property="userPhoneNumber" destination="HEA-5N-fla" id="xtI-sa-ESm"/>
-                        <outlet property="username" destination="fyo-PL-vda" id="c5U-IU-uag"/>
+                        <outlet property="userAddressTF" destination="4Gb-yh-Fgb" id="exC-a1-eFA"/>
+                        <outlet property="userCompleteNameTF" destination="VTF-L9-oTK" id="gLL-KB-D18"/>
+                        <outlet property="userEmailTF" destination="wyY-HW-nNP" id="IXc-SQ-v4E"/>
+                        <outlet property="userPasswordTF" destination="hWU-gX-1Dn" id="bcK-gT-xIX"/>
+                        <outlet property="userPhoneNumberTF" destination="HEA-5N-fla" id="R03-La-gmU"/>
+                        <outlet property="usernameTF" destination="fyo-PL-vda" id="oHz-SL-gQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tug-d0-4Nw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Jc8-hZ-79j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="759" y="644"/>
         </scene>
