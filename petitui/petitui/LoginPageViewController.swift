@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import Foundation
 
 class LoginPageViewController: UIViewController {
@@ -28,20 +29,7 @@ class LoginPageViewController: UIViewController {
         }
         
     }
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
     
-    //
-    func isValidPassword(_ password: String) -> Bool {
-        let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        
-        let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
-        return passPred.evaluate(with: password)
-    }
     
     @IBAction func loginButton(_ sender: Any) {
         let userEmail = userEmailTF.text;
@@ -55,7 +43,7 @@ class LoginPageViewController: UIViewController {
             
         } else {
             
-            if(isValidEmail(userEmail!) && isValidPassword(userPassword!)){
+            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!)){
                 print("OLEEE")
             }else{
                 displayMyAlertMessage(userMessage: "mimimimimi");

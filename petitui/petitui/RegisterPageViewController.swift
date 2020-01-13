@@ -42,32 +42,8 @@ class RegisterPageViewController: UIViewController {
         }
         
     }
-    
-    //
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
-    //
-    func isValidPassword(_ password: String) -> Bool {
-        let passRegEx = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        
-        let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
-        return passPred.evaluate(with: password)
-    }
-    
-    //
-    func isValidPhone(_ phone: String) -> Bool {
-        let phoneRegEx = "(6|7)[ -]*([0-9][ -]*){8}"
-        
-        let phonePred = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
-        return phonePred.evaluate(with: phone)
-    }
 
-    //
+
     @IBAction func signUpButton(_ sender: Any) {
     
         let userEmail = userEmailTF.text
@@ -87,7 +63,7 @@ class RegisterPageViewController: UIViewController {
             
         } else {
             
-            if(isValidEmail(userEmail!) && isValidPassword(userPassword!) && isValidPhone(phone!)){
+            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!) && Validator.isValidPhone(phone!)){
                 print("OLEEE")
             }else{
                 displayMyAlertMessage(userMessage: "mimimimimi");
