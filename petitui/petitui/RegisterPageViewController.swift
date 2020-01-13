@@ -97,10 +97,8 @@ class RegisterPageViewController: UIViewController {
         //Check if passwords match
         /*if(userPassword != userRepeatPassword)
         {
-            // Display an alert message
             displayMyAlertMessage("Passwords do not match");
             return;
-            
         }*/
         
         
