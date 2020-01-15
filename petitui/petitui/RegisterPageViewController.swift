@@ -8,11 +8,12 @@
 
 import UIKit
 import Foundation
+import SkyFloatingLabelTextField
 
 class RegisterPageViewController: UIViewController {
     
     
-    @IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var usernameTF: SkyFloatingLabelTextField!
     
     @IBOutlet weak var userEmailTF: UITextField!
     

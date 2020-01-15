@@ -269,7 +269,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyo-PL-vda">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyo-PL-vda" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="0.0" y="29" width="382" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="x20-bs-rD2"/>
@@ -499,7 +499,7 @@
                         <outlet property="userEmailTF" destination="wyY-HW-nNP" id="2jB-Ko-5Di"/>
                         <outlet property="userPasswordTF" destination="hWU-gX-1Dn" id="YWU-z8-j2d"/>
                         <outlet property="userPhoneNumberTF" destination="HEA-5N-fla" id="2OB-J2-XOo"/>
-                        <outlet property="usernameTF" destination="fyo-PL-vda" id="9d9-p9-fUb"/>
+                        <outlet property="usernameTF" destination="fyo-PL-vda" id="Az3-x4-40j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tug-d0-4Nw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
