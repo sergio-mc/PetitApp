@@ -50,21 +50,7 @@ class LoginPageViewController: UIViewController {
             }
         }
         
-        /*let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail");
-        
-        let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword");
-        
-        if(userEmailStored == userEmail)
-        {
-            if(userPasswordStored == userPassword)
-            {
-                // Login is successfull
-                NSUserDefaults.standardUserDefaults().setBool(true,forKey:"isUserLoggedIn");
-                NSUserDefaults.standardUserDefaults().synchronize();
-                
-                self.dismissViewControllerAnimated(true, completion:nil);
-            }
-        }*/
+       
     }
     
     override func viewDidLoad() {
@@ -73,10 +59,6 @@ class LoginPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
  
- /*override func didReceiveMemoryWarning() {
- super.didReceiveMemoryWarning()
- // Dispose of any resources that can be recreated.
- }*/
  
  
 }

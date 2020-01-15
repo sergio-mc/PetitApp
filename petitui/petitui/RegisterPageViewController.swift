@@ -17,7 +17,9 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var userEmailTF: UITextField!
     
     @IBOutlet weak var userPasswordTF: UITextField!
-
+    
+    @IBOutlet weak var userConfirmPassword: UITextField!
+    
     @IBOutlet weak var userCompleteNameTF: UITextField!
     
     @IBOutlet weak var userPhoneNumberTF: UITextField!
@@ -51,6 +53,7 @@ class RegisterPageViewController: UIViewController {
         let userName = userCompleteNameTF.text
         let address = userAddressTF.text
         let phone = userPhoneNumberTF.text
+        let userRepeatPassword = userConfirmPassword.text
         
         /*let userRepeatPassword = repeatPasswordTextField.text;*/
         
@@ -71,51 +74,13 @@ class RegisterPageViewController: UIViewController {
         }
         
         //Check if passwords match
-        /*if(userPassword != userRepeatPassword)
+        if(userPassword != userRepeatPassword)
         {
-            displayMyAlertMessage("Passwords do not match");
+            displayMyAlertMessage(userMessage: "Guau, las contraseñas no coinciden");
             return;
-        }*/
-        
-        
-        
-        
-        // Store data
-        /*let myUser:PFUser = PFUser();
-        
-        myUser.username = userEmail
-        myUser.password = userPassword
-        myUser.email = userEmail
-        
-        
-        myUser.signUpInBackgroundWithBlock {
-            (success:Bool!, error:NSError!) -> Void in
-            
-            println("User successfully registered")
-            
-            // Display alert message with confirmation.
-            var myAlert = UIAlertController(title:"Alert", message:"Registration is successful. Thank you!", preferredStyle: UIAlertControllerStyle.Alert);
-            
-            let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in
-                self.dismissViewControllerAnimated(true, completion:nil);
-            }
-            
-            myAlert.addAction(okAction);
-            self.presentViewController(myAlert, animated:true, completion:nil);
-            
-            
         }
-        
-        
-        
-        
-        
-        
-    }
+  
     
-*/
-    
-        
     }
     
 }
