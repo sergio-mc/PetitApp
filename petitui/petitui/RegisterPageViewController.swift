@@ -6,11 +6,13 @@
 //  Copyright © 2020 Sergio. All rights reserved.
 //
 
+// Check del username
+
 import UIKit
 import Foundation
 import SkyFloatingLabelTextField
 
-class RegisterPageViewController: UIViewController {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var usernameTF: SkyFloatingLabelTextField!
@@ -27,7 +29,14 @@ class RegisterPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Código correspondiente al DatePicker
+        
+       
+        usernameTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        userEmailTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        userConfirmPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        //DatePicker
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(RegisterPageViewController.dateChanged(datePicker:)), for: .valueChanged)
@@ -38,7 +47,23 @@ class RegisterPageViewController: UIViewController {
         
         inputDate.inputView = datePicker
         
-        // Do any additional setup after loading the view.
+    }
+    
+    // This will notify us when something has changed on the textfield
+    @objc func textFieldDidChange(_ textfield: UITextField) {
+        if let text = textfield.text {
+            if let floatingLabelTextField = textfield as? SkyFloatingLabelTextField {
+                
+                //Comprobación
+                if(text.count < 3) {
+                    floatingLabelTextField.errorMessage = "Invalid username"
+                }
+                else {
+                    // The error message will only disappear when we reset it to nil or empty string
+                    floatingLabelTextField.errorMessage = ""
+                }
+            }
+        }
     }
     
     // Check when view is tapped and stop editing.
@@ -68,6 +93,7 @@ class RegisterPageViewController: UIViewController {
         
     }
 
+    //Sign up button event
     @IBAction func signUpButton(_ sender: Any) {
     
         let userEmail = userEmailTF.text
@@ -75,22 +101,9 @@ class RegisterPageViewController: UIViewController {
         let userName = usernameTF.text
         let repeatedPassword = userConfirmPassword.text
         
-        /*let userRepeatPassword = repeatPasswordTextField.text;*/
-        
         //Check if passwords match
-        func isValidRepeatedPassword(_ repeatedPassword: String) -> Bool {
-            var areEqualPasswords : Bool = false
-            
-            if(userPassword != repeatedPassword)
-            {
-                displayMyAlertMessage(userMessage: "Guau, las contraseñas no coinciden");
-                areEqualPasswords = false
-            } else {
-                print("Contraseñas iguales")
-                areEqualPasswords = true
-            }
-            
-            return areEqualPasswords
+        func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
+            return userPassword == repeatedPassword
         }
         
         // Check for empty fields
@@ -102,16 +115,23 @@ class RegisterPageViewController: UIViewController {
             
         } else {
             
-            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!) && isValidRepeatedPassword(repeatedPassword!)){
+            //Validation of email and password
+            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!)){
                 print("OLEEE")
-            }else{
+                
+                //Validation of passwords
+                if (isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
+                    
+                    //Registered!!
+                    
+                }
+            } else {
+                
                 displayMyAlertMessage(userMessage: "mimimimimi");
             }
         }
-        
-        
-  
     
+        
     }
     
 }

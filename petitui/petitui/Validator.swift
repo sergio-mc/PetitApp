@@ -17,6 +17,11 @@ class Validator: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //
+    static func isUsernameValid(_ username: String) -> Bool {
+        return true
+    }
+    
     static func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
@@ -30,12 +35,5 @@ class Validator: UIViewController {
         
         let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
         return passPred.evaluate(with: password)
-    }
-    //
-    static func isValidPhone(_ phone: String) -> Bool {
-        let phoneRegEx = "(6|7)[ -]*([0-9][ -]*){8}"
-        
-        let phonePred = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
-        return phonePred.evaluate(with: phone)
     }
 }
