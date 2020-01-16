@@ -15,19 +15,11 @@ class RegisterPageViewController: UIViewController {
     
     @IBOutlet weak var usernameTF: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var userEmailTF: UITextField!
+    @IBOutlet weak var userEmailTF: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var userPasswordTF: UITextField!
+    @IBOutlet weak var userPasswordTF: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var userConfirmPassword: UITextField!
-    
-    @IBOutlet weak var userCompleteNameTF: UITextField!
-    
-    @IBOutlet weak var userPhoneNumberTF: UITextField!
-    
-    @IBOutlet weak var userAddressTF: UITextField!
-    
-    
+    @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +38,33 @@ class RegisterPageViewController: UIViewController {
         
     }
 
-
     @IBAction func signUpButton(_ sender: Any) {
     
         let userEmail = userEmailTF.text
         let userPassword = userPasswordTF.text
-        let userName = userCompleteNameTF.text
-        let address = userAddressTF.text
-        let phone = userPhoneNumberTF.text
-        let userRepeatPassword = userConfirmPassword.text
+        let userName = usernameTF.text
+        let repeatedPassword = userConfirmPassword.text
         
         /*let userRepeatPassword = repeatPasswordTextField.text;*/
         
+        //Check if passwords match
+        func isValidRepeatedPassword(_ repeatedPassword: String) -> Bool {
+            var areEqualPasswords : Bool = false
+            
+            if(userPassword != repeatedPassword)
+            {
+                displayMyAlertMessage(userMessage: "Guau, las contraseñas no coinciden");
+                areEqualPasswords = false
+            } else {
+                print("Contraseñas iguales")
+                areEqualPasswords = true
+            }
+            
+            return areEqualPasswords
+        }
+        
         // Check for empty fields
-        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || address!.isEmpty || phone!.isEmpty )
+        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty )
         {
             // Alert message
             displayMyAlertMessage(userMessage: "All fields are required!");
@@ -67,19 +72,14 @@ class RegisterPageViewController: UIViewController {
             
         } else {
             
-            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!) && Validator.isValidPhone(phone!)){
+            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!) && isValidRepeatedPassword(repeatedPassword!)){
                 print("OLEEE")
             }else{
                 displayMyAlertMessage(userMessage: "mimimimimi");
             }
         }
         
-        //Check if passwords match
-        if(userPassword != userRepeatPassword)
-        {
-            displayMyAlertMessage(userMessage: "Guau, las contraseñas no coinciden");
-            return;
-        }
+        
   
     
     }
