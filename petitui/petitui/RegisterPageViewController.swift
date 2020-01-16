@@ -21,9 +21,39 @@ class RegisterPageViewController: UIViewController {
     
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
+    @IBOutlet weak var inputDate: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Código correspondiente al DatePicker
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(RegisterPageViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RegisterPageViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputDate.inputView = datePicker
+        
         // Do any additional setup after loading the view.
+    }
+    
+    // Check when view is tapped and stop editing.
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
+    {
+        view.endEditing(true)
+    }
+    
+    // Check when datePicker is changed and format it into string to set UiTextField.text
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        //print(datePicker.date)
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        inputDate.text = dateFormatter.string(from: datePicker.date)
+        //print(dateFormatter.string(from: datePicker.date))
     }
     
     //Displays an alert with a message depending on the string passed through parameters
