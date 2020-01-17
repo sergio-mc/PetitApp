@@ -36,4 +36,7 @@ class Validator: UIViewController {
         let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
         return passPred.evaluate(with: password)
     }
+    static func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
+        return userPassword == repeatedPassword
+    }
 }

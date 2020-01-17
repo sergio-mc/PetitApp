@@ -30,7 +30,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         usernameTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userEmailTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -51,17 +51,34 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     // This will notify us when something has changed on the textfield
     @objc func textFieldDidChange(_ textfield: UITextField) {
+        
         if let text = textfield.text {
             if let floatingLabelTextField = textfield as? SkyFloatingLabelTextField {
+                var errorMessage=""
+                switch textfield {
+                    
+                case usernameTF:
+                    if(text.count < 3) {
+                        errorMessage = "Invalid username"
+                    }
+                case userEmailTF:
+                    if(!Validator.isValidEmail(text)) {
+                        errorMessage = "Invalid email"
+                    }
+                case userPasswordTF:
+                    if(!Validator.isValidPassword(text)) {
+                        errorMessage = "Invalid password"
+                    }
+                case userConfirmPassword:
+                    if(!Validator.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
+                        errorMessage = "Passwords doesn't match"
+                    }
+                default:
+                    errorMessage = ""
+                }
                 
-                //Comprobación
-                if(text.count < 3) {
-                    floatingLabelTextField.errorMessage = "Invalid username"
-                }
-                else {
-                    // The error message will only disappear when we reset it to nil or empty string
-                    floatingLabelTextField.errorMessage = ""
-                }
+                floatingLabelTextField.errorMessage = errorMessage
+                
             }
         }
     }
@@ -92,45 +109,43 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-
+    
     //Sign up button event
     @IBAction func signUpButton(_ sender: Any) {
-    
+        
         let userEmail = userEmailTF.text
         let userPassword = userPasswordTF.text
         let userName = usernameTF.text
         let repeatedPassword = userConfirmPassword.text
         
         //Check if passwords match
-        func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
-            return userPassword == repeatedPassword
-        }
+        
         
         // Check for empty fields
         if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty )
         {
             // Alert message
-            displayMyAlertMessage(userMessage: "All fields are required!");
+            displayMyAlertMessage(userMessage: "(HURON SOUNDS) All fields are required!");
             return;
             
         } else {
             
-            //Validation of email and password
+            //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
             if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!)){
-                print("OLEEE")
+              displayMyAlertMessage(userMessage:"OLEEE OLEEE CARACOLE")
                 
                 //Validation of passwords
-                if (isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
-                    
+                if (Validator.isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
+              displayMyAlertMessage(userMessage:"Miaauu! Registered")
                     //Registered!!
                     
                 }
             } else {
                 
-                displayMyAlertMessage(userMessage: "mimimimimi");
+                displayMyAlertMessage(userMessage: "Woof! you need to fix that first");
             }
         }
-    
+        
         
     }
     

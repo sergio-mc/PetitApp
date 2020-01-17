@@ -7,17 +7,17 @@
 //
 
 import UIKit
-
+import SkyFloatingLabelTextField
 import Foundation
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController,UITextFieldDelegate {
     
     
     
-    @IBOutlet weak var userEmailTF: UITextField!
+    @IBOutlet weak var userEmailTF: SkyFloatingLabelTextField!
     
     
-    @IBOutlet weak var userPasswordTF: UITextField!
+    @IBOutlet weak var userPasswordTF: SkyFloatingLabelTextField!
     
     func displayMyAlertMessage(userMessage:String)
     {
@@ -44,13 +44,13 @@ class LoginPageViewController: UIViewController {
         } else {
             
             if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!)){
-                print("OLEEE")
+                print("OLEEE OLEEE LOS CARACOLE")
             }else{
-                displayMyAlertMessage(userMessage: "mimimimimi");
+                displayMyAlertMessage(userMessage: "User not foud");
             }
         }
         
-       
+        
     }
     
     override func viewDidLoad() {
@@ -63,8 +63,34 @@ class LoginPageViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationController?.view.backgroundColor = .clear
+        
+        userEmailTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        
     }
- 
- 
- 
+    @objc func textFieldDidChange(_ textfield: UITextField) {
+    
+        if let text = textfield.text {
+            if let floatingLabelTextField = textfield as? SkyFloatingLabelTextField {
+                
+                switch textfield {
+                case userEmailTF:
+                    if(text.count < 0) {
+                        floatingLabelTextField.errorMessage = "Email"
+                    }
+                case userPasswordTF:
+                    if(text.count < 0) {
+                        floatingLabelTextField.errorMessage = "Password"
+                    }
+                default:
+                    print("")
+                }
+                
+            }
+        }
+    }
+    
+    
+    
 }
