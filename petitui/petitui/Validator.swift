@@ -22,6 +22,7 @@ class Validator: UIViewController {
         return true
     }
     
+    //
     static func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
@@ -36,7 +37,30 @@ class Validator: UIViewController {
         let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
         return passPred.evaluate(with: password)
     }
+    
+    //
     static func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
         return userPassword == repeatedPassword
+    }
+    
+    //
+    static func isValidDate(_ date: Date) -> Bool {
+    
+        let validDate: Bool = false
+        
+        let today = NSDate()
+        
+        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        
+        let age = gregorian.components([.year], from: date, to: today as Date, options: [])
+        
+        if age.year! < 18 {
+            print("that grown mannnn")
+        } else {
+            print("little kid")
+        }
+       
+    
+        return validDate
     }
 }

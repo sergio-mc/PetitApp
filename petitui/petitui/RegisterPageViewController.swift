@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sergio. All rights reserved.
 //
 
-// Check del username
-
 import UIKit
 import Foundation
 import SkyFloatingLabelTextField
@@ -67,7 +65,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                     }
                 case userPasswordTF:
                     if(!Validator.isValidPassword(text)) {
-                        errorMessage = "Invalid password"
+                        errorMessage = "Must contains 8 characters and 1 number"
                     }
                 case userConfirmPassword:
                     if(!Validator.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
@@ -99,14 +97,21 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Displays an alert with a message depending on the string passed through parameters
-    func displayMyAlertMessage(userMessage:String)
+    func displayMyAlertMessage(userMessage:String, alertType: Int)
     {
-        let alertDisapperTimeInSeconds = 2.0
-        let alert = UIAlertController(title: nil, message: userMessage, preferredStyle: .actionSheet)
-        self.present(alert, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + alertDisapperTimeInSeconds) {
-            alert.dismiss(animated: true)
+        let alertTitle: String
+        
+        if (alertType == 0) {
+            alertTitle = "There was an error!"
+        } else {
+            alertTitle = "Nice!"
         }
+        
+        let alert = UIAlertController(title: alertTitle, message: userMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -125,24 +130,25 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty )
         {
             // Alert message
-            displayMyAlertMessage(userMessage: "(HURON SOUNDS) All fields are required!");
+            displayMyAlertMessage(userMessage: "All fields are required", alertType: 0);
             return;
             
         } else {
             
             //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
-            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!)){
-              displayMyAlertMessage(userMessage:"OLEEE OLEEE CARACOLE")
+            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!) && Validator.isValidDate(datePicker!.date) ){
                 
                 //Validation of passwords
                 if (Validator.isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
-              displayMyAlertMessage(userMessage:"Miaauu! Registered")
+                    
+                    displayMyAlertMessage(userMessage:"Registered!", alertType: 1)
+                    
                     //Registered!!
                     
                 }
             } else {
                 
-                displayMyAlertMessage(userMessage: "Woof! you need to fix that first");
+                displayMyAlertMessage(userMessage: "Woof! you need to fix that first", alertType: 0);
             }
         }
         
