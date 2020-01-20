@@ -43,24 +43,4 @@ class Validator: UIViewController {
         return userPassword == repeatedPassword
     }
     
-    //
-    static func isValidDate(_ date: Date) -> Bool {
-    
-        let validDate: Bool = false
-        
-        let today = NSDate()
-        
-        let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-        
-        let age = gregorian.components([.year], from: date, to: today as Date, options: [])
-        
-        if age.year! < 18 {
-            print("that grown mannnn")
-        } else {
-            print("little kid")
-        }
-       
-    
-        return validDate
-    }
 }

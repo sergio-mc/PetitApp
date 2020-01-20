@@ -38,7 +38,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             if(Validator.isValidEmail(userRecoverEmail!)){
                 print("SENDED")
             }else{
-                displayMyAlertMessage(userMessage: "Email not found", alertType: 0);
+                displayMyAlertMessage(userMessage: "Invalid email", alertType: 0);
             }
         }
         

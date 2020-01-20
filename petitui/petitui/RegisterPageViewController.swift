@@ -21,9 +21,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var inputDate: UITextField!
+    @IBOutlet weak var userAgeTF: UISwitch!
     
-    private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +33,6 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userConfirmPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        //DatePicker
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(RegisterPageViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RegisterPageViewController.viewTapped(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture)
-        
-        inputDate.inputView = datePicker
         
     }
     
@@ -81,21 +70,6 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Check when view is tapped and stop editing.
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
-    {
-        view.endEditing(true)
-    }
-    
-    // Check when datePicker is changed and format it into string to set UiTextField.text
-    @objc func dateChanged(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        //print(datePicker.date)
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        inputDate.text = dateFormatter.string(from: datePicker.date)
-        //print(dateFormatter.string(from: datePicker.date))
-    }
-    
     //Displays an alert with a message depending on the string passed through parameters
     func displayMyAlertMessage(userMessage:String, alertType: Int)
     {
@@ -123,11 +97,11 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         let userName = usernameTF.text
         let repeatedPassword = userConfirmPassword.text
         
-        //Check if passwords match
+        //Check if passwords match 46
         
         
         // Check for empty fields
-        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty )
+        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn)
         {
             // Alert message
             displayMyAlertMessage(userMessage: "All fields are required", alertType: 0);
@@ -136,7 +110,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         } else {
             
             //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
-            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!) && Validator.isValidDate(datePicker!.date) ){
+            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!) && userAgeTF.isOn){
                 
                 //Validation of passwords
                 if (Validator.isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
