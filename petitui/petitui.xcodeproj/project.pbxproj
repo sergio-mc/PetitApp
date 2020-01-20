@@ -16,6 +16,7 @@
 		7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */; };
 		7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */; };
 		7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1223CCFCEB00D118F3 /* Validator.swift */; };
+		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		7FA36E1223CCFCEB00D118F3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
+		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petitui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
 				7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */,
 				7FA36E1223CCFCEB00D118F3 /* Validator.swift */,
+				CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */,
 			);
 			path = petitui;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				7F0802A923C8CE34008A640A /* ViewController.swift in Sources */,
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
 				7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */,
+				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
