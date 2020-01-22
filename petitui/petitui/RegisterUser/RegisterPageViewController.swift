@@ -2,13 +2,12 @@
 //  RegisterPageViewController.swift
 //  petitui
 //
-//  Created by alumnos on 10/01/2020.
-//  Copyright © 2020 Sergio. All rights reserved.
 //
 
 import UIKit
 import Foundation
 import SkyFloatingLabelTextField
+import Alamofire
 
 class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
@@ -49,15 +48,15 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                         errorMessage = "Invalid username"
                     }
                 case userEmailTF:
-                    if(!Validator.isValidEmail(text)) {
+                    if(!DataHelpers.isValidEmail(text)) {
                         errorMessage = "Invalid email"
                     }
                 case userPasswordTF:
-                    if(!Validator.isValidPassword(text)) {
+                    if(!DataHelpers.isValidPassword(text)) {
                         errorMessage = "Must contains 8 characters and 1 number"
                     }
                 case userConfirmPassword:
-                    if(!Validator.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
+                    if(!DataHelpers.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
                         errorMessage = "Passwords doesn't match"
                     }
                 default:
@@ -70,25 +69,6 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //Displays an alert with a message depending on the string passed through parameters
-    func displayMyAlertMessage(userMessage:String, alertType: Int)
-    {
-        let alertTitle: String
-        
-        if (alertType == 0) {
-            alertTitle = "There was an error!"
-        } else {
-            alertTitle = "Nice!"
-        }
-        
-        let alert = UIAlertController(title: alertTitle, message: userMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-        }))
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
     //Sign up button event
     @IBAction func signUpButton(_ sender: Any) {
         
@@ -97,35 +77,52 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         let userName = usernameTF.text
         let repeatedPassword = userConfirmPassword.text
         
-        //Check if passwords match 46
-        
-        
         // Check for empty fields
         if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn)
         {
             // Alert message
-            displayMyAlertMessage(userMessage: "All fields are required", alertType: 0);
+            self.present(DataHelpers.displayAlert(userMessage: "All fields are required", alertType: 0), animated: true, completion: nil)
+            
             return;
             
         } else {
             
             //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
-            if ( Validator.isValidPassword(userPassword!) && Validator.isValidEmail(userEmail!) && Validator.isUsernameValid(userName!) && userAgeTF.isOn){
+            if ( DataHelpers.isValidPassword(userPassword!) && DataHelpers.isValidEmail(userEmail!) && DataHelpers.isUsernameValid(userName!) && userAgeTF.isOn){
                 
                 //Validation of passwords
-                if (Validator.isValidRepeatedPassword(repeatedPassword!, userPassword!)) {
-                    
-                    displayMyAlertMessage(userMessage:"Registered!", alertType: 1)
-                    
-                    //Registered!!
-                    
-                }
+                createUser(email: userEmail!,password: userPassword!,userName: userName!)
+                
             } else {
                 
-                displayMyAlertMessage(userMessage: "Woof! you need to fix that first", alertType: 0);
+                self.present(DataHelpers.displayAlert(userMessage: "Woof! you need to fix that first", alertType: 0), animated: true, completion: nil)
             }
         }
         
+    }
+    func createUser(email:String,password:String,userName:String)  {
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user")
+        let user=User( email: email, password: password, userName: userName)
+        
+        AF.request(url!,
+                   method: .post,
+                   parameters:user,
+                   encoder: JSONParameterEncoder.default
+            
+        ).response { response in
+            do{
+                let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                if(responseData.code==200) {
+                    self.present(DataHelpers.displayAlert(userMessage:"Registered!", alertType: 1), animated: true, completion: nil)
+                }else{
+                    self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+                }
+                
+            }catch{
+                print(error)
+                
+            }
+        }
         
     }
     

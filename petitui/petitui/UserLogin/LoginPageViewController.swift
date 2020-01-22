@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Foundation
+import Alamofire
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,23 +18,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userPasswordTF: SkyFloatingLabelTextField!
     
     //Displays an alert with a message depending on the string passed through parameters
-    func displayMyAlertMessage(userMessage:String, alertType: Int)
-    {
-        let alertTitle: String
-        
-        if (alertType == 0) {
-            alertTitle = "There was an error!"
-        } else {
-            alertTitle = "Nice!"
-        }
-        
-        let alert = UIAlertController(title: alertTitle, message: userMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-        }))
-        self.present(alert, animated: true, completion: nil)
-        
-    }
+    
     
     @IBAction func loginButton(_ sender: Any) {
         let userEmail = userEmailTF.text;
@@ -42,15 +27,13 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         if(userEmail!.isEmpty || userPassword!.isEmpty)
         {
             // Alert message
-            displayMyAlertMessage(userMessage: "All fields are required", alertType: 0);
+            self.present(DataHelpers.displayAlert(userMessage:"All fields are required", alertType: 0), animated: true, completion: nil)
             return;
             
         } else {
             
-            if(Validator.isValidEmail(userEmail!) && Validator.isValidPassword(userPassword!)){
-                print("LOGED")
-            }else{
-                displayMyAlertMessage(userMessage: "User not foud", alertType: 0);
+            if(DataHelpers.isValidEmail(userEmail!) && DataHelpers.isValidPassword(userPassword!)){
+                loginUser(email: userEmail!, password: userPassword!)
             }
         }
         
@@ -78,11 +61,11 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 switch textfield {
                     
                 case userEmailTF:
-                    if(!Validator.isValidEmail(text)) {
+                    if(!DataHelpers.isValidEmail(text)) {
                         errorMessage = "Invalid email"
                     }
                 case userPasswordTF:
-                    if(!Validator.isValidPassword(text)) {
+                    if(!DataHelpers.isValidPassword(text)) {
                         errorMessage = "Must contains 8 characters and 1 number"
                     }
                 default:
@@ -93,6 +76,33 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 
             }
         }
+    }
+    func loginUser(email:String,password:String)  {
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/login")
+        let user=User( email: email, password: password)
+        AF.request(url!,
+                   method: .post,
+                   parameters:user,
+                   encoder: JSONParameterEncoder.default
+            
+        ).response { response in
+            do{
+                let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                if(responseData.code==200) {
+                    
+                    self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
+                    
+                }else{
+                    self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+                    
+                }
+                
+            }catch{
+                print(error)
+                
+            }
+        }
+        
     }
     
     

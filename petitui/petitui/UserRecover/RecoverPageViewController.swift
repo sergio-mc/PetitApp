@@ -6,23 +6,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
     
     @IBOutlet weak var userEmail: SkyFloatingLabelTextField!
     
-    func displayMyAlertMessage(userMessage:String, alertType: Int)
-    {
-        let alertTitle: String
-        
-        if (alertType == 0) {
-            alertTitle = "There was an error!"
-        } else {
-            alertTitle = "Nice!"
-        }
-        
-        let alert = UIAlertController(title: alertTitle, message: userMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-        }))
-        self.present(alert, animated: true, completion: nil)
-        
-    }
+    
     
     @IBAction func recoverButton(_ sender: Any) {
         let userRecoverEmail = userEmail.text;
@@ -30,15 +14,16 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
         if(userRecoverEmail!.isEmpty)
         {
             // Alert message
-            displayMyAlertMessage(userMessage: "All fields are required", alertType: 0);
+            self.present(DataHelpers.displayAlert(userMessage: "All fields are required", alertType: 0), animated: true, completion: nil)
             return;
             
         } else {
             
-            if(Validator.isValidEmail(userRecoverEmail!)){
+            if(DataHelpers.isValidEmail(userRecoverEmail!)){
                 print("SENDED")
             }else{
-                displayMyAlertMessage(userMessage: "Invalid email", alertType: 0);
+                self.present(DataHelpers.displayAlert(userMessage: "Invalid email", alertType: 0), animated: true, completion: nil)
+                
             }
         }
         
@@ -59,7 +44,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
                 switch textfield {
                     
                 case userEmail:
-                    if(!Validator.isValidEmail(text)) {
+                    if(!DataHelpers.isValidEmail(text)) {
                         errorMessage = "Invalid email"
                     }
                 default:

@@ -16,6 +16,10 @@
 		7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */; };
 		7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */; };
 		7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1223CCFCEB00D118F3 /* Validator.swift */; };
+		B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* Register.swift */; };
+		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
+		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
+		B2E80E7123D77550008D3C29 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E80E7023D77550008D3C29 /* User.swift */; };
 		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,10 @@
 		7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		7FA36E1223CCFCEB00D118F3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
+		B21D9E5A23D62F7000F56ECA /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Register.swift; path = SharedModels/Register.swift; sourceTree = "<group>"; };
+		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
+		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
+		B2E80E7023D77550008D3C29 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petitui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,15 +78,19 @@
 			isa = PBXGroup;
 			children = (
 				7F0802A623C8CE34008A640A /* AppDelegate.swift */,
-				7F0802A823C8CE34008A640A /* ViewController.swift */,
+				B2E80E6F23D75C39008D3C29 /* RegisterUser */,
+				B2E047FF23D898CD00CFD8D1 /* UserLogin */,
+				B2E0480023D8994900CFD8D1 /* UserRecover */,
+				B2E0480123D89AAC00CFD8D1 /* SharedModels */,
 				7F0802AA23C8CE34008A640A /* Main.storyboard */,
+				7F0802A823C8CE34008A640A /* ViewController.swift */,
 				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
 				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				7F0802B223C8CE36008A640A /* Info.plist */,
-				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
-				7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */,
+				B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */,
+				B21D9E5A23D62F7000F56ECA /* Register.swift */,
+				B2E80E7023D77550008D3C29 /* User.swift */,
 				7FA36E1223CCFCEB00D118F3 /* Validator.swift */,
-				CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */,
 			);
 			path = petitui;
 			sourceTree = "<group>";
@@ -98,6 +110,38 @@
 				DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2E047FF23D898CD00CFD8D1 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */,
+				B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */,
+			);
+			path = UserLogin;
+			sourceTree = "<group>";
+		};
+		B2E0480023D8994900CFD8D1 /* UserRecover */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */,
+			);
+			path = UserRecover;
+			sourceTree = "<group>";
+		};
+		B2E0480123D89AAC00CFD8D1 /* SharedModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedModels;
+			sourceTree = "<group>";
+		};
+		B2E80E6F23D75C39008D3C29 /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
+			);
+			path = RegisterUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,11 +260,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */,
+				B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */,
 				7F0802A923C8CE34008A640A /* ViewController.swift in Sources */,
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
 				7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */,
+				B2E80E7123D77550008D3C29 /* User.swift in Sources */,
+				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,
 				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
+				B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
