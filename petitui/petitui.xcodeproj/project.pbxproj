@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		2673AA56CAADE356DAF6FDBC /* Pods_petitui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */; };
 		7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0802A623C8CE34008A640A /* AppDelegate.swift */; };
-		7F0802A923C8CE34008A640A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0802A823C8CE34008A640A /* ViewController.swift */; };
 		7F0802AC23C8CE34008A640A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AA23C8CE34008A640A /* Main.storyboard */; };
 		7F0802AE23C8CE36008A640A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AD23C8CE36008A640A /* Assets.xcassets */; };
 		7F0802B123C8CE36008A640A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */; };
 		7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */; };
 		7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */; };
-		7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1223CCFCEB00D118F3 /* Validator.swift */; };
+		B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */; };
+		B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */; };
+		B21A773123DB780700D71EB1 /* AnimalFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A773023DB780700D71EB1 /* AnimalFeedCell.swift */; };
 		B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* Register.swift */; };
 		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
 		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
@@ -27,15 +28,16 @@
 		7A5E01D100176298EF883153 /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.debug.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0802A323C8CE34008A640A /* petitui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petitui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0802A623C8CE34008A640A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F0802A823C8CE34008A640A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F0802AB23C8CE34008A640A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F0802AD23C8CE36008A640A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0802B023C8CE36008A640A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0802B223C8CE36008A640A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		7FA36E1223CCFCEB00D118F3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
+		B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
+		B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeCellView.swift; sourceTree = "<group>"; };
+		B21A773023DB780700D71EB1 /* AnimalFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFeedCell.swift; sourceTree = "<group>"; };
 		B21D9E5A23D62F7000F56ECA /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Register.swift; path = SharedModels/Register.swift; sourceTree = "<group>"; };
 		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
@@ -77,20 +79,19 @@
 		7F0802A523C8CE34008A640A /* petitui */ = {
 			isa = PBXGroup;
 			children = (
+				B207D3F723DB4CDC001D788D /* AnimalFeed */,
 				7F0802A623C8CE34008A640A /* AppDelegate.swift */,
 				B2E80E6F23D75C39008D3C29 /* RegisterUser */,
 				B2E047FF23D898CD00CFD8D1 /* UserLogin */,
 				B2E0480023D8994900CFD8D1 /* UserRecover */,
 				B2E0480123D89AAC00CFD8D1 /* SharedModels */,
 				7F0802AA23C8CE34008A640A /* Main.storyboard */,
-				7F0802A823C8CE34008A640A /* ViewController.swift */,
 				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
 				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				7F0802B223C8CE36008A640A /* Info.plist */,
 				B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */,
 				B21D9E5A23D62F7000F56ECA /* Register.swift */,
 				B2E80E7023D77550008D3C29 /* User.swift */,
-				7FA36E1223CCFCEB00D118F3 /* Validator.swift */,
 			);
 			path = petitui;
 			sourceTree = "<group>";
@@ -110,6 +111,16 @@
 				DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B207D3F723DB4CDC001D788D /* AnimalFeed */ = {
+			isa = PBXGroup;
+			children = (
+				B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */,
+				B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */,
+				B21A773023DB780700D71EB1 /* AnimalFeedCell.swift */,
+			);
+			path = AnimalFeed;
 			sourceTree = "<group>";
 		};
 		B2E047FF23D898CD00CFD8D1 /* UserLogin */ = {
@@ -261,14 +272,15 @@
 			files = (
 				7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */,
 				B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */,
-				7F0802A923C8CE34008A640A /* ViewController.swift in Sources */,
+				B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */,
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
-				7FA36E1323CCFCEB00D118F3 /* Validator.swift in Sources */,
 				B2E80E7123D77550008D3C29 /* User.swift in Sources */,
 				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,
 				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 				B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */,
+				B21A773123DB780700D71EB1 /* AnimalFeedCell.swift in Sources */,
+				B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

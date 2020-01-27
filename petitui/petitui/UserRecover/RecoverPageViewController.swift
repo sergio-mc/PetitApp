@@ -1,7 +1,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Foundation
-
+import Alamofire
 class RecoverPageViewController: UIViewController,UITextFieldDelegate{
     
     @IBOutlet weak var userEmail: SkyFloatingLabelTextField!
@@ -18,10 +18,12 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             return;
             
         } else {
-            
-            if(DataHelpers.isValidEmail(userRecoverEmail!)){
-                print("SENDED")
-            }else{
+            if let email = userRecoverEmail {
+                if(DataHelpers.isValidEmail(email)){
+                    sendEmail(email: email)
+                }
+            }
+            else{
                 self.present(DataHelpers.displayAlert(userMessage: "Invalid email", alertType: 0), animated: true, completion: nil)
                 
             }
@@ -55,6 +57,29 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
                 
             }
         }
+    }
+    
+    func sendEmail(email:String)  {
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/password/reset")
+        AF.request(url!,
+                   method: .post,
+                   parameters:["email": email],
+                   encoder: JSONParameterEncoder.default
+            
+        ).response { response in
+            do{
+                let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                if(responseData.code==200) {
+                    
+                    self.present(DataHelpers.displayAlert(userMessage:"mail sended!", alertType: 1), animated: true, completion: nil)
+                }else{
+                    self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+                }
+            }catch{
+                print(error)
+            }
+        }
+        
     }
     
 }
