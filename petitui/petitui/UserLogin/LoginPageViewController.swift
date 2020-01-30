@@ -78,7 +78,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     func loginUser(email:String,password:String)  {
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/login")
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
         let user=User( email: email, password: password)
         AF.request(url!,
                    method: .post,
@@ -86,6 +86,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                    encoder: JSONParameterEncoder.default
             
         ).response { response in
+            print(response);
             do{
                 let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
                 if(responseData.code==200) {
