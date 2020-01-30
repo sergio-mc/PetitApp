@@ -70,7 +70,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             do{
                 let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
                 if(responseData.code==200) {
-                    
+                    self.navigationController?.popViewController(animated: false)
                     self.present(DataHelpers.displayAlert(userMessage:"mail sended!", alertType: 1), animated: true, completion: nil)
                 }else{
                     self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)

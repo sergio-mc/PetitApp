@@ -33,9 +33,20 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         } else {
             
             if(DataHelpers.isValidEmail(userEmail!) && DataHelpers.isValidPassword(userPassword!)){
-                loginUser(email: userEmail!, password: userPassword!, sender: sender as! UIButton)
+                loginUser(email: userEmail!, password: userPassword!)
+                {
+                    (isWorking) in
+                   
+                    if(isWorking) {self.segueLogin()
+                           self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
+                    }
+                    
+                    
+                }
                 
             }
+            
+            
         }
         
         
@@ -78,9 +89,10 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    func loginUser(email:String,password:String, sender: UIButton)  {
+    func loginUser(email:String,password:String, completion: @escaping (Bool) -> ()){
         let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
         let user=User( email: email, password: password)
+        
         AF.request(url!,
                    method: .post,
                    parameters:user,
@@ -88,15 +100,18 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             
         ).response { response in
             print(response);
+            var isWorking = false
             do{
                 let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
                 if(responseData.code==200) {
                     
-                    self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
-                    self.segueLogin(sender)
+                 
+                    isWorking = true
+                    completion(isWorking)
+                    
                 }else{
                     self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
-                    
+                    completion(isWorking)
                 }
                 
             }catch{
@@ -107,11 +122,9 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func segueLogin(_ sender: UIButton)
-    {
-        performSegue(withIdentifier: "loginSegue", sender: sender)
+    func segueLogin()  {
+        performSegue(withIdentifier: "loginSegue", sender: nil)
     }
-    
     
     
 }

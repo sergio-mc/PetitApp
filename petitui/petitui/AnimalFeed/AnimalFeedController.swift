@@ -14,6 +14,9 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var petsCollectionView: UICollectionView!
     
+    @IBAction func filterSwitch(_ sender: Any) {
+        
+    }
     let datos = ["beagle"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

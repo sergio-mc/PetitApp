@@ -232,7 +232,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mbr-Vy-DoY"/>
-                                                    <segue destination="8um-Ny-Qbk" kind="show" identifier="loginSegue" id="XOU-oE-c8u"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g3I-Zl-uAx">
@@ -281,11 +280,12 @@
                     <connections>
                         <outlet property="userEmailTF" destination="x4q-kt-7kZ" id="aFN-9j-HkJ"/>
                         <outlet property="userPasswordTF" destination="uVn-MS-r0M" id="lw8-p2-0rX"/>
+                        <segue destination="8um-Ny-Qbk" kind="show" identifier="loginSegue" id="49u-4r-xSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57.971014492753625" y="115.84821428571428"/>
+            <point key="canvasLocation" x="-132" y="116"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="yi8-uL-MNO">
@@ -601,6 +601,7 @@
                         <outlet property="userEmailTF" destination="wyY-HW-nNP" id="1Oj-1F-FyQ"/>
                         <outlet property="userPasswordTF" destination="hWU-gX-1Dn" id="4JU-1m-ryj"/>
                         <outlet property="usernameTF" destination="fyo-PL-vda" id="9EE-0L-X0J"/>
+                        <segue destination="8um-Ny-Qbk" kind="show" identifier="registerSegue" id="9Cw-D8-KXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tug-d0-4Nw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1118,7 +1119,7 @@
         <scene sceneID="Hpa-9K-Xoc">
             <objects>
                 <viewController id="8um-Ny-Qbk" customClass="AnimalFeedController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="wf0-MB-DEG">
+                    <view key="view" contentMode="scaleToFill" id="wf0-MB-DEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1237,10 +1238,13 @@
                                                     <constraint firstAttribute="height" constant="50" id="SRk-ma-0cN"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="First"/>
-                                                    <segment title="Second"/>
-                                                    <segment title="Third"/>
+                                                    <segment title="Race"/>
+                                                    <segment title="Distance"/>
+                                                    <segment title="Age"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="filterSwitch:" destination="8um-Ny-Qbk" eventType="touchUpInside" id="8bn-E4-wpS"/>
+                                                </connections>
                                             </segmentedControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-Gk-ibQ">
                                                 <rect key="frame" x="0.0" y="60" width="394" height="90"/>
@@ -1287,24 +1291,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nch-XJ-IIQ">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="k0W-hc-9R4"/>
-                                    <constraint firstAttribute="height" constant="49" id="tQs-kN-YFQ"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="" image="trash.slash.fill" catalog="system" selectedImage="trash" id="ftI-Y9-vmE">
-                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="" image="bubble.right" catalog="system" selectedImage="bubble.right.fill" id="4aN-xK-6eE"/>
-                                    <tabBarItem title="" image="suit.heart" catalog="system" id="uuo-dm-XzP"/>
-                                    <tabBarItem title="" image="gear" catalog="system" id="rAf-IR-dyj"/>
-                                </items>
-                            </tabBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-vq-Mmh">
-                                <rect key="frame" x="10" y="389" width="394" height="402"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-vq-Mmh">
+                                <rect key="frame" x="10" y="433" width="394" height="402"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="402" id="9ZP-7y-A4W"/>
@@ -1383,6 +1371,22 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nch-XJ-IIQ">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="k0W-hc-9R4"/>
+                                    <constraint firstAttribute="height" constant="49" id="tQs-kN-YFQ"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="" image="trash.slash.fill" catalog="system" selectedImage="trash" id="ftI-Y9-vmE">
+                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="bubble.right" catalog="system" selectedImage="bubble.right.fill" id="4aN-xK-6eE"/>
+                                    <tabBarItem title="" image="suit.heart" catalog="system" id="uuo-dm-XzP"/>
+                                    <tabBarItem title="" image="gear" catalog="system" id="rAf-IR-dyj"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1390,7 +1394,6 @@
                             <constraint firstItem="0TY-Ox-4RL" firstAttribute="trailing" secondItem="leW-fV-Jat" secondAttribute="trailing" constant="10" id="DKD-PH-Dhb"/>
                             <constraint firstItem="ZbU-vq-Mmh" firstAttribute="leading" secondItem="0TY-Ox-4RL" secondAttribute="leading" constant="10" id="Na7-Qn-dye"/>
                             <constraint firstItem="b4e-7B-fdn" firstAttribute="leading" secondItem="0TY-Ox-4RL" secondAttribute="leading" constant="10" id="PVM-aG-vbR"/>
-                            <constraint firstItem="nch-XJ-IIQ" firstAttribute="top" secondItem="ZbU-vq-Mmh" secondAttribute="bottom" constant="22" id="VYu-hG-JGx"/>
                             <constraint firstItem="b4e-7B-fdn" firstAttribute="top" secondItem="0TY-Ox-4RL" secondAttribute="top" constant="316" id="bPJ-QX-iwE"/>
                             <constraint firstItem="nch-XJ-IIQ" firstAttribute="centerX" secondItem="ZbU-vq-Mmh" secondAttribute="centerX" id="e0R-wG-I8I"/>
                             <constraint firstItem="leW-fV-Jat" firstAttribute="top" secondItem="0TY-Ox-4RL" secondAttribute="top" constant="10" id="h93-Xh-LBc"/>
@@ -1408,7 +1411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uch-5h-giC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1120.2898550724638" y="1569.6428571428571"/>
+            <point key="canvasLocation" x="-804" y="804"/>
         </scene>
     </scenes>
     <resources>
@@ -1431,4 +1434,7 @@
         <image name="trash" catalog="system" width="60" height="64"/>
         <image name="trash.slash.fill" catalog="system" width="60" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Cw-D8-KXU"/>
+    </inferredMetricsTieBreakers>
 </document>
