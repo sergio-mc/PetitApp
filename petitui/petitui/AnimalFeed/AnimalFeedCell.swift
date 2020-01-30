@@ -13,8 +13,5 @@ import UIKit
 class AnimalFeedCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var animalFeedImage: UIImageView!
-    @IBOutlet weak var animalFeedName: UILabel!
-    
-    @IBOutlet weak var animalFeedAge: UILabel!
+ 
 }

@@ -33,7 +33,8 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         } else {
             
             if(DataHelpers.isValidEmail(userEmail!) && DataHelpers.isValidPassword(userPassword!)){
-                loginUser(email: userEmail!, password: userPassword!)
+                loginUser(email: userEmail!, password: userPassword!, sender: sender as! UIButton)
+                
             }
         }
         
@@ -77,7 +78,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    func loginUser(email:String,password:String)  {
+    func loginUser(email:String,password:String, sender: UIButton)  {
         let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
         let user=User( email: email, password: password)
         AF.request(url!,
@@ -92,7 +93,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 if(responseData.code==200) {
                     
                     self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
-                    
+                    self.segueLogin(sender)
                 }else{
                     self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
                     
@@ -104,6 +105,11 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+    }
+    
+    func segueLogin(_ sender: UIButton)
+    {
+        performSegue(withIdentifier: "loginSegue", sender: sender)
     }
     
     
