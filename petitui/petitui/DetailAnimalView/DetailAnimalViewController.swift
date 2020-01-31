@@ -20,7 +20,7 @@ class DetailAnimalViewController: UIViewController {
     @IBOutlet weak var descriptionPet: UILabel!
     @IBOutlet weak var pictureOwner: UIImageView!
     @IBOutlet weak var nameOwner: UILabel!
-    @IBOutlet weak var sexPet: UILabel!
+    @IBOutlet weak var genrePet: UILabel!
     @IBOutlet weak var favoriteIcon: UIButton!
     
     private var favorite: Bool = false
@@ -51,13 +51,13 @@ class DetailAnimalViewController: UIViewController {
     {
         let name = "Sergio"
         let age = "4 years"
-        let sex = "Male"
+        let genre = "Male"
         let location = "Leganes 33"
         let animalDescription = "Animal description example"
         let idOwner = "David"
         let idType = "Beagle"
         let idBreed = "Beagle"
-        let pet = Pet(idOwner: idOwner, idType: idType, name: name, sex: sex, age: age, location: location, animalDescription: animalDescription, idBreed: idBreed)
+        let pet = Pet(idOwner: idOwner, idType: idType, name: name, genre: genre, age: age, location: location, animalDescription: animalDescription, idBreed: idBreed)
         
         namePet.text = pet.name
         locationPet.text = pet.location
@@ -65,7 +65,7 @@ class DetailAnimalViewController: UIViewController {
         agePet.text = pet.age
         descriptionPet.text = pet.animalDescription
         nameOwner.text = pet.idOwner
-        sexPet.text = pet.sex
+        genrePet.text = pet.genre
     }
     
     

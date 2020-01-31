@@ -705,7 +705,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TNL-gv-JWP">
                                                                         <rect key="frame" x="25" y="7.9999999999999964" width="110" height="59.666666666666657"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beagle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGR-hO-GBQ">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGR-hO-GBQ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="20.333333333333332"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="JRH-Nh-XHv"/>
@@ -714,7 +714,7 @@
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Race" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-6S-TVG">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Beagle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-6S-TVG">
                                                                                 <rect key="frame" x="0.0" y="40.333333333333371" width="110" height="19.333333333333329"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
@@ -725,7 +725,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bRU-Cg-x8i">
                                                                         <rect key="frame" x="145" y="7.9999999999999964" width="110" height="59.666666666666657"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Masculine" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAz-Te-T1o">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAz-Te-T1o">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="20.333333333333332"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="voC-MJ-v9g"/>
@@ -734,7 +734,7 @@
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-Kg-Vp8">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Male" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWd-Kg-Vp8">
                                                                                 <rect key="frame" x="0.0" y="40.333333333333371" width="110" height="19.333333333333329"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
@@ -745,7 +745,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-5T-rT0">
                                                                         <rect key="frame" x="265" y="7.9999999999999964" width="110" height="59.666666666666657"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="4 months" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-gR-0yC">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Age" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-gR-0yC">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="20.333333333333332"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="110" id="JJN-4O-AYA"/>
@@ -754,7 +754,7 @@
                                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-tV-Lqt">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="4 years" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-tV-Lqt">
                                                                                 <rect key="frame" x="0.0" y="40.333333333333371" width="110" height="19.333333333333329"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                 <nil key="textColor"/>
@@ -890,16 +890,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="fNG-CP-gD3"/>
                     <connections>
-                        <outlet property="agePet" destination="ZY3-gR-0yC" id="nqu-KW-7P2"/>
+                        <outlet property="agePet" destination="kFx-tV-Lqt" id="y9j-Aq-Qdl"/>
                         <outlet property="descriptionPet" destination="hWf-Wm-csF" id="NuS-sy-KQK"/>
                         <outlet property="favoriteIcon" destination="ZTK-hl-LAx" id="v9Y-BI-lAr"/>
+                        <outlet property="genrePet" destination="aWd-Kg-Vp8" id="S4k-QB-XbQ"/>
                         <outlet property="locationPet" destination="Eb2-6H-xUh" id="eCn-Fc-Vkr"/>
                         <outlet property="nameOwner" destination="hfl-5R-6YE" id="9UM-RF-zUC"/>
                         <outlet property="namePet" destination="KYA-Lf-ba9" id="TiX-vc-RQf"/>
                         <outlet property="pictureOwner" destination="a3z-bS-eS1" id="i7Z-90-dbz"/>
                         <outlet property="picturePet" destination="YyL-cg-DTn" id="6Vl-fc-bU9"/>
-                        <outlet property="racePet" destination="WGR-hO-GBQ" id="9m1-KO-zYN"/>
-                        <outlet property="sexPet" destination="XAz-Te-T1o" id="ONh-uq-ZWP"/>
+                        <outlet property="racePet" destination="Gzv-6S-TVG" id="JTH-FU-tcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Oo-kt-lZG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1238,12 +1238,13 @@
                                                     <constraint firstAttribute="height" constant="50" id="SRk-ma-0cN"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Race"/>
+                                                    <segment title="Breed"/>
                                                     <segment title="Distance"/>
                                                     <segment title="Age"/>
                                                 </segments>
+                                                <color key="selectedSegmentTintColor" red="0.59838825464248657" green="0.81992882490158081" blue="0.79215759038925171" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
-                                                    <action selector="filterSwitch:" destination="8um-Ny-Qbk" eventType="touchUpInside" id="8bn-E4-wpS"/>
+                                                    <action selector="filterSwitchWithController:" destination="8um-Ny-Qbk" eventType="valueChanged" id="Wem-Ne-HMc"/>
                                                 </connections>
                                             </segmentedControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-Gk-ibQ">
@@ -1256,19 +1257,25 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-am-0Uc">
+                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a race.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-am-0Uc">
                                                         <rect key="frame" x="10" y="25" width="380" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-3s-pTM" userLabel="DistanceSlider">
+                                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-3s-pTM" userLabel="DistanceSlider">
                                                         <rect key="frame" x="10" y="30" width="380" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="onChangeDistanceSlider:" destination="8um-Ny-Qbk" eventType="valueChanged" id="JX1-53-77W"/>
+                                                        </connections>
                                                     </slider>
-                                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1kg-mn-Wzl" userLabel="AgeSlider">
+                                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="1kg-mn-Wzl" userLabel="AgeSlider">
                                                         <rect key="frame" x="10" y="30" width="380" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="onChangeAgeSlider:" destination="8um-Ny-Qbk" eventType="valueChanged" id="ngI-dv-woj"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1379,12 +1386,10 @@
                                     <constraint firstAttribute="height" constant="49" id="tQs-kN-YFQ"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="" image="trash.slash.fill" catalog="system" selectedImage="trash" id="ftI-Y9-vmE">
-                                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tabBarItem>
+                                    <tabBarItem title="" image="house" catalog="system" selectedImage="house.fill" id="ftI-Y9-vmE"/>
                                     <tabBarItem title="" image="bubble.right" catalog="system" selectedImage="bubble.right.fill" id="4aN-xK-6eE"/>
-                                    <tabBarItem title="" image="suit.heart" catalog="system" id="uuo-dm-XzP"/>
-                                    <tabBarItem title="" image="gear" catalog="system" id="rAf-IR-dyj"/>
+                                    <tabBarItem title="" image="suit.heart" catalog="system" selectedImage="suit.heart.fill" id="uuo-dm-XzP"/>
+                                    <tabBarItem title="" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="rAf-IR-dyj"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -1406,6 +1411,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="32u-vu-sQm"/>
                     <connections>
+                        <outlet property="filterAgeSlider" destination="1kg-mn-Wzl" id="8Xh-IS-gKE"/>
+                        <outlet property="filterDistanceSlider" destination="mhd-3s-pTM" id="ph2-oQ-54z"/>
+                        <outlet property="filterSearchBar" destination="dc9-am-0Uc" id="XZJ-8I-9eV"/>
+                        <outlet property="filterSelecter" destination="Cbp-nz-8GB" id="X8A-dm-PDI"/>
+                        <outlet property="filterText" destination="cEP-5U-t0U" id="zfd-T2-fyk"/>
                         <outlet property="petsCollectionView" destination="ZbU-vq-Mmh" id="xeA-Qk-xYI"/>
                     </connections>
                 </viewController>
@@ -1423,16 +1433,18 @@
         <image name="cat" width="512" height="512"/>
         <image name="dog" width="512" height="512"/>
         <image name="envelope" catalog="system" width="64" height="46"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="lock" catalog="system" width="64" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="petdetailbackground" width="1890" height="1417"/>
         <image name="pin.fill" catalog="system" width="58" height="64"/>
         <image name="sloth" width="512" height="512"/>
         <image name="suit.heart" catalog="system" width="64" height="54"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
-        <image name="trash.slash.fill" catalog="system" width="60" height="64"/>
+        <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Cw-D8-KXU"/>

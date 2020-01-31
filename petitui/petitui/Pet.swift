@@ -6,16 +6,16 @@
 import Foundation
 
 struct Pet: Codable {
-    let idOwner, name, idType, sex: String
+    let idOwner, name, idType, genre: String
     let age, location, animalDescription, preferedPhoto: String?
     let idBreed: String
     let id: Int?
     
-    init(idOwner:String,idType:String,name:String,sex:String,age:String,location:String,animalDescription:String,idBreed:String) {
+    init(idOwner:String,idType:String,name:String,genre:String,age:String,location:String,animalDescription:String,idBreed:String) {
         self.idOwner = idOwner
         self.idType = idType
         self.name = name
-        self.sex = sex
+        self.genre = genre
         self.age = age
         self.location = location
         self.animalDescription = animalDescription
@@ -28,7 +28,7 @@ struct Pet: Codable {
         case idOwner = "id_owner"
         case name
         case idType = "id_type"
-        case sex, age, location
+        case genre, age, location
         case animalDescription = "description"
         case preferedPhoto = "prefered_photo"
         case idBreed = "id_breed"
