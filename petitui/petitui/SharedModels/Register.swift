@@ -15,3 +15,17 @@ struct RegisterResponse: Codable {
     
 }
 
+struct AnimalsResponse: Codable {
+    var code: Int?
+    var msg, errorMsg: String?
+    var animals: [Pet]?
+    
+
+    enum CodingKeys: String, CodingKey {
+        case code
+        case errorMsg = "error_msg"
+        case msg
+        case animals
+    }
+    
+}

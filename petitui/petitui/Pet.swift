@@ -6,33 +6,37 @@
 import Foundation
 
 struct Pet: Codable {
-    let idOwner, name, idType, genre: String
-    let age, location, animalDescription, preferedPhoto: String?
-    let idBreed: String
-    let id: Int?
+    let  name, type, sex: String
+    let animalDescription, preferedPhoto: String
+    let breed: String?
+    let idOwner, id, age : Int
+    let latitude, longitude :Double
     
-    init(idOwner:String,idType:String,name:String,genre:String,age:String,location:String,animalDescription:String,idBreed:String) {
+    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String, id:Int) {
         self.idOwner = idOwner
-        self.idType = idType
         self.name = name
-        self.genre = genre
+        self.type = type
+        self.sex = sex
         self.age = age
-        self.location = location
+        self.latitude = latitude
+        self.longitude = longitude
         self.animalDescription = animalDescription
-        self.idBreed = idBreed
-        self.preferedPhoto = nil
-        self.id = nil
+        self.breed = breed
+        self.preferedPhoto = preferedPhoto
+        self.id = id
     }
-
+    
     enum CodingKeys: String, CodingKey {
         case idOwner = "id_owner"
         case name
-        case idType = "id_type"
-        case genre, age, location
+        case type
+        case sex, age
         case animalDescription = "description"
         case preferedPhoto = "prefered_photo"
-        case idBreed = "id_breed"
+        case breed
         case id
+        case longitude
+        case latitude
     }
     
 }

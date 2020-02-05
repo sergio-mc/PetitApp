@@ -12,6 +12,7 @@ import UIKit
 
 class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var petsFeed:[Pet] = []
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
     @IBOutlet weak var filterDistanceSlider: UISlider!
@@ -70,10 +71,11 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = false
         }
     }
-    let datos = ["beagle"]
+ 
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return petsFeed.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -82,9 +84,16 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.petsCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! AnimalFeedCell
-        cell.petName.text = "Pipo"
-        cell.petAge.text = "11"
-        cell.petImage.image = UIImage.init(imageLiteralResourceName: datos[0])
+        
+        
+        cell.petName.text = petsFeed[indexPath.row].name
+        cell.petAge.text = String(petsFeed[indexPath.row].age)
+        ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
+            (data) in
+            cell.petImage.image = UIImage(data: data)
+        }
+        
+        
         
         return cell
     }
@@ -96,7 +105,10 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ApiManager.getFeedAnimals(){pets in
+            self.petsFeed=pets
+            self.petsCollectionView.reloadData()
+        }
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
         
@@ -112,7 +124,19 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let item = (sender as? AnimalFeedCell)
+        
+        let indexPath = self.petsCollectionView.indexPath(for: item!)
+        let cell = petsCollectionView.cellForItem(at: indexPath!) as? AnimalFeedCell 
+            
+        
+        let selectedPed=petsFeed[indexPath?.row ?? 0]
+        let detailPetView = segue.destination as! DetailAnimalViewController
+        detailPetView.detailPet = selectedPed
+        detailPetView.detailImage=cell?.petImage
+        
+    }
     
     
 }
