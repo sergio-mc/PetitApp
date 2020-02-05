@@ -36,9 +36,9 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 loginUser(email: userEmail!, password: userPassword!)
                 {
                     (isWorking) in
-                   
+                    
                     if(isWorking) {self.segueLogin()
-                           self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
+                        self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
                     }
                     
                     
@@ -100,24 +100,24 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             
         ).response { response in
             print(response);
-            var isWorking = false
-            do{
-                let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
-                if(responseData.code==200) {
-                    
-                 
-                    isWorking = true
-                    completion(isWorking)
-                    
-                }else{
-                    self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
-                    completion(isWorking)
+            if(response.error == nil){
+                var isWorking = false
+                do{
+                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        isWorking = true
+                        completion(isWorking)
+                    }else{
+                        self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+                        completion(isWorking)
+                    }
+                }catch{
+                    print(error)
                 }
-                
-            }catch{
-                print(error)
-                
+            }else{
+                self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
             }
+            
         }
         
     }
