@@ -46,6 +46,7 @@ class DetailAnimalViewController: UIViewController {
         super.viewDidLoad()
         if let pet = detailPet, let image = detailImage {
             setValues(pet: pet, image:image)
+            setOwnerData(pet:pet) 
         }
         
         // Do any additional setup after loading the view.
@@ -61,22 +62,28 @@ class DetailAnimalViewController: UIViewController {
         racePet.text = String(pet.type)
         agePet.text = String(pet.age)
         descriptionPet.text = pet.animalDescription
-        nameOwner.text = String(pet.idOwner)
         genrePet.text = pet.sex
         picturePet.image=image.image
+    }
+    
+    func setOwnerData(pet:Pet)  {
+        ApiManager.getUser(id: pet.idOwner){
+            
+            user in
+            if let username = user.userName{
+                self.nameOwner.text = String(username)
+                print(username, "detail")
+            }
+            
+        }
+       
+        
+       
     }
     
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
 }

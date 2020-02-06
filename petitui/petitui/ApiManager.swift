@@ -47,7 +47,7 @@ class ApiManager {
                 }
             }
             catch{
-             print("error")
+                print("error")
             }
         }
         
@@ -75,7 +75,27 @@ class ApiManager {
                 }
         }
     }
+    static func getUser(id:Int ,completion: @escaping (User) -> ()){
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/one/\(id)")
+        AF.request(url!, method: .get)
+            .validate()
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let user = responseData.user {
+                                print(user)
+                                completion(user)
+                            }
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+        }
+    }
     
-   
+    
     
 }
