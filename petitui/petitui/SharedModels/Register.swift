@@ -29,3 +29,18 @@ struct AnimalsResponse: Codable {
     }
     
 }
+
+struct AnimalResponse: Codable {
+    var code: Int?
+    var msg, errorMsg: String?
+    var animal: Pet?
+    
+
+    enum CodingKeys: String, CodingKey {
+        case code
+        case errorMsg = "error_msg"
+        case msg
+        case animal
+    }
+    
+}

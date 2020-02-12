@@ -96,7 +96,9 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
 
                ImagePickerManager().pickImage(self){ image in
                  print(image)
-                ApiManager.testImage(data: image.jpegData(compressionQuality: 0.2)!)
+                let pet=Pet(idOwner: 1, type: "kira", name: "nala", sex: "no", age: 1, animalDescription: "catitapelada", breed: "spinix", latitude: 333.333, longitude: 5444.444, preferedPhoto: "catofota")
+                
+                ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){pet in print(pet)}
              }
          }
 

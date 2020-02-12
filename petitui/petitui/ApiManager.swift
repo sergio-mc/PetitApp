@@ -96,38 +96,47 @@ class ApiManager {
         }
     }
     
-    static func testImage(data:Data)  {
+    static func createAnimal(pet:Pet,data:Data, completion: @escaping (Pet) -> ()){
         
+        let url = "http://0.0.0.0:8888/petit-api/public/api/animal"
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(Data(String(pet.idOwner).utf8), withName: "id_owner")
+            multipartFormData.append(Data(pet.name.utf8), withName: "name")
+            multipartFormData.append(Data(pet.type.utf8), withName: "type")
+            multipartFormData.append(Data(pet.sex.utf8), withName: "sex")
+            multipartFormData.append(Data(String(pet.age).utf8), withName: "age")
+            multipartFormData.append(Data(pet.animalDescription.utf8), withName: "description")
+            multipartFormData.append(Data(pet.breed?.utf8 ?? "".utf8), withName: "breed")
+            multipartFormData.append(Data(String(pet.longitude).utf8), withName: "longitude")
+            multipartFormData.append(Data(String(pet.latitude).utf8), withName: "latitude")
+            
+            multipartFormData.append(data, withName: "picture",fileName: "picture", mimeType:  "image/png")
+            //             multipartFormData.append(image, withName: "picture", fileName: "beagle", mimeType: "image/png")
+        }, to: url)
+            .response{ response in
+                print(response)
+        }
+        .uploadProgress(queue: .main, closure: { progress in
+            //Current upload progress of file
+            print("Upload Progress: \(progress.fractionCompleted)")
+        })
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:AnimalResponse = try JSONDecoder().decode(AnimalResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let pets = responseData.animal {
+                                completion(pets)
+                            }
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+                
+                
+        }
         
-        let image = UIImage.init(named: "beagle")
-        let imgData = image!.jpegData(compressionQuality: 0.2)!
-        let url = "http://0.0.0.0:8888/petit-api/public/api/animal/1"
-        let parameter = ["name":"perrita prueba"]
-        let headers: HTTPHeaders = [
-        "Content-type": "multipart/form-data",
-        "Accept": "application/json"
-        ]
-        
-         AF.upload(multipartFormData: { multipartFormData in
-             multipartFormData.append(Data("sergioparlo".utf8), withName: "name")
-             multipartFormData.append(data, withName: "picture",fileName: "picture", mimeType:  "image/png")
-//             multipartFormData.append(image, withName: "picture", fileName: "beagle", mimeType: "image/png")
-         }, to: url)
-             .response{ response in
-                 print(response)
-             }
-               .uploadProgress(queue: .main, closure: { progress in
-                   //Current upload progress of file
-                   print("Upload Progress: \(progress.fractionCompleted)")
-               })
-               .response(completionHandler: { data in
-                print(data)
-                   //Do what ever you want to do with response
-               })
-
-
-
-
     }
     
 }

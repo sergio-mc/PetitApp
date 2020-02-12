@@ -9,8 +9,9 @@ struct Pet: Codable {
     let  name, type, sex: String
     let animalDescription, preferedPhoto: String
     let breed: String?
-    let idOwner, id, age : Int
+    let idOwner, age : Int
     let latitude, longitude :Double
+    let id: Int?
     
     init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String, id:Int) {
         self.idOwner = idOwner
@@ -25,6 +26,19 @@ struct Pet: Codable {
         self.preferedPhoto = preferedPhoto
         self.id = id
     }
+    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String) {
+           self.idOwner = idOwner
+           self.name = name
+           self.type = type
+           self.sex = sex
+           self.age = age
+           self.latitude = latitude
+           self.longitude = longitude
+           self.animalDescription = animalDescription
+           self.breed = breed
+           self.preferedPhoto = preferedPhoto
+           self.id = nil
+       }
     
     enum CodingKeys: String, CodingKey {
         case idOwner = "id_owner"
