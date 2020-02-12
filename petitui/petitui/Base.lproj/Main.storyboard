@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -977,8 +977,8 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zoe-cX-a0B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qmo-dW-fDZ">
-                                                                        <rect key="frame" x="0.0" y="6" width="313" height="68"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qmo-dW-fDZ">
+                                                                        <rect key="frame" x="0.0" y="0.33333333333331439" width="313" height="79.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Form" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McU-0x-Wtc">
                                                                                 <rect key="frame" x="56.666666666666657" y="0.0" width="199.99999999999997" height="25.333333333333332"/>
@@ -989,17 +989,17 @@
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-UC-WYd">
-                                                                                <rect key="frame" x="0.0" y="25.333333333333311" width="313" height="42.666666666666657"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-UC-WYd">
+                                                                                <rect key="frame" x="0.0" y="45.333333333333371" width="313" height="34"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7i-1h-DtP">
-                                                                                        <rect key="frame" x="0.0" y="19.666666666666686" width="53" height="23"/>
+                                                                                        <rect key="frame" x="0.0" y="5.6666666666666288" width="53" height="23"/>
                                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Vw0-TV-dPq" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                                        <rect key="frame" x="73" y="0.0" width="240" height="42.666666666666664"/>
+                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Vw0-TV-dPq">
+                                                                                        <rect key="frame" x="73" y="0.0" width="240" height="34"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="240" id="fua-2a-lad"/>
                                                                                         </constraints>
@@ -1015,16 +1015,13 @@
                                                                                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                                                                <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                                                                 <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                             </userDefinedRuntimeAttribute>
                                                                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Name"/>
                                                                                         </userDefinedRuntimeAttributes>
-                                                                                        <connections>
-                                                                                            <action selector="inputPetName:" destination="wTc-2b-C3d" eventType="editingDidEnd" id="11q-sL-oOI"/>
-                                                                                        </connections>
                                                                                     </textField>
                                                                                 </subviews>
                                                                             </stackView>
@@ -1180,17 +1177,17 @@
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-d0-i3Q">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-d0-i3Q">
                                                                 <rect key="frame" x="0.0" y="195" width="314.33333333333331" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igx-4t-pUR">
-                                                                        <rect key="frame" x="0.0" y="17" width="54.333333333333336" height="23"/>
+                                                                        <rect key="frame" x="0.0" y="8.6666666666666288" width="54.333333333333336" height="23"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8eH-XD-DJd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                        <rect key="frame" x="74.333333333333314" y="0.0" width="240" height="40"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet breed" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8eH-XD-DJd">
+                                                                        <rect key="frame" x="74.333333333333314" y="3" width="240" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="240" id="d0L-Nc-tb2"/>
                                                                         </constraints>
@@ -1205,16 +1202,13 @@
                                                                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                                                <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                                                 <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Breed"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="inputPetBreed:" destination="wTc-2b-C3d" eventType="editingDidEnd" id="YtG-pV-n8E"/>
-                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <constraints>
@@ -1244,17 +1238,17 @@
                                                                     </segmentedControl>
                                                                 </subviews>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="L0Z-wW-dxT">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="L0Z-wW-dxT">
                                                                 <rect key="frame" x="0.0" y="306" width="315.66666666666669" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afN-Ft-pzQ">
-                                                                        <rect key="frame" x="0.0" y="17" width="35.666666666666664" height="23"/>
+                                                                        <rect key="frame" x="0.0" y="8.6666666666666288" width="35.666666666666664" height="23"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-ts-OiC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                        <rect key="frame" x="75.666666666666686" y="0.0" width="240" height="40"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet age" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="J5h-ts-OiC">
+                                                                        <rect key="frame" x="75.666666666666686" y="3" width="240" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="240" id="3oq-cf-c7A"/>
                                                                         </constraints>
@@ -1269,16 +1263,13 @@
                                                                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                                                <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                                                 <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Age"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="inputPetAge:" destination="wTc-2b-C3d" eventType="editingDidEnd" id="lk8-PW-asi"/>
-                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <constraints>
@@ -1286,7 +1277,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="smB-l1-p3c">
-                                                                <rect key="frame" x="0.0" y="366" width="360" height="154"/>
+                                                                <rect key="frame" x="0.0" y="366" width="400" height="154"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2O-NB-kvM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="140.33333333333334" height="23"/>
@@ -1294,10 +1285,10 @@
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yOe-Jk-GBl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                        <rect key="frame" x="0.0" y="43" width="360" height="51"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yOe-Jk-GBl">
+                                                                        <rect key="frame" x="0.0" y="43" width="400" height="51"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="360" id="yEA-qX-qHC"/>
+                                                                            <constraint firstAttribute="width" constant="400" id="yEA-qX-qHC"/>
                                                                         </constraints>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1311,23 +1302,20 @@
                                                                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                                                <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                                                 <color key="value" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Description"/>
                                                                         </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="inputPetDescription:" destination="wTc-2b-C3d" eventType="editingDidEnd" id="aXB-Ro-ZIy"/>
-                                                                        </connections>
                                                                     </textField>
                                                                     <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-Q6-crY">
-                                                                        <rect key="frame" x="0.0" y="114" width="300" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="114" width="400" height="40"/>
                                                                         <color key="backgroundColor" red="0.60225307939999995" green="0.81993013619999999" blue="0.79215753079999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="vFK-HL-fzn"/>
-                                                                            <constraint firstAttribute="width" constant="300" id="zvm-U3-C0b"/>
+                                                                            <constraint firstAttribute="width" constant="400" id="zvm-U3-C0b"/>
                                                                         </constraints>
                                                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                         <state key="normal" title="Add pet">
@@ -1394,7 +1382,12 @@
                     <connections>
                         <outlet property="catType" destination="hCk-pF-HmD" id="CCh-IM-ns5"/>
                         <outlet property="dogType" destination="m66-ce-1LB" id="nZO-kr-QDm"/>
+                        <outlet property="inputAge" destination="J5h-ts-OiC" id="6xp-q6-8IN"/>
+                        <outlet property="inputBreed" destination="8eH-XD-DJd" id="9U3-li-s8w"/>
+                        <outlet property="inputDescription" destination="yOe-Jk-GBl" id="lBc-4I-8Ba"/>
+                        <outlet property="inputName" destination="Vw0-TV-dPq" id="AVD-Lr-wtk"/>
                         <outlet property="otherType" destination="kTD-3w-9p5" id="OyV-ej-PWT"/>
+                        <outlet property="uploadImage" destination="qAi-sx-Sxt" id="5Cc-o7-aUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n71-oM-4g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

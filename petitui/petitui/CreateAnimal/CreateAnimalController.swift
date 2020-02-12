@@ -15,13 +15,17 @@ class CreateAnimalController: UIViewController {
     @IBOutlet weak var dogType: UIButton!
     @IBOutlet weak var catType: UIButton!
     @IBOutlet weak var otherType: UIButton!
+    @IBOutlet weak var uploadImage: UIImageView!
+    
+    @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputBreed: UITextField!
+    @IBOutlet weak var inputAge: UITextField!
+    @IBOutlet weak var inputDescription: UITextField!
     
     
     @IBAction func uploadPetImage(_ sender: Any) {
     }
     @IBAction func setPetLocation(_ sender: Any) {
-    }
-    @IBAction func inputPetName(_ sender: Any) {
     }
     @IBAction func dogTypeButton(_ sender: Any) {
         dogType.layer.borderWidth = 2
@@ -45,15 +49,9 @@ class CreateAnimalController: UIViewController {
         typeValue = "other"
         print(typeValue)
     }
-    @IBAction func inputPetBreed(_ sender: Any) {
-    }
-    @IBAction func selectorPetGenre(_ sender: Any) {
-    }
-    @IBAction func inputPetAge(_ sender: Any) {
-    }
-    @IBAction func inputPetDescription(_ sender: Any) {
-    }
+    
     @IBAction func addPetButton(_ sender: Any) {
+        
     }
     
     
