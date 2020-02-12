@@ -96,6 +96,38 @@ class ApiManager {
         }
     }
     
-    
+    static func testImage(data:Data)  {
+        
+        
+        let image = UIImage.init(named: "beagle")
+        let imgData = image!.jpegData(compressionQuality: 0.2)!
+        let url = "http://0.0.0.0:8888/petit-api/public/api/animal/1"
+        let parameter = ["name":"perrita prueba"]
+        let headers: HTTPHeaders = [
+        "Content-type": "multipart/form-data",
+        "Accept": "application/json"
+        ]
+        
+         AF.upload(multipartFormData: { multipartFormData in
+             multipartFormData.append(Data("sergioparlo".utf8), withName: "name")
+             multipartFormData.append(data, withName: "picture",fileName: "picture", mimeType:  "image/png")
+//             multipartFormData.append(image, withName: "picture", fileName: "beagle", mimeType: "image/png")
+         }, to: url)
+             .response{ response in
+                 print(response)
+             }
+               .uploadProgress(queue: .main, closure: { progress in
+                   //Current upload progress of file
+                   print("Upload Progress: \(progress.fractionCompleted)")
+               })
+               .response(completionHandler: { data in
+                print(data)
+                   //Do what ever you want to do with response
+               })
+
+
+
+
+    }
     
 }

@@ -131,7 +131,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             cell.petImage.image = UIImage(data: data)
         }
         
-        
+
         
         return cell
     }
@@ -175,11 +175,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let item = (sender as? AnimalFeedCell)
-        
         let indexPath = self.petsCollectionView.indexPath(for: item!)
-        let cell = petsCollectionView.cellForItem(at: indexPath!) as? AnimalFeedCell 
-            
-        
+        let cell = petsCollectionView.cellForItem(at: indexPath!) as? AnimalFeedCell
         let selectedPed=petsFeed[indexPath?.row ?? 0]
         let detailPetView = segue.destination as! DetailAnimalViewController
         detailPetView.detailPet = selectedPed

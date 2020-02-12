@@ -24,6 +24,10 @@ class CreateAnimalController: UIViewController {
     
     
     @IBAction func uploadPetImage(_ sender: Any) {
+        ImagePickerManager().pickImage(self){ image in
+            self.uploadImage.image=image
+        }
+        
     }
     @IBAction func setPetLocation(_ sender: Any) {
     }
@@ -51,16 +55,16 @@ class CreateAnimalController: UIViewController {
     }
     
     @IBAction func addPetButton(_ sender: Any) {
-        
+       print(checkAllFields())
     }
     
     
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         dogType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         dogType.layer.borderWidth = 0
         
@@ -70,6 +74,29 @@ class CreateAnimalController: UIViewController {
         otherType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         otherType.layer.borderWidth = 0
     }
+    func createAnimal() {
+        
+    }
     
-
+    func checkAllFields()->Bool {
+        if uploadImage.image != nil {
+             self.present(DataHelpers.displayAlert(userMessage: "Animal picture missing", alertType: 0), animated: true, completion: nil)
+            return false}
+        if typeValue.isEmpty{
+             self.present(DataHelpers.displayAlert(userMessage: "Select an animal type", alertType: 0), animated: true, completion: nil)
+            return false}
+        if inputName.text?.isEmpty ?? true{
+             self.present(DataHelpers.displayAlert(userMessage: "Add a name for the pet", alertType: 0), animated: true, completion: nil)
+            return false}
+        if inputAge.text?.isEmpty ?? true{
+             self.present(DataHelpers.displayAlert(userMessage: "Add the age of the pet", alertType: 0), animated: true, completion: nil)
+            return false}
+        if inputDescription.text?.isEmpty ?? true{
+             self.present(DataHelpers.displayAlert(userMessage: "Add a short description for the pet", alertType: 0), animated: true, completion: nil)
+            return false}
+        
+        return true
+    }
+    
+    
 }

@@ -9,10 +9,11 @@
 import UIKit
 
 
-class DetailAnimalViewController: UIViewController {
+class DetailAnimalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     public var detailPet:Pet?
     public var detailImage:UIImageView?
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var picturePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -91,7 +92,15 @@ class DetailAnimalViewController: UIViewController {
     
     
     
-    
+    @IBAction func addphoto(_ sender: UIButton) {
+
+               ImagePickerManager().pickImage(self){ image in
+                 print(image)
+                ApiManager.testImage(data: image.jpegData(compressionQuality: 0.2)!)
+             }
+         }
+
+       
     
     
 }

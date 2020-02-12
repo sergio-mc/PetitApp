@@ -17,6 +17,7 @@
 		B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */; };
 		B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */; };
 		B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* Register.swift */; };
+		B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231145D23EDB147001E4831 /* ImagePickerManager.swift */; };
 		B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A0B3723EB1B15008DFF67 /* ApiManager.swift */; };
 		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
 		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
@@ -44,6 +45,7 @@
 		B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
 		B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeCellView.swift; sourceTree = "<group>"; };
 		B21D9E5A23D62F7000F56ECA /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Register.swift; path = SharedModels/Register.swift; sourceTree = "<group>"; };
+		B231145D23EDB147001E4831 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = petitui/ImagePickerManager.swift; sourceTree = SOURCE_ROOT; };
 		B24A0B3723EB1B15008DFF67 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */,
+				B231145D23EDB147001E4831 /* ImagePickerManager.swift */,
 			);
 			path = DetailAnimalView;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				CE8342D123DB4EDB008B15C5 /* Pet.swift in Sources */,
 				B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */,
 				CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */,
+				B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 				CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */,
 				B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */,

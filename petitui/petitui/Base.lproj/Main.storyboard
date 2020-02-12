@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -862,6 +862,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="addphoto:" destination="uQh-aw-Iqj" eventType="touchUpInside" id="02F-i2-GKc"/>
                                             <action selector="signUpButton:" destination="e0L-rp-dFy" eventType="touchUpInside" id="gUL-yo-Y8c"/>
                                         </connections>
                                     </button>
@@ -946,7 +947,17 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Captura de pantalla 2020-02-06 a las 19.28.38" translatesAutoresizingMaskIntoConstraints="NO" id="qAi-sx-Sxt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" " translatesAutoresizingMaskIntoConstraints="NO" id="qAi-sx-Sxt">
+                                                <rect key="frame" x="45" y="45" width="250" height="250"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="125"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-Qe-DUg">
                                                 <rect key="frame" x="45" y="45" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1233,7 +1244,6 @@
                                                                         <color key="selectedSegmentTintColor" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <connections>
                                                                             <action selector="filterSwitchWithController:" destination="8um-Ny-Qbk" eventType="valueChanged" id="Twy-0j-5Sb"/>
-                                                                            <action selector="selectorPetGenre:" destination="wTc-2b-C3d" eventType="valueChanged" id="Ynq-xH-dUU"/>
                                                                         </connections>
                                                                     </segmentedControl>
                                                                 </subviews>
@@ -1942,7 +1952,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Captura de pantalla 2020-02-06 a las 19.28.38" width="450" height="450"/>
+        <image name=" " width="16" height="16"/>
         <image name="Logo_perrete_trans" width="2048" height="2048"/>
         <image name="backgroundimage" width="750" height="1334"/>
         <image name="beagle" width="600" height="600"/>
@@ -1966,6 +1976,7 @@
         <image name="sloth" width="512" height="512"/>
         <image name="suit.heart" catalog="system" width="64" height="54"/>
         <image name="suit.heart.fill" catalog="system" width="64" height="54"/>
+        <image name="takePhoto" width="450" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Lr-5d-UUE"/>
