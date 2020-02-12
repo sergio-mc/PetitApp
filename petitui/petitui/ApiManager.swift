@@ -96,7 +96,7 @@ class ApiManager {
         }
     }
     
-    static func createAnimal(pet:Pet,data:Data, completion: @escaping (Pet) -> ()){
+    static func createAnimal(pet:Pet,data:Data, completion: @escaping (Bool) -> ()){
         
         let url = "http://0.0.0.0:8888/petit-api/public/api/animal"
         AF.upload(multipartFormData: { multipartFormData in
@@ -126,11 +126,11 @@ class ApiManager {
                         let responseData:AnimalResponse = try JSONDecoder().decode(AnimalResponse.self, from: response.data!)
                         if(responseData.code==200) {
                             if let pets = responseData.animal {
-                                completion(pets)
+                                completion(true)
                             }
                         }
                     }catch{
-                        print(error)
+                       completion(false)
                     }
                 }
                 

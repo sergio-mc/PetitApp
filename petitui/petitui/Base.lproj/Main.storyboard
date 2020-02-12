@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uQh-aw-Iqj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -947,7 +947,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" " translatesAutoresizingMaskIntoConstraints="NO" id="qAi-sx-Sxt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-Qe-DUg">
                                                 <rect key="frame" x="45" y="45" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -957,7 +957,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="lxD-Qe-DUg">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAi-sx-Sxt">
                                                 <rect key="frame" x="45" y="45" width="250" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1242,9 +1242,6 @@
                                                                             <segment title="Female"/>
                                                                         </segments>
                                                                         <color key="selectedSegmentTintColor" red="0.058823529409999999" green="0.60392156860000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <connections>
-                                                                            <action selector="filterSwitchWithController:" destination="8um-Ny-Qbk" eventType="valueChanged" id="Twy-0j-5Sb"/>
-                                                                        </connections>
                                                                     </segmentedControl>
                                                                 </subviews>
                                                             </stackView>
@@ -1392,12 +1389,14 @@
                     <connections>
                         <outlet property="catType" destination="hCk-pF-HmD" id="CCh-IM-ns5"/>
                         <outlet property="dogType" destination="m66-ce-1LB" id="nZO-kr-QDm"/>
+                        <outlet property="genreSelector" destination="AXI-PN-86c" id="74V-Ak-SR4"/>
                         <outlet property="inputAge" destination="J5h-ts-OiC" id="6xp-q6-8IN"/>
                         <outlet property="inputBreed" destination="8eH-XD-DJd" id="9U3-li-s8w"/>
                         <outlet property="inputDescription" destination="yOe-Jk-GBl" id="lBc-4I-8Ba"/>
                         <outlet property="inputName" destination="Vw0-TV-dPq" id="AVD-Lr-wtk"/>
                         <outlet property="otherType" destination="kTD-3w-9p5" id="OyV-ej-PWT"/>
                         <outlet property="uploadImage" destination="qAi-sx-Sxt" id="5Cc-o7-aUz"/>
+                        <segue destination="8um-Ny-Qbk" kind="show" identifier="animalFeedSegue" id="OvB-3i-dic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n71-oM-4g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1952,7 +1951,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name=" " width="16" height="16"/>
         <image name="Logo_perrete_trans" width="2048" height="2048"/>
         <image name="backgroundimage" width="750" height="1334"/>
         <image name="beagle" width="600" height="600"/>
@@ -1979,6 +1977,7 @@
         <image name="takePhoto" width="450" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nep-V7-l0Z"/>
         <segue reference="9Lr-5d-UUE"/>
     </inferredMetricsTieBreakers>
 </document>

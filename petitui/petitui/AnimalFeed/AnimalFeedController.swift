@@ -22,9 +22,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         catFilter.layer.borderWidth = 0
         otherFilter.layer.borderWidth = 0
         
-        // Recargar datos cuando sabemos que la base de datos esta actualizada
-        /*self.viewDidLoad()
-        self.viewWillAppear(true)*/
+        
     }
     @IBAction func catFilterButton(_ sender: Any) {
         dogFilter.layer.borderWidth = 0
@@ -161,6 +159,10 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+        
         
         
     }
@@ -182,6 +184,23 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         detailPetView.detailPet = selectedPed
         detailPetView.detailImage=cell?.petImage
         
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+       if gesture.direction == .right {
+            print("Swipe Right")
+       }
+       else if gesture.direction == .left {
+            print("Swipe Left")
+       }
+       else if gesture.direction == .up {
+            print("Swipe Up")
+       }
+       else if gesture.direction == .down {
+            // Recargar datos cuando sabemos que la base de datos esta actualizada
+            self.viewDidLoad()
+            self.viewWillAppear(true)
+       }
     }
     
     
