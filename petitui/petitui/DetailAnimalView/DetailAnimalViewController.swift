@@ -63,22 +63,30 @@ class DetailAnimalViewController: UIViewController {
         agePet.text = String(pet.age)
         descriptionPet.text = pet.animalDescription
         genrePet.text = pet.sex
-        picturePet.image=image.image
+        picturePet.image = image.image
+        
     }
     
     func setOwnerData(pet:Pet)  {
         ApiManager.getUser(id: pet.idOwner){
             
             user in
+            
             if let username = user.userName{
                 self.nameOwner.text = String(username)
-                print(username, "detail")
+                if let pictureUrl = user.picture{
+                    ApiManager.getImage(url: pictureUrl){
+                        
+                        picture in
+                        self.pictureOwner.image = UIImage(data: picture)
+                    }
+                }
             }
             
         }
-       
         
-       
+        
+        
     }
     
     

@@ -11,6 +11,7 @@ import Alamofire
 
 class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
+    fileprivate var activityView : UIView?
     
     @IBOutlet weak var usernameTF: SkyFloatingLabelTextField!
     
@@ -92,6 +93,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                 
                 //Validation of passwords
                 createUser(email: userEmail!,password: userPassword!,userName: userName!)
+                self.showSpinner()
                 
             } else {
                 
@@ -115,8 +117,10 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                     let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
                     if(responseData.code==200) {
                         self.segueLogin()
-                        self.present(DataHelpers.displayAlert(userMessage:"Registered!", alertType: 1), animated: true, completion: nil)
+                        self.removeSpinner()
+                        
                     }else{
+                        self.removeSpinner()
                         self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
                     }
                     
@@ -134,6 +138,24 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     func segueLogin()  {
         performSegue(withIdentifier: "registerSegue", sender: nil)
+    }
+    
+    func showSpinner()
+    {
+        activityView = UIView(frame: self.view.bounds)
+        activityView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.center = activityView!.center
+        activityIndicator.startAnimating()
+        activityView?.addSubview(activityIndicator)
+        self.view.addSubview(activityView!)
+    }
+    
+    func removeSpinner()
+    {
+        activityView?.removeFromSuperview()
+        activityView = nil
     }
     
 }

@@ -12,6 +12,33 @@ import UIKit
 
 class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var dogFilter: UIButton!
+    @IBOutlet weak var catFilter: UIButton!
+    @IBOutlet weak var otherFilter: UIButton!
+
+    
+    @IBAction func dogFilterButton(_ sender: Any) {
+        dogFilter.layer.borderWidth = 2
+        catFilter.layer.borderWidth = 0
+        otherFilter.layer.borderWidth = 0
+        
+        // Recargar datos cuando sabemos que la base de datos esta actualizada
+        /*self.viewDidLoad()
+        self.viewWillAppear(true)*/
+    }
+    @IBAction func catFilterButton(_ sender: Any) {
+        dogFilter.layer.borderWidth = 0
+        catFilter.layer.borderWidth = 2
+        otherFilter.layer.borderWidth = 0
+    }
+    
+    @IBAction func otherFilterButton(_ sender: Any) {
+        dogFilter.layer.borderWidth = 0
+        catFilter.layer.borderWidth = 0
+        otherFilter.layer.borderWidth = 2
+    }
+    
+    
     var petsFeed:[Pet] = []
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
@@ -23,20 +50,30 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var petsCollectionView: UICollectionView!
     
+    @IBAction func onChangeBreedInput(_ sender: Any) {
+        let currentValue: String = (sender as AnyObject).text
+        filterText.text = "Breed: \(currentValue)"
+        filterSelecter.setTitle("Breed: \(currentValue)", forSegmentAt: 0)
+    }
+    
+    
     @IBAction func onChangeDistanceSlider(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         filterText.text = "Distance: \(currentValue) km"
+        filterSelecter.setTitle("Distance: \(currentValue) km", forSegmentAt: 1)
     }
     
     @IBAction func onChangeAgeSlider(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         filterText.text = "Age: \(currentValue)"
+        filterSelecter.setTitle("Age: \(currentValue)", forSegmentAt: 2)
     }
     
     
     @IBAction func filterSwitch(controller sender: Any) {
         switch filterSelecter.selectedSegmentIndex {
         case 0:
+            
             filterSearchBar.isEnabled = true
             filterSearchBar.isHighlighted = true
             filterText.isHidden = true
@@ -45,6 +82,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = true
             break
         case 1:
+            
             filterSearchBar.isHighlighted = false
             filterSearchBar.isEnabled = false
             filterText.text = "Distance: 0"
@@ -111,6 +149,17 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         }
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
+        
+        dogFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
+        dogFilter.layer.borderWidth = 0
+        
+        catFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
+        catFilter.layer.borderWidth = 0
+        
+        otherFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
+        otherFilter.layer.borderWidth = 0
+        
+        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
         
         
