@@ -11,6 +11,10 @@ import UIKit
 
 
 class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var titleNewPets: UILabel!
+    
+    @IBOutlet weak var barItem: UITabBarItem!
+    
     
     @IBOutlet weak var dogFilter: UIButton!
     @IBOutlet weak var catFilter: UIButton!
@@ -49,6 +53,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var petsCollectionView: UICollectionView!
     
     @IBAction func onChangeBreedInput(_ sender: Any) {
+        setCollectionViewPosition()
         let currentValue: String = (sender as AnyObject).text
         filterText.text = "Breed: \(currentValue)"
         filterSelecter.setTitle("Breed: \(currentValue)", forSegmentAt: 0)
@@ -56,12 +61,14 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     @IBAction func onChangeDistanceSlider(_ sender: UISlider) {
+        setCollectionViewPosition()
         let currentValue = Int(sender.value)
         filterText.text = "Distance: \(currentValue) km"
         filterSelecter.setTitle("Distance: \(currentValue) km", forSegmentAt: 1)
     }
     
     @IBAction func onChangeAgeSlider(_ sender: UISlider) {
+        setCollectionViewPosition()
         let currentValue = Int(sender.value)
         filterText.text = "Age: \(currentValue)"
         filterSelecter.setTitle("Age: \(currentValue)", forSegmentAt: 2)
@@ -71,7 +78,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     @IBAction func filterSwitch(controller sender: Any) {
         switch filterSelecter.selectedSegmentIndex {
         case 0:
-            
+            setCollectionViewPosition()
             filterSearchBar.isEnabled = true
             filterSearchBar.isHighlighted = true
             filterText.isHidden = true
@@ -80,7 +87,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = true
             break
         case 1:
-            
+            setCollectionViewPosition()
             filterSearchBar.isHighlighted = false
             filterSearchBar.isEnabled = false
             filterText.text = "Distance: 0"
@@ -91,6 +98,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = true
             break
         case 2:
+            setCollectionViewPosition()
             filterSearchBar.isHighlighted = false
             filterSearchBar.isEnabled = false
             filterText.text = "Age: 0"
@@ -101,6 +109,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = false
             break
         default:
+            setCollectionViewPosition()
             filterText.isHidden = false
             filterSearchBar.isHidden = false
             filterDistanceSlider.isHidden = false
@@ -141,6 +150,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.petsCollectionView.reloadData()
@@ -165,13 +175,33 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         
         
+        
     }
+    
+    override func viewDidLayoutSubviews() {
+        if(filterSelecter.selectedSegmentIndex < 0){
+            titleNewPets.frame.origin.y = 320
+            petsCollectionView.frame.origin.y = 350
+        }else{
+            setCollectionViewPosition()
+        }
+        
+    }
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         filterText.text = ""
-        filterSelecter.selectedSegmentIndex -= 1;
+        filterSearchBar.isHidden = true
+        filterDistanceSlider.isHidden = true
+        filterAgeSlider.isHidden = true
+        filterSelecter.selectedSegmentIndex -= 3;
         
         
+        titleNewPets.frame.origin.y = 320
+        petsCollectionView.frame.origin.y = 350
     }
     
     
@@ -201,6 +231,12 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             self.viewDidLoad()
             self.viewWillAppear(true)
        }
+    }
+    
+    func setCollectionViewPosition()
+    {
+        titleNewPets.frame.origin.y = 400
+        petsCollectionView.frame.origin.y = 430
     }
     
     

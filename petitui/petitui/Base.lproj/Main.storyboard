@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -613,11 +613,11 @@
             <objects>
                 <viewController id="uQh-aw-Iqj" customClass="DetailAnimalViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5BI-oL-t4w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSW-CG-QEK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-7S-1mG">
                                         <rect key="frame" x="37" y="0.0" width="340" height="340"/>
@@ -645,7 +645,7 @@
                                         </subviews>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qe-YA-ONG">
-                                        <rect key="frame" x="0.0" y="357" width="414" height="451"/>
+                                        <rect key="frame" x="0.0" y="357" width="414" height="485"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-bJ-2SB">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
@@ -669,13 +669,13 @@
                                                                         <rect key="frame" x="0.0" y="28.666666666666679" width="394" height="111.33333333333331"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wLy-UX-30g">
-                                                                                <rect key="frame" x="0.0" y="50.33333333333335" width="50" height="21.666666666666671"/>
+                                                                                <rect key="frame" x="0.0" y="50.333333333333293" width="50" height="21.666666666666671"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="CqC-NA-L70"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getafe, Madrid ( 2.5 km )" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb2-6H-xUh">
-                                                                                <rect key="frame" x="57" y="50.666666666666686" width="280" height="20.333333333333329"/>
+                                                                                <rect key="frame" x="57" y="50.666666666666629" width="280" height="20.333333333333329"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="280" id="i2H-Ha-QRu"/>
                                                                                 </constraints>
@@ -684,7 +684,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTK-hl-LAx">
-                                                                                <rect key="frame" x="344" y="49.666666666666686" width="50" height="22"/>
+                                                                                <rect key="frame" x="344" y="49.666666666666629" width="50" height="22"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="50" id="8z1-jB-zCp"/>
                                                                                 </constraints>
@@ -912,7 +912,7 @@
             <objects>
                 <viewController id="2aO-zH-EiE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9O7-M5-99r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Fuw-KO-pVg"/>
@@ -928,11 +928,11 @@
             <objects>
                 <viewController id="wTc-2b-C3d" customClass="CreateAnimalController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlI-eE-0gR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-NL-LeU">
-                                <rect key="frame" x="0.0" y="50" width="414" height="846"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="792"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-J9-6Qk">
                                         <rect key="frame" x="37" y="0.0" width="340" height="340"/>
@@ -977,7 +977,7 @@
                                         </subviews>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-69-XIe">
-                                        <rect key="frame" x="0.0" y="357" width="414" height="489"/>
+                                        <rect key="frame" x="0.0" y="357" width="414" height="435"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-QN-D91">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="530"/>
@@ -1396,7 +1396,7 @@
                         <outlet property="inputName" destination="Vw0-TV-dPq" id="AVD-Lr-wtk"/>
                         <outlet property="otherType" destination="kTD-3w-9p5" id="OyV-ej-PWT"/>
                         <outlet property="uploadImage" destination="qAi-sx-Sxt" id="5Cc-o7-aUz"/>
-                        <segue destination="8um-Ny-Qbk" kind="show" identifier="animalFeedSegue" id="OvB-3i-dic"/>
+                        <segue destination="xqd-C8-ZcR" kind="show" identifier="animalFeedSegue" id="cIC-cu-vzg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n71-oM-4g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1408,7 +1408,7 @@
             <objects>
                 <viewController id="n3R-8j-Sun" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zqa-BV-WkQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8IT-5u-OFA"/>
@@ -1424,7 +1424,7 @@
             <objects>
                 <viewController id="R0Y-zx-obw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sVL-8x-6ek">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="FMu-jB-Vvt"/>
@@ -1627,11 +1627,11 @@
             <objects>
                 <viewController id="8um-Ny-Qbk" customClass="AnimalFeedController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wf0-MB-DEG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="leW-fV-Jat">
-                                <rect key="frame" x="10" y="137.99999999999997" width="394" height="308.33333333333326"/>
+                                <rect key="frame" x="10" y="50" width="394" height="308.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IxO-3a-cCu">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="125.33333333333333"/>
@@ -1643,7 +1643,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XvS-4B-03b">
-                                                <rect key="frame" x="0.0" y="50.333333333333343" width="394" height="75"/>
+                                                <rect key="frame" x="0.0" y="50.333333333333329" width="394" height="75"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fE-YW-koL">
                                                         <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="75"/>
@@ -1764,7 +1764,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EiP-wl-rRt">
-                                        <rect key="frame" x="0.0" y="158.33333333333331" width="394" height="150"/>
+                                        <rect key="frame" x="0.0" y="158.33333333333334" width="394" height="150.00000000000003"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cbp-nz-8GB">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="51"/>
@@ -1782,7 +1782,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxS-Gk-ibQ">
-                                                <rect key="frame" x="0.0" y="60" width="394" height="90"/>
+                                                <rect key="frame" x="0.0" y="59.999999999999972" width="394" height="90"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age: 5 years" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEP-5U-t0U">
                                                         <rect key="frame" x="10" y="0.0" width="380" height="21"/>
@@ -1791,7 +1791,7 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a race.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-am-0Uc">
+                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search a race.." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-am-0Uc">
                                                         <rect key="frame" x="10" y="25" width="380" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1826,7 +1826,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newest Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-7B-fdn">
-                                <rect key="frame" x="10" y="444" width="394" height="20.333333333333314"/>
+                                <rect key="frame" x="10" y="356" width="394" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.329999999999998" id="5Zd-PT-MlU"/>
                                     <constraint firstAttribute="width" constant="394" id="lVj-de-FMK"/>
@@ -1836,7 +1836,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-vq-Mmh">
-                                <rect key="frame" x="10" y="473" width="394" height="402"/>
+                                <rect key="frame" x="10" y="385" width="394" height="402"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="402" id="9ZP-7y-A4W"/>
@@ -1934,6 +1934,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="tOn-vh-haO"/>
                     <navigationItem key="navigationItem" id="32u-vu-sQm"/>
                     <connections>
+                        <outlet property="barItem" destination="tOn-vh-haO" id="KOv-5D-xU3"/>
                         <outlet property="catFilter" destination="1m4-ae-3we" id="hL3-iG-v8b"/>
                         <outlet property="dogFilter" destination="BYf-KN-HHU" id="eRZ-HZ-E6G"/>
                         <outlet property="filterAgeSlider" destination="1kg-mn-Wzl" id="8Xh-IS-gKE"/>
@@ -1943,6 +1944,7 @@
                         <outlet property="filterText" destination="cEP-5U-t0U" id="zfd-T2-fyk"/>
                         <outlet property="otherFilter" destination="em4-Km-6te" id="wpU-Od-KFR"/>
                         <outlet property="petsCollectionView" destination="ZbU-vq-Mmh" id="xeA-Qk-xYI"/>
+                        <outlet property="titleNewPets" destination="b4e-7B-fdn" id="0y2-cp-RAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uch-5h-giC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1977,7 +1979,6 @@
         <image name="takePhoto" width="450" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nep-V7-l0Z"/>
-        <segue reference="9Lr-5d-UUE"/>
+        <segue reference="cIC-cu-vzg"/>
     </inferredMetricsTieBreakers>
 </document>

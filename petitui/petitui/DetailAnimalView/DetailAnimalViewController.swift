@@ -92,7 +92,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     
-    @IBAction func addphoto(_ sender: UIButton) {
+    /*@IBAction func addphoto(_ sender: UIButton) {
 
                ImagePickerManager().pickImage(self){ image in
                  print(image)
@@ -100,7 +100,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
                 
                 ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){pet in print(pet)}
              }
-         }
+         }*/
 
        
     
