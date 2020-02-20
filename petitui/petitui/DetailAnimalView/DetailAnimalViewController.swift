@@ -8,9 +8,12 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
-class DetailAnimalViewController: UIViewController {
+
+class DetailAnimalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    public var detailPet:Pet?
+    public var detailImage:UIImageView?
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var picturePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -24,61 +27,82 @@ class DetailAnimalViewController: UIViewController {
     @IBOutlet weak var favoriteIcon: UIButton!
     
     private var favorite: Bool = false
-
+    
     @IBAction func isFavorite(_ sender: Any) {
-        if(favorite)
-        {
-            favorite = false
-            favoriteIcon.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
-            print("Eliminar animal como favorito")
-        }else if (!favorite)
-        {
-            favorite = true
-            favoriteIcon.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
-            print("Setear animal a favorito")
-        }
+        //        if(favorite)
+        //        {
+        //            favorite = false
+        //            favoriteIcon.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
+        //            print("Eliminar animal como favorito")
+        //        }else if (!favorite)
+        //        {
+        //            favorite = true
+        //            favoriteIcon.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+        //            print("Setear animal a favorito")
+        //        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setValues()
+        if let pet = detailPet, let image = detailImage {
+            setValues(pet: pet, image:image)
+            setOwnerData(pet:pet) 
+        }
+        
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    func setValues()
+    func setValues(pet:Pet, image:UIImageView)
     {
-        let name = "Sergio"
-        let age = "4 years"
-        let genre = "Male"
-        let location = "Leganes 33"
-        let animalDescription = "Animal description example"
-        let idOwner = "David"
-        let idType = "Beagle"
-        let idBreed = "Beagle"
-        let pet = Pet(idOwner: idOwner, idType: idType, name: name, genre: genre, age: age, location: location, animalDescription: animalDescription, idBreed: idBreed)
+        
         
         namePet.text = pet.name
-        locationPet.text = pet.location
-        racePet.text = pet.idBreed
-        agePet.text = pet.age
+        locationPet.text = "madrid"
+        racePet.text = String(pet.type)
+        agePet.text = String(pet.age)
         descriptionPet.text = pet.animalDescription
-        nameOwner.text = pet.idOwner
-        genrePet.text = pet.genre
+        genrePet.text = pet.sex
+        picturePet.image = image.image
+        
+    }
+    
+    func setOwnerData(pet:Pet)  {
+        ApiManager.getUser(id: pet.idOwner){
+            
+            user in
+            
+            if let username = user.userName{
+                self.nameOwner.text = String(username)
+                if let pictureUrl = user.picture{
+                    ApiManager.getImage(url: pictureUrl){
+                        
+                        picture in
+                        self.pictureOwner.image = UIImage(data: picture)
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
     }
     
     
     
+    /*@IBAction func addphoto(_ sender: UIButton) {
 
-    /*
-    // MARK: - Navigation
+               ImagePickerManager().pickImage(self){ image in
+                 print(image)
+                let pet=Pet(idOwner: 1, type: "kira", name: "nala", sex: "no", age: 1, animalDescription: "catitapelada", breed: "spinix", latitude: 333.333, longitude: 5444.444, preferedPhoto: "catofota")
+                
+                ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){pet in print(pet)}
+             }
+         }*/
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+       
+    
+    
 }

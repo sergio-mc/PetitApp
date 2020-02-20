@@ -13,12 +13,14 @@ import Alamofire
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
+    fileprivate var activityView : UIView?
+    
     @IBOutlet weak var userEmailTF: SkyFloatingLabelTextField!
     
     @IBOutlet weak var userPasswordTF: SkyFloatingLabelTextField!
     
     //Displays an alert with a message depending on the string passed through parameters
-    
+    let loader = LoaderViewController()
     
     @IBAction func loginButton(_ sender: Any) {
         let userEmail = userEmailTF.text;
@@ -31,18 +33,23 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             return;
             
         } else {
-            
+           
             if(DataHelpers.isValidEmail(userEmail!) && DataHelpers.isValidPassword(userPassword!)){
+                
                 loginUser(email: userEmail!, password: userPassword!)
                 {
                     (isWorking) in
                     
-                    if(isWorking) {self.segueLogin()
-                        self.present(DataHelpers.displayAlert(userMessage:"successful login!", alertType: 1), animated: true, completion: nil)
+                    if(isWorking) {
+                        
+                        self.segueLogin()
+                        
+                    
                     }
                     
                     
                 }
+                self.showSpinner()
                 
             }
             
@@ -107,9 +114,12 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                     if(responseData.code==200) {
                         isWorking = true
                         completion(isWorking)
+                        self.removeSpinner()
                     }else{
+                        self.removeSpinner()
                         self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
                         completion(isWorking)
+                        
                     }
                 }catch{
                     print(error)
@@ -124,6 +134,24 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     func segueLogin()  {
         performSegue(withIdentifier: "loginSegue", sender: nil)
+    }
+    
+    func showSpinner()
+    {
+        activityView = UIView(frame: self.view.bounds)
+        activityView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.center = activityView!.center
+        activityIndicator.startAnimating()
+        activityView?.addSubview(activityIndicator)
+        self.view.addSubview(activityView!)
+    }
+    
+    func removeSpinner()
+    {
+        activityView?.removeFromSuperview()
+        activityView = nil
     }
     
     

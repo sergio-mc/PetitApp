@@ -4,6 +4,8 @@ import Foundation
 import Alamofire
 class RecoverPageViewController: UIViewController,UITextFieldDelegate{
     
+    fileprivate var activityView : UIView?
+    
     @IBOutlet weak var userEmail: SkyFloatingLabelTextField!
     
     
@@ -21,6 +23,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             if let email = userRecoverEmail {
                 if(DataHelpers.isValidEmail(email)){
                     sendEmail(email: email)
+                    self.showSpinner()
                 }
             }
             else{
@@ -71,8 +74,10 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
                 let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
                 if(responseData.code==200) {
                     self.navigationController?.popViewController(animated: false)
+                    self.removeSpinner()
                     self.present(DataHelpers.displayAlert(userMessage:"mail sended!", alertType: 1), animated: true, completion: nil)
                 }else{
+                    self.removeSpinner()
                     self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
                 }
             }catch{
@@ -80,6 +85,24 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             }
         }
         
+    }
+    
+    func showSpinner()
+    {
+        activityView = UIView(frame: self.view.bounds)
+        activityView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.center = activityView!.center
+        activityIndicator.startAnimating()
+        activityView?.addSubview(activityIndicator)
+        self.view.addSubview(activityView!)
+    }
+    
+    func removeSpinner()
+    {
+        activityView?.removeFromSuperview()
+        activityView = nil
     }
     
 }

@@ -50,10 +50,19 @@ class DataHelpers{
         return passPred.evaluate(with: password)
     }
     
+    static func isValidage(_ age: String) -> Bool {
+           let passRegEx = "^[0-9]+$"
+           
+           let passPred = NSPredicate(format:"SELF MATCHES %@", passRegEx)
+           return passPred.evaluate(with: age)
+       }
+    
     //
     static func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
         return userPassword == repeatedPassword
     }
+    
+
     
     
 }
