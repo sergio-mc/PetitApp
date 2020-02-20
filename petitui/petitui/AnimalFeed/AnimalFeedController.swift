@@ -26,21 +26,44 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         catFilter.layer.borderWidth = 0
         otherFilter.layer.borderWidth = 0
         
+        let dog: String = "dog"
+        filterAnimalsModel.type = dog
+        
+        ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
+            self.petsFeed=pets
+            self.petsCollectionView.reloadData()
+        }
+       
         
     }
     @IBAction func catFilterButton(_ sender: Any) {
         dogFilter.layer.borderWidth = 0
         catFilter.layer.borderWidth = 2
         otherFilter.layer.borderWidth = 0
+        
+       let cat: String = "cat"
+       filterAnimalsModel.type = cat
+       ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
+           self.petsFeed=pets
+           self.petsCollectionView.reloadData()
+       }
     }
     
     @IBAction func otherFilterButton(_ sender: Any) {
         dogFilter.layer.borderWidth = 0
         catFilter.layer.borderWidth = 0
         otherFilter.layer.borderWidth = 2
+        
+        let other: String = "other"
+        filterAnimalsModel.type = other
+        ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
+            self.petsFeed=pets
+            self.petsCollectionView.reloadData()
+        }
+    
     }
     
-    
+    var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
@@ -57,6 +80,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let currentValue: String = (sender as AnyObject).text
         filterText.text = "Breed: \(currentValue)"
         filterSelecter.setTitle("Breed: \(currentValue)", forSegmentAt: 0)
+        
+        
     }
     
     
@@ -65,6 +90,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let currentValue = Int(sender.value)
         filterText.text = "Distance: \(currentValue) km"
         filterSelecter.setTitle("Distance: \(currentValue) km", forSegmentAt: 1)
+        
+        
     }
     
     @IBAction func onChangeAgeSlider(_ sender: UISlider) {
@@ -151,6 +178,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.petsCollectionView.reloadData()

@@ -75,6 +75,118 @@ class ApiManager {
                 }
         }
     }
+    static func getAnimalsType(type: String, completion: @escaping ([Pet]) -> ()){
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/type/\(type)")
+        AF.request(url!,
+                   method: .get
+        )
+            .validate()
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let pets = responseData.animals {
+                                completion(pets)
+                            }
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+        }
+        
+    }
+    
+    static func getAnimalsAge(age: Int, completion: @escaping ([Pet]) -> ()){
+    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/age/\(age)")
+    AF.request(url!,
+               method: .get
+    )
+        .validate()
+        .responseJSON { response in
+            if(response.error == nil){
+                do{
+                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        if let pets = responseData.animals {
+                            completion(pets)
+                        }
+                    }
+                }catch{
+                    print(error)
+                }
+            }
+        }
+    }
+    static func getAnimalsBreed(breed: String, completion: @escaping ([Pet]) -> ()){
+    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/breed/\(breed)")
+    AF.request(url!,
+               method: .get
+    )
+        .validate()
+        .responseJSON { response in
+            if(response.error == nil){
+                do{
+                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        if let pets = responseData.animals {
+                            completion(pets)
+                        }
+                    }
+                }catch{
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func getAnimalsDistance(latitude: Float, longitude: Float, distance: Int, completion: @escaping ([Pet]) -> ()){
+    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/distance/\(latitude)/\(longitude)/\(distance)/")
+    AF.request(url!,
+               method: .get
+    )
+        .validate()
+        .responseJSON { response in
+            if(response.error == nil){
+                do{
+                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        if let pets = responseData.animals {
+                            completion(pets)
+                        }
+                    }
+                }catch{
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func getAnimalsFilters(filterAnimalModel : FilterAnimalsModel, completion: @escaping ([Pet]) -> ()){
+    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/filtered")
+    AF.request(url!,
+               method: .get,
+               parameters:filterAnimalModel,
+               encoder: JSONParameterEncoder.default
+    )
+        .validate()
+        .responseJSON { response in
+            if(response.error == nil){
+                do{
+                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        if let pets = responseData.animals {
+                            completion(pets)
+                        }
+                    }
+                }catch{
+                    print(error)
+                }
+            }
+        }
+    }
+    
     static func getUser(id:Int ,completion: @escaping (User) -> ()){
         let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/one/\(id)")
         AF.request(url!, method: .get)
