@@ -1,20 +1,36 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (5.0.0)
+  - FaveButton (3.2.1)
+  - MBRadioCheckboxButton (2.0)
+  - RevealingSplashView (0.6.0)
   - SkyFloatingLabelTextField (3.8.0)
+  - SwiftyImage (1.5.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - FaveButton
+  - MBRadioCheckboxButton
+  - RevealingSplashView
   - SkyFloatingLabelTextField
+  - SwiftyImage (~> 1.5)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FaveButton
+    - MBRadioCheckboxButton
+    - RevealingSplashView
     - SkyFloatingLabelTextField
+    - SwiftyImage
 
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
+  FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
+  MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  SwiftyImage: 88a8c90ee3963a498de728c4ccdb079b4820cef0
 
-PODFILE CHECKSUM: 358e4a57417022406c659176fb2113b30c609a1f
+PODFILE CHECKSUM: a856419c96436a6bbf21cd0e5b54ac748b020bf4
 
 COCOAPODS: 1.8.4

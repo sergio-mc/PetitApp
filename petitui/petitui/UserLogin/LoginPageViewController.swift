@@ -10,6 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import Foundation
 import Alamofire
+import RevealingSplashView
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
@@ -69,6 +70,16 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationController?.view.backgroundColor = .clear
+        
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "logoperrete")!,iconInitialSize: CGSize(width: 300, height: 300), backgroundColor: UIColor(red:174/255, green:225/255, blue:219/255, alpha:1.0))
+
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
     }
     
     // This will notify us when something has changed on the textfield
@@ -114,7 +125,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                     if(responseData.code==200) {
                         isWorking = true
                         completion(isWorking)
-                        self.removeSpinner()
+                            
                     }else{
                         self.removeSpinner()
                         self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
@@ -125,6 +136,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                     print(error)
                 }
             }else{
+                self.removeSpinner()
                 self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
             }
             

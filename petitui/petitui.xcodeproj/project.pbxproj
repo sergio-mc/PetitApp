@@ -23,7 +23,11 @@
 		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
 		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
 		B2E80E7123D77550008D3C29 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E80E7023D77550008D3C29 /* User.swift */; };
+		CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249BF23FF06FB0022B6CD /* FavoritesAnimalsViewController.swift */; };
+		CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */; };
+		CE4249C423FFD1250022B6CD /* logoMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4249C323FFD1240022B6CD /* logoMenu.png */; };
 		CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CF5723E1E9FC002F2A10 /* AnimalFeedCell.swift */; };
+		CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75B29A23FFE6AB00340857 /* FavoriteFeedCell.swift */; };
 		CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */; };
 		CE8342CF23DB4C63008B15C5 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */; };
 		CE8342D123DB4EDB008B15C5 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342D023DB4EDB008B15C5 /* Pet.swift */; };
@@ -52,7 +56,11 @@
 		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		B2E80E7023D77550008D3C29 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE4249BF23FF06FB0022B6CD /* FavoritesAnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAnimalsViewController.swift; sourceTree = "<group>"; };
+		CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		CE4249C323FFD1240022B6CD /* logoMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoMenu.png; path = ../../../../../Downloads/logoMenu.png; sourceTree = "<group>"; };
 		CE46CF5723E1E9FC002F2A10 /* AnimalFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimalFeedCell.swift; path = ../../AnimalFeedCell.swift; sourceTree = "<group>"; };
+		CE75B29A23FFE6AB00340857 /* FavoriteFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFeedCell.swift; sourceTree = "<group>"; };
 		CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnimalController.swift; sourceTree = "<group>"; };
 		CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
 		CE8342D023DB4EDB008B15C5 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 		7F0802A523C8CE34008A640A /* petitui */ = {
 			isa = PBXGroup;
 			children = (
+				CE4249BE23FF06C90022B6CD /* FavoritesAnimals */,
 				CE7E7EBD23F4481E00029694 /* CreateAnimal */,
 				B207D3F723DB4CDC001D788D /* AnimalFeed */,
 				7F0802A623C8CE34008A640A /* AppDelegate.swift */,
@@ -107,6 +116,7 @@
 				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
 				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				7F0802B223C8CE36008A640A /* Info.plist */,
+				CE4249C323FFD1240022B6CD /* logoMenu.png */,
 				B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */,
 				B21D9E5A23D62F7000F56ECA /* Register.swift */,
 				B2E80E7023D77550008D3C29 /* User.swift */,
@@ -114,6 +124,7 @@
 				B24A0B3723EB1B15008DFF67 /* ApiManager.swift */,
 				CE9A54E023ECA65700C5427F /* TabBarViewController.swift */,
 				CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */,
+				CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */,
 			);
 			path = petitui;
 			sourceTree = "<group>";
@@ -176,6 +187,15 @@
 				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
 			);
 			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		CE4249BE23FF06C90022B6CD /* FavoritesAnimals */ = {
+			isa = PBXGroup;
+			children = (
+				CE4249BF23FF06FB0022B6CD /* FavoritesAnimalsViewController.swift */,
+				CE75B29A23FFE6AB00340857 /* FavoriteFeedCell.swift */,
+			);
+			path = FavoritesAnimals;
 			sourceTree = "<group>";
 		};
 		CE7E7EBD23F4481E00029694 /* CreateAnimal */ = {
@@ -258,6 +278,7 @@
 				7F0802B123C8CE36008A640A /* LaunchScreen.storyboard in Resources */,
 				7F0802AE23C8CE36008A640A /* Assets.xcassets in Resources */,
 				7F0802AC23C8CE34008A640A /* Main.storyboard in Resources */,
+				CE4249C423FFD1250022B6CD /* logoMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,13 +342,16 @@
 				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
 				CE8342D123DB4EDB008B15C5 /* Pet.swift in Sources */,
 				B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */,
+				CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */,
 				CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */,
 				3E31C5FB23FF088500516597 /* FilterAnimalsModel.swift in Sources */,
 				B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */,
+				CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 				CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */,
 				B21D9E5B23D62F7000F56ECA /* Register.swift in Sources */,
 				CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */,
+				CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */,
 				B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

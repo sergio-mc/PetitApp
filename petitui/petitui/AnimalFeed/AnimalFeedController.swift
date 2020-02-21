@@ -19,7 +19,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var dogFilter: UIButton!
     @IBOutlet weak var catFilter: UIButton!
     @IBOutlet weak var otherFilter: UIButton!
-
+    
     
     @IBAction func dogFilterButton(_ sender: Any) {
         dogFilter.layer.borderWidth = 2
@@ -31,6 +31,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
             self.petsFeed=pets
+            print(self.petsFeed)
             self.petsCollectionView.reloadData()
         }
        
@@ -159,13 +160,17 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         
         cell.petName.text = petsFeed[indexPath.row].name
-        cell.petAge.text = String(petsFeed[indexPath.row].age)
+        cell.petAge.text = "\(String(petsFeed[indexPath.row].age)) years"
         ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
             (data) in
             cell.petImage.image = UIImage(data: data)
         }
         
-
+        cell.cellUIView.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
+        cell.cellUIView.layer.borderWidth = 0.5
+        cell.petName.layer.addBorder(edge: UIRectEdge.top, color: UIColor.red, thickness: 0.5)
+        cell.layer.cornerRadius = 20
+        cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         
         return cell
     }
@@ -195,11 +200,18 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         otherFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         otherFilter.layer.borderWidth = 0
         
+        filterSelecter.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
+        
+        filterSelecter.layer.borderWidth = 1
+        
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
+        
+        
+        
         
         
         
@@ -268,4 +280,34 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     
+}
+
+extension CALayer {
+
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+
+        let border = CALayer()
+
+        switch edge {
+        case UIRectEdge.top:
+            border.frame = CGRect(x: -50, y: -5, width: self.frame.width, height: thickness)
+            break
+        case UIRectEdge.bottom:
+            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: UIScreen.main.bounds.width, height: thickness)
+            break
+        case UIRectEdge.left:
+            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
+            break
+        case UIRectEdge.right:
+            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
+            break
+        default:
+            break
+        }
+
+        border.backgroundColor = UIColor.lightGray.cgColor
+
+        self.addSublayer(border)
+    }
+
 }

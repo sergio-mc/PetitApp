@@ -7,136 +7,264 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2BEFC430F516EFF4D82732C0A739A10 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E454CB1743C6D686914D9ECAF34631C3 /* Protector.swift */; };
-		06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC3DEFD1197B82C4C55C34EBF53837 /* Validation.swift */; };
-		0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD7675765178D65C4B828B30670D8A /* CachedResponseHandler.swift */; };
-		0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CD6D8055754F1CC2241CF7A71EDC /* ServerTrustEvaluation.swift */; };
-		10CC0DED42AC8D413BCA321D4A72C415 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A925870BA9D0262987436B0184FF3AF /* UITextField+fixCaretPosition.swift */; };
-		13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389657E062F31358749DA074217916 /* ResponseSerialization.swift */; };
-		14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C810EBC7916400586127F5379EAA8C0 /* ParameterEncoding.swift */; };
-		17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3510875FEB97FBE85FA5BA756172AB4B /* AFError.swift */; };
-		32306C3289769E0CB99E5581372B81D7 /* Pods-petitui-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A394BA07DFA93DA70D52FADF443563 /* Pods-petitui-dummy.m */; };
-		3F382618063FE40A205947DCBF27959C /* SkyFloatingLabelTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1713475F5B0E74546E404D35096594 /* SkyFloatingLabelTextField-dummy.m */; };
-		4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DDC0AA7BA2F80E2561A4B7316BBFF /* Result+Alamofire.swift */; };
-		42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957C27D3B3CFE26CE745151A6D7CCFE /* SessionDelegate.swift */; };
-		44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0DB49EBF5E7876877F22786197616F /* AlamofireExtended.swift */; };
-		48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BF75D3A4956DE53786E578AFDA8F15 /* RequestTaskMap.swift */; };
-		56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1997BF9BBC0DFD8F26930C9D97C7FC /* HTTPHeaders.swift */; };
-		5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50011366CFA224079EAC77BFFAA89D /* MultipartFormData.swift */; };
-		5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780A7F8138BE50FB52EAE6AC9E29AD4 /* URLEncodedFormEncoder.swift */; };
-		5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD216772D6561CF98E49618558254F12 /* ParameterEncoder.swift */; };
-		5E580E543673EF12E30563999B9A29F2 /* Pods-petitui-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1761F854336DBD2F5F82D3EF4440C7AB /* Pods-petitui-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B186238FB68842E051755DF2E7BB97 /* Session.swift */; };
-		6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE1205934983C79E167D2242A4286C /* Request.swift */; };
-		70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3226E19BE052EB942D2C4411D014C19 /* URLConvertible+URLRequestConvertible.swift */; };
-		7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90846D5B12E482F854A425FE157E90F3 /* NetworkReachabilityManager.swift */; };
-		92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43257C5046D00F1CD46CEBC48C43CEDE /* OperationQueue+Alamofire.swift */; };
+		00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C49DFB18E431E01346B05E62918615C /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D803DDF4B15A6D7BD3D3F0A71E9E00B /* Protector.swift */; };
+		06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CBF4C235A38A75691766DDFBDBE44A /* Validation.swift */; };
+		099FEC5512A47F85F3708ACC9F25BBEE /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E05DED359A7759196C1EC34D048F889 /* FaveButton.swift */; };
+		0AB624A38E35C23E82EF9B04792EBF17 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4AAEEE74661294F0E81600CFD7D301 /* Init.swift */; };
+		0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957421273409167B8D6A6E63E61CA3D5 /* CachedResponseHandler.swift */; };
+		0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3704DF995DB06E26C44F3B5611B00C /* ServerTrustEvaluation.swift */; };
+		0CFFBD55760461439DCD2E287895CF0C /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7402B405E4D667E17F0EDAAE004B25 /* Animations.swift */; };
+		10CC0DED42AC8D413BCA321D4A72C415 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9A5EBADB11307F8D7C369292589E8 /* UITextField+fixCaretPosition.swift */; };
+		13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FB6194812E5143F4222AAFB157055E /* ResponseSerialization.swift */; };
+		14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F8B483445A42C01CD3364D18CDFC7C /* ParameterEncoding.swift */; };
+		17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397C5729AD1F39640A75C6634B901CC0 /* AFError.swift */; };
+		19EDCFE01866B3BC748DF8BF398D8722 /* FaveIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3154439DABB05D1991CFD9E6374B6 /* FaveIcon.swift */; };
+		25F1E75FFD798B196629421E6E437D1B /* SwiftyImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D62FD1526DDEB5897E08F80E732C23 /* SwiftyImage-dummy.m */; };
+		2B532BA2EE7ABE5A7ECF90D14F5CC4C1 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555E22BFB7B5F6DDD954AD60FDCBE13 /* Ring.swift */; };
+		2D103BBEFE9CE323A14C853861E4F801 /* MBRadioCheckboxButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D44CDCD8CD8EF3F3FAAE82B2E749DDC6 /* MBRadioCheckboxButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D796693C82C88B236B517CC3BF3DD81 /* RevealingSplashView.h in Headers */ = {isa = PBXBuildFile; fileRef = A87F9D4347C9F0451D148EADE9CEF7B5 /* RevealingSplashView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		334B4420C1D35AB5E97786B7EC59AF53 /* SplashAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED82940D5A7ED68C6F2710F5E8E56F4 /* SplashAnimatable.swift */; };
+		345301588CE2D5818996472BA109A6B2 /* RevealingSplashView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAE60E3F886A7F20BF57E8AE6F9A1B6 /* RevealingSplashView-dummy.m */; };
+		3F382618063FE40A205947DCBF27959C /* SkyFloatingLabelTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAFC3B4E3AEB70BE0F8CED0770B6E09 /* SkyFloatingLabelTextField-dummy.m */; };
+		4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26C83BC0CC513907CB3596C204B8AB /* Result+Alamofire.swift */; };
+		42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14406C7050076362BD97C14E7AED248 /* SessionDelegate.swift */; };
+		44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DD951D6890E1A7A100AEF44EC550A2 /* AlamofireExtended.swift */; };
+		44C466F5E7F7BEBB1A98E72B24B76C4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		46E1797A3F13C02626E28F990BA9644B /* RadioCheckboxBaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F02E2F507E37C28ECD46183BC66C27 /* RadioCheckboxBaseContainer.swift */; };
+		48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698ED7D1DCBB5DB690C02F2E7BAB094 /* RequestTaskMap.swift */; };
+		50C5A5F4C3B50DCA2E933546C35DE603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC373BDFE48C15B6B44FEB37D6B8B3E8 /* HTTPHeaders.swift */; };
+		5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828E58CC5F1F2B6568B0763EC923438 /* MultipartFormData.swift */; };
+		5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2E94E482587CBE726C37F8CA7A23 /* URLEncodedFormEncoder.swift */; };
+		5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766A7370AAF0FADE6F3C5301BAED8756 /* ParameterEncoder.swift */; };
+		652660D8A0DED1B07F1D3304C68972BE /* CheckBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E47B2176EC84DA0D09586E64C6823A /* CheckBoxColor.swift */; };
+		69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D771DD1380D1D80A558507AF59663FC /* Session.swift */; };
+		6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615B227080D70A1DC3B172CA5728781 /* Request.swift */; };
+		70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DEBBEC628BDC0D2DC6148D026FE3A5 /* URLConvertible+URLRequestConvertible.swift */; };
+		741FA609F45BC4F01D1A587DF19ECBBA /* RadioButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5EA43F479C7927DACF852051A358C2 /* RadioButtonColor.swift */; };
+		770168DE52B4855A94437E5EB527EC84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		776C8675E6F20EE4F8C7D7344D670BB1 /* SplashAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FEF49CA483DD911DF4B89571428DEC /* SplashAnimationType.swift */; };
+		79DC660BABE7437E569F3008C7684623 /* FaveButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 170F886BAE3A4663E878B17105A3CE4D /* FaveButton-dummy.m */; };
+		7C3FDD1FC86D93B805BFC5F7275104C3 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78C326EB9E4AB7CAB281522A7636A0 /* CheckboxButton.swift */; };
+		7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80AADC29671BB1952BDC692CC01B911 /* NetworkReachabilityManager.swift */; };
+		811024FB04EF14A8C9F7FB8BB4F491B0 /* FaveButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD3F213965DE62726D0CE0BCF0316B95 /* FaveButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		839096BE3B5BF66FF9D3A81743A0DACE /* Pods-petitui-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1761F854336DBD2F5F82D3EF4440C7AB /* Pods-petitui-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		842EEDEA961F5E57A0C03FEEF1BF469B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361AE40B1B802C841A8A6A55854C12EF /* RadioButton.swift */; };
+		8A44B1C9B94C2C6831EA5F935560C256 /* RadioButtonCircleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96033F6A039B80F6B6D33E69FBB6AB15 /* RadioButtonCircleStyle.swift */; };
+		9114B937D705E2157F6EE64F8E6304BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438D167F65596F0A876E5A96056F5716 /* OperationQueue+Alamofire.swift */; };
+		941CF8600D86F37CEF165DA6E7F3134A /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043C132770CFCE65493BF51E1E7ED3B /* RevealingSplashView.swift */; };
+		96E0C24088BBA11F6C17B3D9277383FA /* RadioCheckboxBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C8767765702DC6BE3817AF9416BA9 /* RadioCheckboxBaseButton.swift */; };
 		97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B079F294DA5D9A879E6D53A91F51A1E /* CFNetwork.framework */; };
-		AD9899986955B2EC1EC20818C860C971 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133033BE94DDDF214680AADDC79938C6 /* RequestInterceptor.swift */; };
-		AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6593E2DE16252C5150B5508E73A4075 /* URLSessionConfiguration+Alamofire.swift */; };
-		B09FEC0B831B6F4E6D415077BF437A2A /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67273207EC10BD2BB651D9F5000FF81E /* SkyFloatingLabelTextField.swift */; };
-		B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3B8D74B648ACFE13C9675A1C1CF5A /* Alamofire-dummy.m */; };
-		B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A55F0289FF5C862D2A7F5610507F41 /* HTTPMethod.swift */; };
-		B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F47C2D4352E80EAA72E7852D595EF7 /* Alamofire.swift */; };
+		AD9899986955B2EC1EC20818C860C971 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C2817BDF84F89DB7704CD44111BF2 /* RequestInterceptor.swift */; };
+		AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4E961DCC3D6471EC14D1B4D09B727 /* URLSessionConfiguration+Alamofire.swift */; };
+		B09FEC0B831B6F4E6D415077BF437A2A /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439D87DBF38C3F6FC23C80DBB8EB6CE /* SkyFloatingLabelTextField.swift */; };
+		B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D990FA7C38966B59602CE8DF6F07F33 /* Alamofire-dummy.m */; };
+		B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1C40C10B80010601AFE2DFB67A96C /* HTTPMethod.swift */; };
+		B4EDD6BA5B7FF2597E37BA39BAF1741B /* RadioButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB37145DC1357B5315FBBE471F89112 /* RadioButtonContainer.swift */; };
+		B5158000D8AF34EC5472BEB7614DA645 /* MBRadioCheckboxButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A38883A00F5B13D6C858CFAB5699C50 /* MBRadioCheckboxButton-dummy.m */; };
+		B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1404BFBB7796F2509B8CEAE0B1215D /* Alamofire.swift */; };
 		BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
-		C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22379D27C19A7FA7DB1159966E2BB3DA /* RedirectHandler.swift */; };
-		C7369563F6946D8984124E1A546B6425 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A268285640D7DBF87EF01786CD53F /* Notifications.swift */; };
-		CACBD166E573774FB5613C34AA6DA7A7 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52941B21773F16C27311F76D432831F8 /* EventMonitor.swift */; };
-		D6560C23E0F6A5F13CE2F4C2A3774A73 /* SkyFloatingLabelTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7B1A00F07F76E609DF9AF8B3282F938 /* SkyFloatingLabelTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30862DE28230E13780C28A08037C6260 /* RetryPolicy.swift */; };
-		DFCCA3D65E6F49365273DC056AA07F73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
-		E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6214AC1EAB2C848DA0D8D4F7B6F8F7 /* MultipartUpload.swift */; };
-		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E23F5C85320D6C31B2FB14EF0B13650 /* URLRequest+Alamofire.swift */; };
-		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113A7E0AA08F03F79A7794812CEEC1F1 /* DispatchQueue+Alamofire.swift */; };
-		EE63B846EDD498D4335668FFD70F3F25 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E09121A49020A3DEDCD972523FC7 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
-		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F4F94B3EAC92A858F139EEEF3DD97 /* Response.swift */; };
+		C258779885B794A4A16463D06F97FE4B /* SwiftyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73DC41114A24A9F6FE658C62A76AEA /* SwiftyImage.swift */; };
+		C4CF9DB856606722BEA2C24F67F47ED2 /* CheckboxLineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1BE2797CF9F8F3BC5E232B61D986F /* CheckboxLineStyle.swift */; };
+		C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD938CA95CAC3B66B87F4DA800B5775 /* RedirectHandler.swift */; };
+		C7369563F6946D8984124E1A546B6425 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553084EB2A86EC2C98083D932A62CF1 /* Notifications.swift */; };
+		CA350C5D0D5AD3D3C04B4E70D6B87A85 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C45ACC4DAC2303C78CFC22779775AB /* Easing.swift */; };
+		CACBD166E573774FB5613C34AA6DA7A7 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358C0C06C8F67B781D1661C811C0849 /* EventMonitor.swift */; };
+		CDF50EF50907F6E5A67259D2FA0ABEBB /* SwiftyImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 872A42C017DC55B3AB32D84939BC5B8A /* SwiftyImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6560C23E0F6A5F13CE2F4C2A3774A73 /* SkyFloatingLabelTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADD70FAE930E79EB210D181D35AEA9E /* SkyFloatingLabelTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24518F9F806DB7333927DEAB4905DF0 /* RetryPolicy.swift */; };
+		D910DEA97F985EE37DB29BE21FC6F312 /* CheckboxButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E188C647C276EE44DCE8AE850BBF3D /* CheckboxButtonContainerView.swift */; };
+		DD170A2CCD3EADFF33208216A32B942A /* Pods-petitui-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A394BA07DFA93DA70D52FADF443563 /* Pods-petitui-dummy.m */; };
+		E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D37E08966D5B474A60BFEB48B6400BB /* MultipartUpload.swift */; };
+		E09D379E6F22B04285B27B2246BB115C /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B42041D02B112C2A83C76EE523E988B /* Geometry.swift */; };
+		E20160C620D19F6A08ADA8EA69C7D054 /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2727FE8216BFEE0129F6840C40197 /* Constraints+.swift */; };
+		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CE01B179D40F992909A9FC87522A67 /* URLRequest+Alamofire.swift */; };
+		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED364F849C9B0F2A54CF7F9CA027A0 /* DispatchQueue+Alamofire.swift */; };
+		EAAC51BF0617CEF27FA33834154F7647 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
+		EC4EA53823A5D1C79F5E68EE4B389E8F /* RadioButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012782AD75BDD8737790004B518767C9 /* RadioButtonContainerView.swift */; };
+		EC708BD03D699443A30E0FDB4B9BBE08 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974558F37F22C272A30F16F886D2E0E /* Spark.swift */; };
+		EE63B846EDD498D4335668FFD70F3F25 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71FAB34EDEB89357A49364EAEB37EA0 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		F27336E36E943139D98D59B3206DA50F /* CheckboxButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A4DE3189B2E72D025BD4AF26487101 /* CheckboxButtonContainer.swift */; };
+		F5314F2BB4EBA2C5AC7C3EFB485C16DD /* RevealingSplashView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B692ECB96F187AAB2D38202D55A346 /* RevealingSplashView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1123BCAF9B6F47CA9F732AF417EEE0 /* Response.swift */; };
 		F9593C440B7C6D8E7F68FC56B1A3E21B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		45F7C9815004FE6BFFC931FD509FC19D /* PBXContainerItemProxy */ = {
+		1252EB0E9D87F3F2DE1EC4B13C4B9F1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
+			remoteGlobalIDString = 503D6A14D98D6081510928BA52AC3013;
+			remoteInfo = SwiftyImage;
 		};
-		A746E84B6E5A04CC1891FB396E373F1A /* PBXContainerItemProxy */ = {
+		16C5C55968BAA0DF5F8EB8F3DCE992C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DFBAF98039AB4BA7927B611FB65B61BC;
 			remoteInfo = SkyFloatingLabelTextField;
 		};
+		16F2709E7BEC566E2E817248C6A32139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		647A95037FD2ACCAB446271196ABBA63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AB9C4135C214FAD2CB39E8241B20B94;
+			remoteInfo = MBRadioCheckboxButton;
+		};
+		72AA0A1FC0F980EC39EECF9D542BFE18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A16BB753FC705C22DAFCD8B7C1071A09;
+			remoteInfo = RevealingSplashView;
+		};
+		DB6073B1D87FB4AAF1C6825C4CF38ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E6A4B14CA023C808656D9DC438729B2;
+			remoteInfo = FaveButton;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03E3B8D74B648ACFE13C9675A1C1CF5A /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		03E3CD6D8055754F1CC2241CF7A71EDC /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
-		04281C4E51A5B6CA5FCAA5406723307F /* SkyFloatingLabelTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-prefix.pch"; sourceTree = "<group>"; };
+		0043C132770CFCE65493BF51E1E7ED3B /* RevealingSplashView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RevealingSplashView.swift; path = RevealingSplashView/RevealingSplashView.swift; sourceTree = "<group>"; };
+		012782AD75BDD8737790004B518767C9 /* RadioButtonContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonContainerView.swift; path = Source/RadioButton/RadioButtonContainerView.swift; sourceTree = "<group>"; };
+		01A2727FE8216BFEE0129F6840C40197 /* Constraints+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Constraints+.swift"; path = "Source/Helpers/Constraints+.swift"; sourceTree = "<group>"; };
 		044D90FE596AB43823EEF7E2BB7EE336 /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
-		0780A7F8138BE50FB52EAE6AC9E29AD4 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		0A9A268285640D7DBF87EF01786CD53F /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		0B1642566BF287C600EE424862A58D80 /* SkyFloatingLabelTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SkyFloatingLabelTextField.xcconfig; sourceTree = "<group>"; };
+		0B7A527827039F86793060B5D7AC9501 /* MBRadioCheckboxButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBRadioCheckboxButton.modulemap; sourceTree = "<group>"; };
 		0FA40C468FE08680FADB788AA2E26E61 /* Pods-petitui-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-petitui-acknowledgements.plist"; sourceTree = "<group>"; };
-		113A7E0AA08F03F79A7794812CEEC1F1 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		133033BE94DDDF214680AADDC79938C6 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
-		1595BE6A882169ACECDE685C03E29792 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		170F886BAE3A4663E878B17105A3CE4D /* FaveButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FaveButton-dummy.m"; sourceTree = "<group>"; };
 		1761F854336DBD2F5F82D3EF4440C7AB /* Pods-petitui-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-petitui-umbrella.h"; sourceTree = "<group>"; };
-		1C1997BF9BBC0DFD8F26930C9D97C7FC /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		17D1BE2797CF9F8F3BC5E232B61D986F /* CheckboxLineStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxLineStyle.swift; path = Source/CheckboxButton/CheckboxLineStyle.swift; sourceTree = "<group>"; };
+		194C8767765702DC6BE3817AF9416BA9 /* RadioCheckboxBaseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioCheckboxBaseButton.swift; path = Source/BaseButton/RadioCheckboxBaseButton.swift; sourceTree = "<group>"; };
+		1A38883A00F5B13D6C858CFAB5699C50 /* MBRadioCheckboxButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBRadioCheckboxButton-dummy.m"; sourceTree = "<group>"; };
+		1BB37145DC1357B5315FBBE471F89112 /* RadioButtonContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonContainer.swift; path = Source/RadioButton/RadioButtonContainer.swift; sourceTree = "<group>"; };
 		222DAEF0D819F359AFCFF3D4F927E8A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		22379D27C19A7FA7DB1159966E2BB3DA /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
-		2AE409984F9A7A3C65B84BAA4AB05408 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		2D50011366CFA224079EAC77BFFAA89D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		30862DE28230E13780C28A08037C6260 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
-		30B186238FB68842E051755DF2E7BB97 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
-		3510875FEB97FBE85FA5BA756172AB4B /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		28CE01B179D40F992909A9FC87522A67 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
+		2B42041D02B112C2A83C76EE523E988B /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Source/Helpers/Geometry.swift; sourceTree = "<group>"; };
+		2E1404BFBB7796F2509B8CEAE0B1215D /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		325F145C0106657CA93A09DE732E1A36 /* SwiftyImage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyImage-Info.plist"; sourceTree = "<group>"; };
+		34C2E3D7D565438AF9167E96DCC35489 /* FaveButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FaveButton.framework; path = FaveButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		361AE40B1B802C841A8A6A55854C12EF /* RadioButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Source/RadioButton/RadioButton.swift; sourceTree = "<group>"; };
+		36E9A5EBADB11307F8D7C369292589E8 /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+fixCaretPosition.swift"; path = "Sources/UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		3824A07CE179A080E2C5D0D0AB4D9EDE /* Pods-petitui-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-petitui-frameworks.sh"; sourceTree = "<group>"; };
-		392DDC0AA7BA2F80E2561A4B7316BBFF /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		3E45AEC9E54EB3444C9A3835B810D2A2 /* SkyFloatingLabelTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SkyFloatingLabelTextField-Info.plist"; sourceTree = "<group>"; };
-		43257C5046D00F1CD46CEBC48C43CEDE /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		4534E09121A49020A3DEDCD972523FC7 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextFieldWithIcon.swift; path = Sources/SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
-		4CAE1205934983C79E167D2242A4286C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		52941B21773F16C27311F76D432831F8 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		38FB6194812E5143F4222AAFB157055E /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		397C5729AD1F39640A75C6634B901CC0 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		3ADD70FAE930E79EB210D181D35AEA9E /* SkyFloatingLabelTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-umbrella.h"; sourceTree = "<group>"; };
+		3B89E5B5716D928F7F20530594330E4E /* SwiftyImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImage-prefix.pch"; sourceTree = "<group>"; };
+		3C49DFB18E431E01346B05E62918615C /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		3EED364F849C9B0F2A54CF7F9CA027A0 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		3FC1BBC63D3AADE2AED679F8E0C446D4 /* RevealingSplashView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RevealingSplashView-Info.plist"; sourceTree = "<group>"; };
+		3FD3154439DABB05D1991CFD9E6374B6 /* FaveIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveIcon.swift; path = Source/FaveIcon.swift; sourceTree = "<group>"; };
+		40582DFD900730CFE0D2BE96DA17C10A /* SwiftyImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyImage.xcconfig; sourceTree = "<group>"; };
+		438D167F65596F0A876E5A96056F5716 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		44F8B483445A42C01CD3364D18CDFC7C /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		47DD951D6890E1A7A100AEF44EC550A2 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
+		4D37E08966D5B474A60BFEB48B6400BB /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		4F440B506740170410784B5B39CAC81D /* SkyFloatingLabelTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SkyFloatingLabelTextField-Info.plist"; sourceTree = "<group>"; };
+		53DEBBEC628BDC0D2DC6148D026FE3A5 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		5BD938CA95CAC3B66B87F4DA800B5775 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		5D771DD1380D1D80A558507AF59663FC /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E05DED359A7759196C1EC34D048F889 /* FaveButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FaveButton.swift; path = Source/FaveButton.swift; sourceTree = "<group>"; };
 		637CD34CC6E6BEA59E0D48CB58C7CCFD /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
-		67273207EC10BD2BB651D9F5000FF81E /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextField.swift; path = Sources/SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
-		7C810EBC7916400586127F5379EAA8C0 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		83F47C2D4352E80EAA72E7852D595EF7 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		854F4F94B3EAC92A858F139EEEF3DD97 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		85BF75D3A4956DE53786E578AFDA8F15 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		638F2E94E482587CBE726C37F8CA7A23 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
+		64BCA6A74DCE08EF8BA95DFDD789B48D /* SkyFloatingLabelTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-prefix.pch"; sourceTree = "<group>"; };
+		6B73DC41114A24A9F6FE658C62A76AEA /* SwiftyImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyImage.swift; path = Sources/SwiftyImage.swift; sourceTree = "<group>"; };
+		766A7370AAF0FADE6F3C5301BAED8756 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
+		783D386E33D6919806818450B35F59F7 /* MBRadioCheckboxButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBRadioCheckboxButton-prefix.pch"; sourceTree = "<group>"; };
+		7D990FA7C38966B59602CE8DF6F07F33 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		7EDE7180724005B78E74F9D4F8D37388 /* SkyFloatingLabelTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SkyFloatingLabelTextField.xcconfig; sourceTree = "<group>"; };
+		872A42C017DC55B3AB32D84939BC5B8A /* SwiftyImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyImage-umbrella.h"; sourceTree = "<group>"; };
+		8974558F37F22C272A30F16F886D2E0E /* Spark.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spark.swift; path = Source/Spark.swift; sourceTree = "<group>"; };
 		8B079F294DA5D9A879E6D53A91F51A1E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		8E23F5C85320D6C31B2FB14EF0B13650 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		90846D5B12E482F854A425FE157E90F3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		9A0DB49EBF5E7876877F22786197616F /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
-		9A925870BA9D0262987436B0184FF3AF /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+fixCaretPosition.swift"; path = "Sources/UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
+		8D4AAEEE74661294F0E81600CFD7D301 /* Init.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Init.swift; path = Source/Helpers/Init.swift; sourceTree = "<group>"; };
+		8ED82940D5A7ED68C6F2710F5E8E56F4 /* SplashAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimatable.swift; path = RevealingSplashView/SplashAnimatable.swift; sourceTree = "<group>"; };
+		8FAA4DB36817091FB679E5382D27A8C0 /* RevealingSplashView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RevealingSplashView.xcconfig; sourceTree = "<group>"; };
+		9439D87DBF38C3F6FC23C80DBB8EB6CE /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextField.swift; path = Sources/SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		94EBBD981A936C1EECF4B802B84C611C /* FaveButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-prefix.pch"; sourceTree = "<group>"; };
+		957421273409167B8D6A6E63E61CA3D5 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		96033F6A039B80F6B6D33E69FBB6AB15 /* RadioButtonCircleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonCircleStyle.swift; path = Source/RadioButton/RadioButtonCircleStyle.swift; sourceTree = "<group>"; };
+		9A1123BCAF9B6F47CA9F732AF417EEE0 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		9A7488A485BA44FED82237EA49044C56 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		9B5C2817BDF84F89DB7704CD44111BF2 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
+		9D803DDF4B15A6D7BD3D3F0A71E9E00B /* Protector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protector.swift; path = Source/Protector.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A394BA07DFA93DA70D52FADF443563 /* Pods-petitui-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-petitui-dummy.m"; sourceTree = "<group>"; };
-		A3226E19BE052EB942D2C4411D014C19 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
-		A6593E2DE16252C5150B5508E73A4075 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
-		A8A879AD522E0E6A7ECA610C72B461C2 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		B7B1A00F07F76E609DF9AF8B3282F938 /* SkyFloatingLabelTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkyFloatingLabelTextField-umbrella.h"; sourceTree = "<group>"; };
+		A14406C7050076362BD97C14E7AED248 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		A2C45ACC4DAC2303C78CFC22779775AB /* Easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = Source/Helpers/Easing.swift; sourceTree = "<group>"; };
+		A4B692ECB96F187AAB2D38202D55A346 /* RevealingSplashView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-umbrella.h"; sourceTree = "<group>"; };
+		A58FAF96E4A04FEF509D5A988769CAF7 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		A5E47B2176EC84DA0D09586E64C6823A /* CheckBoxColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckBoxColor.swift; path = Source/CheckboxButton/CheckBoxColor.swift; sourceTree = "<group>"; };
+		A7CB29DD40F2A3ECB5878D1D3F3D4AF8 /* SwiftyImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyImage.modulemap; sourceTree = "<group>"; };
+		A828E58CC5F1F2B6568B0763EC923438 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		A87F9D4347C9F0451D148EADE9CEF7B5 /* RevealingSplashView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RevealingSplashView.h; path = RevealingSplashView/RevealingSplashView.h; sourceTree = "<group>"; };
+		AC80694E3ABFBAFAD5CCB79AD544734D /* SkyFloatingLabelTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SkyFloatingLabelTextField.modulemap; sourceTree = "<group>"; };
+		B3F3DADEB24CB70D66620B700C037C30 /* RevealingSplashView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealingSplashView-prefix.pch"; sourceTree = "<group>"; };
+		B7B33FDB7D9B7FDC7EEF58EE25C39684 /* FaveButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FaveButton.modulemap; sourceTree = "<group>"; };
 		B8F8EE0775E30EBAB2D57D817E5A2DF9 /* Pods-petitui-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-petitui-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B9D4F1AAFE63EF0E0E2A1476F7FB73A9 /* Pods-petitui-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-petitui-Info.plist"; sourceTree = "<group>"; };
-		C2BEFC430F516EFF4D82732C0A739A10 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		BB5EA43F479C7927DACF852051A358C2 /* RadioButtonColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonColor.swift; path = Source/RadioButton/RadioButtonColor.swift; sourceTree = "<group>"; };
+		BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RevealingSplashView.framework; path = RevealingSplashView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAE60E3F886A7F20BF57E8AE6F9A1B6 /* RevealingSplashView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevealingSplashView-dummy.m"; sourceTree = "<group>"; };
 		C4922C1491DC360C98F42B4004543103 /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_petitui.framework; path = "Pods-petitui.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA389657E062F31358749DA074217916 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		C5CBF4C235A38A75691766DDFBDBE44A /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		C7A4DE3189B2E72D025BD4AF26487101 /* CheckboxButtonContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButtonContainer.swift; path = Source/CheckboxButton/CheckboxButtonContainer.swift; sourceTree = "<group>"; };
+		C8E188C647C276EE44DCE8AE850BBF3D /* CheckboxButtonContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButtonContainerView.swift; path = Source/CheckboxButton/CheckboxButtonContainerView.swift; sourceTree = "<group>"; };
+		CD3F213965DE62726D0CE0BCF0316B95 /* FaveButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FaveButton-umbrella.h"; sourceTree = "<group>"; };
+		D24518F9F806DB7333927DEAB4905DF0 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		D358C0C06C8F67B781D1661C811C0849 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
 		D392C11EB32EACD5EC9C8D37B51482B6 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SkyFloatingLabelTextField.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9A55F0289FF5C862D2A7F5610507F41 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
-		DCAD7675765178D65C4B828B30670D8A /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
-		DF1713475F5B0E74546E404D35096594 /* SkyFloatingLabelTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SkyFloatingLabelTextField-dummy.m"; sourceTree = "<group>"; };
-		E454CB1743C6D686914D9ECAF34631C3 /* Protector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protector.swift; path = Source/Protector.swift; sourceTree = "<group>"; };
+		D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBRadioCheckboxButton.framework; path = MBRadioCheckboxButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44CDCD8CD8EF3F3FAAE82B2E749DDC6 /* MBRadioCheckboxButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBRadioCheckboxButton-umbrella.h"; sourceTree = "<group>"; };
+		D71FAB34EDEB89357A49364EAEB37EA0 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextFieldWithIcon.swift; path = Sources/SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		D7B4E961DCC3D6471EC14D1B4D09B727 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		D80AADC29671BB1952BDC692CC01B911 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		DC6B4D63A7FBADCE7B5BE23F6900ED1A /* FaveButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FaveButton-Info.plist"; sourceTree = "<group>"; };
+		DCAB764DDFD65DF3BC07F174B2494D14 /* FaveButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaveButton.xcconfig; sourceTree = "<group>"; };
+		E0B1C40C10B80010601AFE2DFB67A96C /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
+		E1F02E2F507E37C28ECD46183BC66C27 /* RadioCheckboxBaseContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioCheckboxBaseContainer.swift; path = Source/BaseButton/RadioCheckboxBaseContainer.swift; sourceTree = "<group>"; };
+		E2B7DD3375793421D1C6C7A50D881157 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		E3AB0CDE1DDCFEC49CFB083D6A79AFD4 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		E3FEF49CA483DD911DF4B89571428DEC /* SplashAnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplashAnimationType.swift; path = RevealingSplashView/SplashAnimationType.swift; sourceTree = "<group>"; };
+		E553084EB2A86EC2C98083D932A62CF1 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		E555E22BFB7B5F6DDD954AD60FDCBE13 /* Ring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ring.swift; path = Source/Ring.swift; sourceTree = "<group>"; };
+		E921E376BD744C3D800798F91FDA2C2F /* MBRadioCheckboxButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBRadioCheckboxButton.xcconfig; sourceTree = "<group>"; };
+		EB26C83BC0CC513907CB3596C204B8AB /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		EC216E5EF02164DFDE5278C035C03440 /* Pods-petitui.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-petitui.modulemap"; sourceTree = "<group>"; };
-		F0D673063696C17A318E082BAA49C9A6 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		F3EC3DEFD1197B82C4C55C34EBF53837 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		F957C27D3B3CFE26CE745151A6D7CCFE /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		FD216772D6561CF98E49618558254F12 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
-		FDD4E4E328267D50EAA73A28CD24A092 /* SkyFloatingLabelTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SkyFloatingLabelTextField.modulemap; sourceTree = "<group>"; };
-		FF6214AC1EAB2C848DA0D8D4F7B6F8F7 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		EC373BDFE48C15B6B44FEB37D6B8B3E8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		ED78C326EB9E4AB7CAB281522A7636A0 /* CheckboxButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButton.swift; path = Source/CheckboxButton/CheckboxButton.swift; sourceTree = "<group>"; };
+		EEAFC3B4E3AEB70BE0F8CED0770B6E09 /* SkyFloatingLabelTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SkyFloatingLabelTextField-dummy.m"; sourceTree = "<group>"; };
+		F42A8753187076797192BFA618E72B62 /* RevealingSplashView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RevealingSplashView.modulemap; sourceTree = "<group>"; };
+		F615B227080D70A1DC3B172CA5728781 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		F698ED7D1DCBB5DB690C02F2E7BAB094 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		F74C363DAFF667F8B8D22C49F131FBE2 /* MBRadioCheckboxButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBRadioCheckboxButton-Info.plist"; sourceTree = "<group>"; };
+		F8D62FD1526DDEB5897E08F80E732C23 /* SwiftyImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyImage-dummy.m"; sourceTree = "<group>"; };
+		FBABE3ACD743F3C21E5DCAC51C0FC0DD /* SwiftyImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyImage.framework; path = SwiftyImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7402B405E4D667E17F0EDAAE004B25 /* Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animations.swift; path = RevealingSplashView/Animations.swift; sourceTree = "<group>"; };
+		FE3704DF995DB06E26C44F3B5611B00C /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00353716605D820799477045CA7896F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9114B937D705E2157F6EE64F8E6304BB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13D971DB7C58250F899E09225458EA60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,11 +273,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C4192990C153A43A2D2A3D519F213E7 /* Frameworks */ = {
+		82EB2D8533CFBCC9AEA081F53A0987DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFCCA3D65E6F49365273DC056AA07F73 /* Foundation.framework in Frameworks */,
+				44C466F5E7F7BEBB1A98E72B24B76C4C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,31 +290,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B8361A29327342B22664DFDB83F517B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAC51BF0617CEF27FA33834154F7647 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4874321F4C59FDAC726E5510AC55706 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C5A5F4C3B50DCA2E933546C35DE603 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B759B2C53D4AFDA53541B04006E90D81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770168DE52B4855A94437E5EB527EC84 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03B632DB51F2FFEFD3BF9B8C040D890F /* Products */ = {
+		027394C727F633B10D572CD19345F601 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
-				C4922C1491DC360C98F42B4004543103 /* Pods_petitui.framework */,
-				D392C11EB32EACD5EC9C8D37B51482B6 /* SkyFloatingLabelTextField.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0AE18396C8EB92B49530A6BE62A2196E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FDD4E4E328267D50EAA73A28CD24A092 /* SkyFloatingLabelTextField.modulemap */,
-				0B1642566BF287C600EE424862A58D80 /* SkyFloatingLabelTextField.xcconfig */,
-				DF1713475F5B0E74546E404D35096594 /* SkyFloatingLabelTextField-dummy.m */,
-				3E45AEC9E54EB3444C9A3835B810D2A2 /* SkyFloatingLabelTextField-Info.plist */,
-				04281C4E51A5B6CA5FCAA5406723307F /* SkyFloatingLabelTextField-prefix.pch */,
-				B7B1A00F07F76E609DF9AF8B3282F938 /* SkyFloatingLabelTextField-umbrella.h */,
+				AC80694E3ABFBAFAD5CCB79AD544734D /* SkyFloatingLabelTextField.modulemap */,
+				7EDE7180724005B78E74F9D4F8D37388 /* SkyFloatingLabelTextField.xcconfig */,
+				EEAFC3B4E3AEB70BE0F8CED0770B6E09 /* SkyFloatingLabelTextField-dummy.m */,
+				4F440B506740170410784B5B39CAC81D /* SkyFloatingLabelTextField-Info.plist */,
+				64BCA6A74DCE08EF8BA95DFDD789B48D /* SkyFloatingLabelTextField-prefix.pch */,
+				3ADD70FAE930E79EB210D181D35AEA9E /* SkyFloatingLabelTextField-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SkyFloatingLabelTextField";
+			sourceTree = "<group>";
+		};
+		1069AA38574895594F0E6095A1B00436 /* SwiftyImage */ = {
+			isa = PBXGroup;
+			children = (
+				6B73DC41114A24A9F6FE658C62A76AEA /* SwiftyImage.swift */,
+				79C7AF04748D307CFED2703A4D20CD81 /* Support Files */,
+			);
+			name = SwiftyImage;
+			path = SwiftyImage;
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -195,6 +347,35 @@
 				E34DCC8E2CF86B8D72232914781A840D /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3550D7D87A4F3B931BBFBE59975C9A88 /* SkyFloatingLabelTextField */ = {
+			isa = PBXGroup;
+			children = (
+				9439D87DBF38C3F6FC23C80DBB8EB6CE /* SkyFloatingLabelTextField.swift */,
+				D71FAB34EDEB89357A49364EAEB37EA0 /* SkyFloatingLabelTextFieldWithIcon.swift */,
+				36E9A5EBADB11307F8D7C369292589E8 /* UITextField+fixCaretPosition.swift */,
+				027394C727F633B10D572CD19345F601 /* Support Files */,
+			);
+			name = SkyFloatingLabelTextField;
+			path = SkyFloatingLabelTextField;
+			sourceTree = "<group>";
+		};
+		3738FB4C0A5C6AF2603A588F70FA781A /* FaveButton */ = {
+			isa = PBXGroup;
+			children = (
+				01A2727FE8216BFEE0129F6840C40197 /* Constraints+.swift */,
+				A2C45ACC4DAC2303C78CFC22779775AB /* Easing.swift */,
+				5E05DED359A7759196C1EC34D048F889 /* FaveButton.swift */,
+				3FD3154439DABB05D1991CFD9E6374B6 /* FaveIcon.swift */,
+				2B42041D02B112C2A83C76EE523E988B /* Geometry.swift */,
+				8D4AAEEE74661294F0E81600CFD7D301 /* Init.swift */,
+				E555E22BFB7B5F6DDD954AD60FDCBE13 /* Ring.swift */,
+				8974558F37F22C272A30F16F886D2E0E /* Spark.swift */,
+				DFAC1BCDBAD59E34B2764C6B427CC145 /* Support Files */,
+			);
+			name = FaveButton;
+			path = FaveButton;
 			sourceTree = "<group>";
 		};
 		3B4D65508BD5AA470145C4FA164CD815 /* Pods-petitui */ = {
@@ -214,65 +395,132 @@
 			path = "Target Support Files/Pods-petitui";
 			sourceTree = "<group>";
 		};
-		63F2C4C6F7B6DB1CB5D18DA9DE7E5C74 /* Alamofire */ = {
+		484B110B53BC5EB96EA5FD027B72251B /* RevealingSplashView */ = {
 			isa = PBXGroup;
 			children = (
-				3510875FEB97FBE85FA5BA756172AB4B /* AFError.swift */,
-				83F47C2D4352E80EAA72E7852D595EF7 /* Alamofire.swift */,
-				9A0DB49EBF5E7876877F22786197616F /* AlamofireExtended.swift */,
-				DCAD7675765178D65C4B828B30670D8A /* CachedResponseHandler.swift */,
-				113A7E0AA08F03F79A7794812CEEC1F1 /* DispatchQueue+Alamofire.swift */,
-				52941B21773F16C27311F76D432831F8 /* EventMonitor.swift */,
-				1C1997BF9BBC0DFD8F26930C9D97C7FC /* HTTPHeaders.swift */,
-				D9A55F0289FF5C862D2A7F5610507F41 /* HTTPMethod.swift */,
-				2D50011366CFA224079EAC77BFFAA89D /* MultipartFormData.swift */,
-				FF6214AC1EAB2C848DA0D8D4F7B6F8F7 /* MultipartUpload.swift */,
-				90846D5B12E482F854A425FE157E90F3 /* NetworkReachabilityManager.swift */,
-				0A9A268285640D7DBF87EF01786CD53F /* Notifications.swift */,
-				43257C5046D00F1CD46CEBC48C43CEDE /* OperationQueue+Alamofire.swift */,
-				FD216772D6561CF98E49618558254F12 /* ParameterEncoder.swift */,
-				7C810EBC7916400586127F5379EAA8C0 /* ParameterEncoding.swift */,
-				E454CB1743C6D686914D9ECAF34631C3 /* Protector.swift */,
-				22379D27C19A7FA7DB1159966E2BB3DA /* RedirectHandler.swift */,
-				4CAE1205934983C79E167D2242A4286C /* Request.swift */,
-				133033BE94DDDF214680AADDC79938C6 /* RequestInterceptor.swift */,
-				85BF75D3A4956DE53786E578AFDA8F15 /* RequestTaskMap.swift */,
-				854F4F94B3EAC92A858F139EEEF3DD97 /* Response.swift */,
-				CA389657E062F31358749DA074217916 /* ResponseSerialization.swift */,
-				392DDC0AA7BA2F80E2561A4B7316BBFF /* Result+Alamofire.swift */,
-				30862DE28230E13780C28A08037C6260 /* RetryPolicy.swift */,
-				03E3CD6D8055754F1CC2241CF7A71EDC /* ServerTrustEvaluation.swift */,
-				30B186238FB68842E051755DF2E7BB97 /* Session.swift */,
-				F957C27D3B3CFE26CE745151A6D7CCFE /* SessionDelegate.swift */,
-				A3226E19BE052EB942D2C4411D014C19 /* URLConvertible+URLRequestConvertible.swift */,
-				0780A7F8138BE50FB52EAE6AC9E29AD4 /* URLEncodedFormEncoder.swift */,
-				8E23F5C85320D6C31B2FB14EF0B13650 /* URLRequest+Alamofire.swift */,
-				A6593E2DE16252C5150B5508E73A4075 /* URLSessionConfiguration+Alamofire.swift */,
-				F3EC3DEFD1197B82C4C55C34EBF53837 /* Validation.swift */,
-				697907EA2A4760A030AB92FFB44E9CE0 /* Support Files */,
+				FD7402B405E4D667E17F0EDAAE004B25 /* Animations.swift */,
+				A87F9D4347C9F0451D148EADE9CEF7B5 /* RevealingSplashView.h */,
+				0043C132770CFCE65493BF51E1E7ED3B /* RevealingSplashView.swift */,
+				8ED82940D5A7ED68C6F2710F5E8E56F4 /* SplashAnimatable.swift */,
+				E3FEF49CA483DD911DF4B89571428DEC /* SplashAnimationType.swift */,
+				D2A8857A9CCB82E83DB5F326A8582AE4 /* Support Files */,
+			);
+			name = RevealingSplashView;
+			path = RevealingSplashView;
+			sourceTree = "<group>";
+		};
+		51EA162A36ED58BDCA2F52F2E4DDDCE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				34C2E3D7D565438AF9167E96DCC35489 /* FaveButton.framework */,
+				D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton.framework */,
+				C4922C1491DC360C98F42B4004543103 /* Pods_petitui.framework */,
+				BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */,
+				D392C11EB32EACD5EC9C8D37B51482B6 /* SkyFloatingLabelTextField.framework */,
+				FBABE3ACD743F3C21E5DCAC51C0FC0DD /* SwiftyImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6483114EF86BC43D328EFC12AB9DF40B /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				397C5729AD1F39640A75C6634B901CC0 /* AFError.swift */,
+				2E1404BFBB7796F2509B8CEAE0B1215D /* Alamofire.swift */,
+				47DD951D6890E1A7A100AEF44EC550A2 /* AlamofireExtended.swift */,
+				957421273409167B8D6A6E63E61CA3D5 /* CachedResponseHandler.swift */,
+				3EED364F849C9B0F2A54CF7F9CA027A0 /* DispatchQueue+Alamofire.swift */,
+				D358C0C06C8F67B781D1661C811C0849 /* EventMonitor.swift */,
+				EC373BDFE48C15B6B44FEB37D6B8B3E8 /* HTTPHeaders.swift */,
+				E0B1C40C10B80010601AFE2DFB67A96C /* HTTPMethod.swift */,
+				A828E58CC5F1F2B6568B0763EC923438 /* MultipartFormData.swift */,
+				4D37E08966D5B474A60BFEB48B6400BB /* MultipartUpload.swift */,
+				D80AADC29671BB1952BDC692CC01B911 /* NetworkReachabilityManager.swift */,
+				E553084EB2A86EC2C98083D932A62CF1 /* Notifications.swift */,
+				438D167F65596F0A876E5A96056F5716 /* OperationQueue+Alamofire.swift */,
+				766A7370AAF0FADE6F3C5301BAED8756 /* ParameterEncoder.swift */,
+				44F8B483445A42C01CD3364D18CDFC7C /* ParameterEncoding.swift */,
+				9D803DDF4B15A6D7BD3D3F0A71E9E00B /* Protector.swift */,
+				5BD938CA95CAC3B66B87F4DA800B5775 /* RedirectHandler.swift */,
+				F615B227080D70A1DC3B172CA5728781 /* Request.swift */,
+				9B5C2817BDF84F89DB7704CD44111BF2 /* RequestInterceptor.swift */,
+				F698ED7D1DCBB5DB690C02F2E7BAB094 /* RequestTaskMap.swift */,
+				9A1123BCAF9B6F47CA9F732AF417EEE0 /* Response.swift */,
+				38FB6194812E5143F4222AAFB157055E /* ResponseSerialization.swift */,
+				EB26C83BC0CC513907CB3596C204B8AB /* Result+Alamofire.swift */,
+				D24518F9F806DB7333927DEAB4905DF0 /* RetryPolicy.swift */,
+				FE3704DF995DB06E26C44F3B5611B00C /* ServerTrustEvaluation.swift */,
+				5D771DD1380D1D80A558507AF59663FC /* Session.swift */,
+				A14406C7050076362BD97C14E7AED248 /* SessionDelegate.swift */,
+				53DEBBEC628BDC0D2DC6148D026FE3A5 /* URLConvertible+URLRequestConvertible.swift */,
+				638F2E94E482587CBE726C37F8CA7A23 /* URLEncodedFormEncoder.swift */,
+				28CE01B179D40F992909A9FC87522A67 /* URLRequest+Alamofire.swift */,
+				D7B4E961DCC3D6471EC14D1B4D09B727 /* URLSessionConfiguration+Alamofire.swift */,
+				C5CBF4C235A38A75691766DDFBDBE44A /* Validation.swift */,
+				C9878B4A15E9791E71651005F59457A8 /* Support Files */,
 			);
 			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		64ABEFF29E4DDE626DBE428729B9CC16 /* Pods */ = {
+		79C7AF04748D307CFED2703A4D20CD81 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				63F2C4C6F7B6DB1CB5D18DA9DE7E5C74 /* Alamofire */,
-				D016FA591399A3A5F262087363F405D4 /* SkyFloatingLabelTextField */,
+				A7CB29DD40F2A3ECB5878D1D3F3D4AF8 /* SwiftyImage.modulemap */,
+				40582DFD900730CFE0D2BE96DA17C10A /* SwiftyImage.xcconfig */,
+				F8D62FD1526DDEB5897E08F80E732C23 /* SwiftyImage-dummy.m */,
+				325F145C0106657CA93A09DE732E1A36 /* SwiftyImage-Info.plist */,
+				3B89E5B5716D928F7F20530594330E4E /* SwiftyImage-prefix.pch */,
+				872A42C017DC55B3AB32D84939BC5B8A /* SwiftyImage-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyImage";
+			sourceTree = "<group>";
+		};
+		80F88AD61FB21CBF78FCFD29BDB783DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6483114EF86BC43D328EFC12AB9DF40B /* Alamofire */,
+				3738FB4C0A5C6AF2603A588F70FA781A /* FaveButton */,
+				855FFFE19D1DB0CD7C0AC279196E35C4 /* MBRadioCheckboxButton */,
+				484B110B53BC5EB96EA5FD027B72251B /* RevealingSplashView */,
+				3550D7D87A4F3B931BBFBE59975C9A88 /* SkyFloatingLabelTextField */,
+				1069AA38574895594F0E6095A1B00436 /* SwiftyImage */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		697907EA2A4760A030AB92FFB44E9CE0 /* Support Files */ = {
+		855FFFE19D1DB0CD7C0AC279196E35C4 /* MBRadioCheckboxButton */ = {
 			isa = PBXGroup;
 			children = (
-				1595BE6A882169ACECDE685C03E29792 /* Alamofire.modulemap */,
-				F0D673063696C17A318E082BAA49C9A6 /* Alamofire.xcconfig */,
-				03E3B8D74B648ACFE13C9675A1C1CF5A /* Alamofire-dummy.m */,
-				2AE409984F9A7A3C65B84BAA4AB05408 /* Alamofire-Info.plist */,
-				A8A879AD522E0E6A7ECA610C72B461C2 /* Alamofire-prefix.pch */,
-				C2BEFC430F516EFF4D82732C0A739A10 /* Alamofire-umbrella.h */,
+				ED78C326EB9E4AB7CAB281522A7636A0 /* CheckboxButton.swift */,
+				C7A4DE3189B2E72D025BD4AF26487101 /* CheckboxButtonContainer.swift */,
+				C8E188C647C276EE44DCE8AE850BBF3D /* CheckboxButtonContainerView.swift */,
+				A5E47B2176EC84DA0D09586E64C6823A /* CheckBoxColor.swift */,
+				17D1BE2797CF9F8F3BC5E232B61D986F /* CheckboxLineStyle.swift */,
+				361AE40B1B802C841A8A6A55854C12EF /* RadioButton.swift */,
+				96033F6A039B80F6B6D33E69FBB6AB15 /* RadioButtonCircleStyle.swift */,
+				BB5EA43F479C7927DACF852051A358C2 /* RadioButtonColor.swift */,
+				1BB37145DC1357B5315FBBE471F89112 /* RadioButtonContainer.swift */,
+				012782AD75BDD8737790004B518767C9 /* RadioButtonContainerView.swift */,
+				194C8767765702DC6BE3817AF9416BA9 /* RadioCheckboxBaseButton.swift */,
+				E1F02E2F507E37C28ECD46183BC66C27 /* RadioCheckboxBaseContainer.swift */,
+				F4C013A78C7D6F129DCFCC6997D42547 /* Support Files */,
+			);
+			name = MBRadioCheckboxButton;
+			path = MBRadioCheckboxButton;
+			sourceTree = "<group>";
+		};
+		C9878B4A15E9791E71651005F59457A8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3AB0CDE1DDCFEC49CFB083D6A79AFD4 /* Alamofire.modulemap */,
+				9A7488A485BA44FED82237EA49044C56 /* Alamofire.xcconfig */,
+				7D990FA7C38966B59602CE8DF6F07F33 /* Alamofire-dummy.m */,
+				E2B7DD3375793421D1C6C7A50D881157 /* Alamofire-Info.plist */,
+				A58FAF96E4A04FEF509D5A988769CAF7 /* Alamofire-prefix.pch */,
+				3C49DFB18E431E01346B05E62918615C /* Alamofire-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
@@ -283,22 +531,38 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				64ABEFF29E4DDE626DBE428729B9CC16 /* Pods */,
-				03B632DB51F2FFEFD3BF9B8C040D890F /* Products */,
+				80F88AD61FB21CBF78FCFD29BDB783DE /* Pods */,
+				51EA162A36ED58BDCA2F52F2E4DDDCE6 /* Products */,
 				E79B406D1108ACD06C534D416E37A55B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D016FA591399A3A5F262087363F405D4 /* SkyFloatingLabelTextField */ = {
+		D2A8857A9CCB82E83DB5F326A8582AE4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				67273207EC10BD2BB651D9F5000FF81E /* SkyFloatingLabelTextField.swift */,
-				4534E09121A49020A3DEDCD972523FC7 /* SkyFloatingLabelTextFieldWithIcon.swift */,
-				9A925870BA9D0262987436B0184FF3AF /* UITextField+fixCaretPosition.swift */,
-				0AE18396C8EB92B49530A6BE62A2196E /* Support Files */,
+				F42A8753187076797192BFA618E72B62 /* RevealingSplashView.modulemap */,
+				8FAA4DB36817091FB679E5382D27A8C0 /* RevealingSplashView.xcconfig */,
+				BEAE60E3F886A7F20BF57E8AE6F9A1B6 /* RevealingSplashView-dummy.m */,
+				3FC1BBC63D3AADE2AED679F8E0C446D4 /* RevealingSplashView-Info.plist */,
+				B3F3DADEB24CB70D66620B700C037C30 /* RevealingSplashView-prefix.pch */,
+				A4B692ECB96F187AAB2D38202D55A346 /* RevealingSplashView-umbrella.h */,
 			);
-			name = SkyFloatingLabelTextField;
-			path = SkyFloatingLabelTextField;
+			name = "Support Files";
+			path = "../Target Support Files/RevealingSplashView";
+			sourceTree = "<group>";
+		};
+		DFAC1BCDBAD59E34B2764C6B427CC145 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7B33FDB7D9B7FDC7EEF58EE25C39684 /* FaveButton.modulemap */,
+				DCAB764DDFD65DF3BC07F174B2494D14 /* FaveButton.xcconfig */,
+				170F886BAE3A4663E878B17105A3CE4D /* FaveButton-dummy.m */,
+				DC6B4D63A7FBADCE7B5BE23F6900ED1A /* FaveButton-Info.plist */,
+				94EBBD981A936C1EECF4B802B84C611C /* FaveButton-prefix.pch */,
+				CD3F213965DE62726D0CE0BCF0316B95 /* FaveButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FaveButton";
 			sourceTree = "<group>";
 		};
 		E34DCC8E2CF86B8D72232914781A840D /* iOS */ = {
@@ -318,14 +582,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F4C013A78C7D6F129DCFCC6997D42547 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B7A527827039F86793060B5D7AC9501 /* MBRadioCheckboxButton.modulemap */,
+				E921E376BD744C3D800798F91FDA2C2F /* MBRadioCheckboxButton.xcconfig */,
+				1A38883A00F5B13D6C858CFAB5699C50 /* MBRadioCheckboxButton-dummy.m */,
+				F74C363DAFF667F8B8D22C49F131FBE2 /* MBRadioCheckboxButton-Info.plist */,
+				783D386E33D6919806818450B35F59F7 /* MBRadioCheckboxButton-prefix.pch */,
+				D44CDCD8CD8EF3F3FAAE82B2E749DDC6 /* MBRadioCheckboxButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBRadioCheckboxButton";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		610E06979E0D8170F9BDF152CA6AEBA2 /* Headers */ = {
+		5AABBEE02C7CF37FEA348DE26DF78140 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E580E543673EF12E30563999B9A29F2 /* Pods-petitui-umbrella.h in Headers */,
+				2D103BBEFE9CE323A14C853861E4F801 /* MBRadioCheckboxButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AC4CA394125D6504D668CBEA4AEFB57 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5314F2BB4EBA2C5AC7C3EFB485C16DD /* RevealingSplashView-umbrella.h in Headers */,
+				2D796693C82C88B236B517CC3BF3DD81 /* RevealingSplashView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +624,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF5B92099793DEEAFFD9EA5D953B3715 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839096BE3B5BF66FF9D3A81743A0DACE /* Pods-petitui-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3B2D8F0713B1177D1B70FFFE9A4E8BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				811024FB04EF14A8C9F7FB8BB4F491B0 /* FaveButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA0FC7C3282E0EF37FC4228106F35E06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,27 +648,111 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0B418EEFC8A75E4BB6D211B423DDEA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF50EF50907F6E5A67259D2FA0ABEBB /* SwiftyImage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		03A83D77EB737EC7F029C9E4E62FD20D /* Pods-petitui */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F73279888A6BA84ED67CDD81D12BD60 /* Build configuration list for PBXNativeTarget "Pods-petitui" */;
+			buildConfigurationList = E1A543DB7631714E3622BDA515F2C1A5 /* Build configuration list for PBXNativeTarget "Pods-petitui" */;
 			buildPhases = (
-				610E06979E0D8170F9BDF152CA6AEBA2 /* Headers */,
-				92E1B93330C47BD91C96B21AB0633927 /* Sources */,
-				3C4192990C153A43A2D2A3D519F213E7 /* Frameworks */,
-				A2232ACCBE4C0C2C821EB4CE05FA7FC5 /* Resources */,
+				CF5B92099793DEEAFFD9EA5D953B3715 /* Headers */,
+				8DEC16E92F34B96099868AC30F1B0CB6 /* Sources */,
+				82EB2D8533CFBCC9AEA081F53A0987DD /* Frameworks */,
+				53A26786D2B1AB9082AE10B0884A0369 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				65481002C780985E9C56F35EBFA707B7 /* PBXTargetDependency */,
-				6B4DD41CC1434FF6283812E0C538C097 /* PBXTargetDependency */,
+				552F52C4824B7EB9A4F3E4F1E339D1E0 /* PBXTargetDependency */,
+				A47B9CF9AAF2B86405FCFC46B8616463 /* PBXTargetDependency */,
+				478D678A0F852334B7018F223B262569 /* PBXTargetDependency */,
+				6B9F45D5C987353B139EB6946F0168F8 /* PBXTargetDependency */,
+				D898FC89EC5B1D11794C25F394A4CD68 /* PBXTargetDependency */,
+				69ABFF0F534770A9B9CFBAA517E8D97A /* PBXTargetDependency */,
 			);
 			name = "Pods-petitui";
 			productName = "Pods-petitui";
 			productReference = C4922C1491DC360C98F42B4004543103 /* Pods_petitui.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		503D6A14D98D6081510928BA52AC3013 /* SwiftyImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB3EDD8385BEE7FA6E91260C41C17A1C /* Build configuration list for PBXNativeTarget "SwiftyImage" */;
+			buildPhases = (
+				F0B418EEFC8A75E4BB6D211B423DDEA6 /* Headers */,
+				772BB3F10A38DC7CC0BBE0180B6F29C9 /* Sources */,
+				A4874321F4C59FDAC726E5510AC55706 /* Frameworks */,
+				56B1389745ED5DC4AD9D8CB01CA1F17A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyImage;
+			productName = SwiftyImage;
+			productReference = FBABE3ACD743F3C21E5DCAC51C0FC0DD /* SwiftyImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5E6A4B14CA023C808656D9DC438729B2 /* FaveButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9246E7C28305301063C85E14244035C /* Build configuration list for PBXNativeTarget "FaveButton" */;
+			buildPhases = (
+				D3B2D8F0713B1177D1B70FFFE9A4E8BA /* Headers */,
+				90885B593DF339143C12084C8F0F1F86 /* Sources */,
+				00353716605D820799477045CA7896F5 /* Frameworks */,
+				94A434D8BBC876918D410EE52E04B63C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaveButton;
+			productName = FaveButton;
+			productReference = 34C2E3D7D565438AF9167E96DCC35489 /* FaveButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28DA69252F589F93B8840CF01BD9B533 /* Build configuration list for PBXNativeTarget "MBRadioCheckboxButton" */;
+			buildPhases = (
+				5AABBEE02C7CF37FEA348DE26DF78140 /* Headers */,
+				C758758628D5436EE2CE313CCDBB69A2 /* Sources */,
+				9B8361A29327342B22664DFDB83F517B /* Frameworks */,
+				09AB0E3559EC34FDCDE57B6FB4DCC83A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBRadioCheckboxButton;
+			productName = MBRadioCheckboxButton;
+			productReference = D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0EF856EB00AD6466ED18368545F7459 /* Build configuration list for PBXNativeTarget "RevealingSplashView" */;
+			buildPhases = (
+				5AC4CA394125D6504D668CBEA4AEFB57 /* Headers */,
+				1F38E196797C73D328B4B719F776DF0E /* Sources */,
+				B759B2C53D4AFDA53541B04006E90D81 /* Frameworks */,
+				A806A1901A533170B0EEC9017A39D069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RevealingSplashView;
+			productName = RevealingSplashView;
+			productReference = BD56534C888FE385363934C9ABE6E7B4 /* RevealingSplashView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DFBAF98039AB4BA7927B611FB65B61BC /* SkyFloatingLabelTextField */ = {
@@ -422,18 +809,29 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 03B632DB51F2FFEFD3BF9B8C040D890F /* Products */;
+			productRefGroup = 51EA162A36ED58BDCA2F52F2E4DDDCE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				5E6A4B14CA023C808656D9DC438729B2 /* FaveButton */,
+				9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */,
 				03A83D77EB737EC7F029C9E4E62FD20D /* Pods-petitui */,
+				A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */,
 				DFBAF98039AB4BA7927B611FB65B61BC /* SkyFloatingLabelTextField */,
+				503D6A14D98D6081510928BA52AC3013 /* SwiftyImage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		09AB0E3559EC34FDCDE57B6FB4DCC83A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		145E33802FEE2F044BC25971B397C955 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,7 +846,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2232ACCBE4C0C2C821EB4CE05FA7FC5 /* Resources */ = {
+		53A26786D2B1AB9082AE10B0884A0369 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B1389745ED5DC4AD9D8CB01CA1F17A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94A434D8BBC876918D410EE52E04B63C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A806A1901A533170B0EEC9017A39D069 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,6 +877,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F38E196797C73D328B4B719F776DF0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CFFBD55760461439DCD2E287895CF0C /* Animations.swift in Sources */,
+				345301588CE2D5818996472BA109A6B2 /* RevealingSplashView-dummy.m in Sources */,
+				941CF8600D86F37CEF165DA6E7F3134A /* RevealingSplashView.swift in Sources */,
+				334B4420C1D35AB5E97786B7EC59AF53 /* SplashAnimatable.swift in Sources */,
+				776C8675E6F20EE4F8C7D7344D670BB1 /* SplashAnimationType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7349DB0E9BEBE664696F1DCC25226F26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,11 +929,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92E1B93330C47BD91C96B21AB0633927 /* Sources */ = {
+		772BB3F10A38DC7CC0BBE0180B6F29C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32306C3289769E0CB99E5581372B81D7 /* Pods-petitui-dummy.m in Sources */,
+				25F1E75FFD798B196629421E6E437D1B /* SwiftyImage-dummy.m in Sources */,
+				C258779885B794A4A16463D06F97FE4B /* SwiftyImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DEC16E92F34B96099868AC30F1B0CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD170A2CCD3EADFF33208216A32B942A /* Pods-petitui-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90885B593DF339143C12084C8F0F1F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E20160C620D19F6A08ADA8EA69C7D054 /* Constraints+.swift in Sources */,
+				CA350C5D0D5AD3D3C04B4E70D6B87A85 /* Easing.swift in Sources */,
+				79DC660BABE7437E569F3008C7684623 /* FaveButton-dummy.m in Sources */,
+				099FEC5512A47F85F3708ACC9F25BBEE /* FaveButton.swift in Sources */,
+				19EDCFE01866B3BC748DF8BF398D8722 /* FaveIcon.swift in Sources */,
+				E09D379E6F22B04285B27B2246BB115C /* Geometry.swift in Sources */,
+				0AB624A38E35C23E82EF9B04792EBF17 /* Init.swift in Sources */,
+				2B532BA2EE7ABE5A7ECF90D14F5CC4C1 /* Ring.swift in Sources */,
+				EC708BD03D699443A30E0FDB4B9BBE08 /* Spark.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C758758628D5436EE2CE313CCDBB69A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C3FDD1FC86D93B805BFC5F7275104C3 /* CheckboxButton.swift in Sources */,
+				F27336E36E943139D98D59B3206DA50F /* CheckboxButtonContainer.swift in Sources */,
+				D910DEA97F985EE37DB29BE21FC6F312 /* CheckboxButtonContainerView.swift in Sources */,
+				652660D8A0DED1B07F1D3304C68972BE /* CheckBoxColor.swift in Sources */,
+				C4CF9DB856606722BEA2C24F67F47ED2 /* CheckboxLineStyle.swift in Sources */,
+				B5158000D8AF34EC5472BEB7614DA645 /* MBRadioCheckboxButton-dummy.m in Sources */,
+				842EEDEA961F5E57A0C03FEEF1BF469B /* RadioButton.swift in Sources */,
+				8A44B1C9B94C2C6831EA5F935560C256 /* RadioButtonCircleStyle.swift in Sources */,
+				741FA609F45BC4F01D1A587DF19ECBBA /* RadioButtonColor.swift in Sources */,
+				B4EDD6BA5B7FF2597E37BA39BAF1741B /* RadioButtonContainer.swift in Sources */,
+				EC4EA53823A5D1C79F5E68EE4B389E8F /* RadioButtonContainerView.swift in Sources */,
+				96E0C24088BBA11F6C17B3D9277383FA /* RadioCheckboxBaseButton.swift in Sources */,
+				46E1797A3F13C02626E28F990BA9644B /* RadioCheckboxBaseContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,24 +996,48 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		65481002C780985E9C56F35EBFA707B7 /* PBXTargetDependency */ = {
+		478D678A0F852334B7018F223B262569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBRadioCheckboxButton;
+			target = 9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */;
+			targetProxy = 647A95037FD2ACCAB446271196ABBA63 /* PBXContainerItemProxy */;
+		};
+		552F52C4824B7EB9A4F3E4F1E339D1E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 45F7C9815004FE6BFFC931FD509FC19D /* PBXContainerItemProxy */;
+			targetProxy = 16F2709E7BEC566E2E817248C6A32139 /* PBXContainerItemProxy */;
 		};
-		6B4DD41CC1434FF6283812E0C538C097 /* PBXTargetDependency */ = {
+		69ABFF0F534770A9B9CFBAA517E8D97A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyImage;
+			target = 503D6A14D98D6081510928BA52AC3013 /* SwiftyImage */;
+			targetProxy = 1252EB0E9D87F3F2DE1EC4B13C4B9F1F /* PBXContainerItemProxy */;
+		};
+		6B9F45D5C987353B139EB6946F0168F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RevealingSplashView;
+			target = A16BB753FC705C22DAFCD8B7C1071A09 /* RevealingSplashView */;
+			targetProxy = 72AA0A1FC0F980EC39EECF9D542BFE18 /* PBXContainerItemProxy */;
+		};
+		A47B9CF9AAF2B86405FCFC46B8616463 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FaveButton;
+			target = 5E6A4B14CA023C808656D9DC438729B2 /* FaveButton */;
+			targetProxy = DB6073B1D87FB4AAF1C6825C4CF38ED5 /* PBXContainerItemProxy */;
+		};
+		D898FC89EC5B1D11794C25F394A4CD68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SkyFloatingLabelTextField;
 			target = DFBAF98039AB4BA7927B611FB65B61BC /* SkyFloatingLabelTextField */;
-			targetProxy = A746E84B6E5A04CC1891FB396E373F1A /* PBXContainerItemProxy */;
+			targetProxy = 16C5C55968BAA0DF5F8EB8F3DCE992C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00319A2330DC739FCBFBB6CFB0C5F58D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D673063696C17A318E082BAA49C9A6 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 9A7488A485BA44FED82237EA49044C56 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -571,9 +1071,44 @@
 			};
 			name = Debug;
 		};
+		047E9A4160DD0932E5CADB226F0E53DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E921E376BD744C3D800798F91FDA2C2F /* MBRadioCheckboxButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton.modulemap";
+				PRODUCT_MODULE_NAME = MBRadioCheckboxButton;
+				PRODUCT_NAME = MBRadioCheckboxButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0CAA74F216DF54615123E226D57250E1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B1642566BF287C600EE424862A58D80 /* SkyFloatingLabelTextField.xcconfig */;
+			baseConfigurationReference = 7EDE7180724005B78E74F9D4F8D37388 /* SkyFloatingLabelTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -607,9 +1142,45 @@
 			};
 			name = Release;
 		};
+		0DBCC192316151E9CBE4518505D9EB42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FAA4DB36817091FB679E5382D27A8C0 /* RevealingSplashView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RevealingSplashView/RevealingSplashView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RevealingSplashView/RevealingSplashView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RevealingSplashView/RevealingSplashView.modulemap";
+				PRODUCT_MODULE_NAME = RevealingSplashView;
+				PRODUCT_NAME = RevealingSplashView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		107C9D26B101E501D0E5D2A2562F3875 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B1642566BF287C600EE424862A58D80 /* SkyFloatingLabelTextField.xcconfig */;
+			baseConfigurationReference = 7EDE7180724005B78E74F9D4F8D37388 /* SkyFloatingLabelTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -636,6 +1207,41 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C9E146998E747A327BAB85B0BCF6709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FAA4DB36817091FB679E5382D27A8C0 /* RevealingSplashView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RevealingSplashView/RevealingSplashView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RevealingSplashView/RevealingSplashView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RevealingSplashView/RevealingSplashView.modulemap";
+				PRODUCT_MODULE_NAME = RevealingSplashView;
+				PRODUCT_NAME = RevealingSplashView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -766,7 +1372,81 @@
 			};
 			name = Release;
 		};
-		E39C3570D8C4103D3F61E72EE572EC8F /* Release */ = {
+		47A9D2E0BFA84147516444CC83495B7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40582DFD900730CFE0D2BE96DA17C10A /* SwiftyImage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyImage/SwiftyImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyImage/SwiftyImage-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyImage/SwiftyImage.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyImage;
+				PRODUCT_NAME = SwiftyImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4FAEE99FC8E7E77988DBFBDC660E9AD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 637CD34CC6E6BEA59E0D48CB58C7CCFD /* Pods-petitui.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-petitui/Pods-petitui-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-petitui/Pods-petitui.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		611086BCC79C62621CF42097A055DF02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 044D90FE596AB43823EEF7E2BB7EE336 /* Pods-petitui.release.xcconfig */;
 			buildSettings = {
@@ -805,12 +1485,10 @@
 			};
 			name = Release;
 		};
-		F3D3C2BB9331D3E73A4BAB9F61ACD9CC /* Debug */ = {
+		74EBEF954A4B20806292A4A6AD48FCA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 637CD34CC6E6BEA59E0D48CB58C7CCFD /* Pods-petitui.debug.xcconfig */;
+			baseConfigurationReference = 40582DFD900730CFE0D2BE96DA17C10A /* SwiftyImage.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -820,23 +1498,129 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-petitui/Pods-petitui-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyImage/SwiftyImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyImage/SwiftyImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-petitui/Pods-petitui.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwiftyImage/SwiftyImage.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyImage;
+				PRODUCT_NAME = SwiftyImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AED20E81343D93B117BFE457ADE9638F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCAB764DDFD65DF3BC07F174B2494D14 /* FaveButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FaveButton/FaveButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FaveButton/FaveButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FaveButton/FaveButton.modulemap";
+				PRODUCT_MODULE_NAME = FaveButton;
+				PRODUCT_NAME = FaveButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5C01BB06952A2F667D5692BB622639F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E921E376BD744C3D800798F91FDA2C2F /* MBRadioCheckboxButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton.modulemap";
+				PRODUCT_MODULE_NAME = MBRadioCheckboxButton;
+				PRODUCT_NAME = MBRadioCheckboxButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D6700B117A27A4204FE020D1B0A78572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCAB764DDFD65DF3BC07F174B2494D14 /* FaveButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FaveButton/FaveButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FaveButton/FaveButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FaveButton/FaveButton.modulemap";
+				PRODUCT_MODULE_NAME = FaveButton;
+				PRODUCT_NAME = FaveButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -845,7 +1629,7 @@
 		};
 		F659822BFF3B3C20B29B76B89800A5E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D673063696C17A318E082BAA49C9A6 /* Alamofire.xcconfig */;
+			baseConfigurationReference = 9A7488A485BA44FED82237EA49044C56 /* Alamofire.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -892,6 +1676,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		28DA69252F589F93B8840CF01BD9B533 /* Build configuration list for PBXNativeTarget "MBRadioCheckboxButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047E9A4160DD0932E5CADB226F0E53DA /* Debug */,
+				D5C01BB06952A2F667D5692BB622639F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -910,11 +1703,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F73279888A6BA84ED67CDD81D12BD60 /* Build configuration list for PBXNativeTarget "Pods-petitui" */ = {
+		BB3EDD8385BEE7FA6E91260C41C17A1C /* Build configuration list for PBXNativeTarget "SwiftyImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3D3C2BB9331D3E73A4BAB9F61ACD9CC /* Debug */,
-				E39C3570D8C4103D3F61E72EE572EC8F /* Release */,
+				74EBEF954A4B20806292A4A6AD48FCA6 /* Debug */,
+				47A9D2E0BFA84147516444CC83495B7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9246E7C28305301063C85E14244035C /* Build configuration list for PBXNativeTarget "FaveButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6700B117A27A4204FE020D1B0A78572 /* Debug */,
+				AED20E81343D93B117BFE457ADE9638F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0EF856EB00AD6466ED18368545F7459 /* Build configuration list for PBXNativeTarget "RevealingSplashView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C9E146998E747A327BAB85B0BCF6709 /* Debug */,
+				0DBCC192316151E9CBE4518505D9EB42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1A543DB7631714E3622BDA515F2C1A5 /* Build configuration list for PBXNativeTarget "Pods-petitui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAEE99FC8E7E77988DBFBDC660E9AD4 /* Debug */,
+				611086BCC79C62621CF42097A055DF02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

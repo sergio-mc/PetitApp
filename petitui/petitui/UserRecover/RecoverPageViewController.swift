@@ -23,6 +23,13 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
             if let email = userRecoverEmail {
                 if(DataHelpers.isValidEmail(email)){
                     sendEmail(email: email)
+                    {
+                        (isWorking) in
+                        if(isWorking)
+                        {
+                            
+                        }
+                    }
                     self.showSpinner()
                 }
             }
@@ -62,7 +69,7 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
         }
     }
     
-    func sendEmail(email:String)  {
+    func sendEmail(email:String,completion: @escaping (Bool) -> ())  {
         let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/password/reset")
         AF.request(url!,
                    method: .post,
@@ -70,21 +77,30 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
                    encoder: JSONParameterEncoder.default
             
         ).response { response in
-            do{
-                let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
-                if(responseData.code==200) {
-                    self.navigationController?.popViewController(animated: false)
-                    self.removeSpinner()
-                    self.present(DataHelpers.displayAlert(userMessage:"mail sended!", alertType: 1), animated: true, completion: nil)
-                }else{
-                    self.removeSpinner()
-                    self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+            
+            if(response.error == nil){
+                var isWorking = false
+                do{
+                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                    if(responseData.code==200) {
+                        self.navigationController?.popViewController(animated: false)
+                        self.removeSpinner()
+                        isWorking = true
+                        self.present(DataHelpers.displayAlert(userMessage:"mail sended!", alertType: 1), animated: true, completion: nil)
+                    }else{
+                        self.removeSpinner()
+                        self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
+                        completion(isWorking)
+                    }
+                }catch{
+                    print(error)
                 }
-            }catch{
-                print(error)
+            }else{
+                self.removeSpinner()
+                self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
             }
+            
         }
-        
     }
     
     func showSpinner()
