@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1971,6 +1971,7 @@
                                                         <rect key="frame" x="10" y="30" width="380" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
+                                                            <action selector="editingEndDistance:" destination="8um-Ny-Qbk" eventType="touchUpInside" id="Lbx-1f-m1Y"/>
                                                             <action selector="onChangeDistanceSlider:" destination="8um-Ny-Qbk" eventType="valueChanged" id="JX1-53-77W"/>
                                                         </connections>
                                                     </slider>
@@ -1978,6 +1979,7 @@
                                                         <rect key="frame" x="10" y="30" width="380" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
+                                                            <action selector="editingEndAge:" destination="8um-Ny-Qbk" eventType="touchUpInside" id="JUS-bq-xhJ"/>
                                                             <action selector="onChangeAgeSlider:" destination="8um-Ny-Qbk" eventType="valueChanged" id="ngI-dv-woj"/>
                                                         </connections>
                                                     </slider>

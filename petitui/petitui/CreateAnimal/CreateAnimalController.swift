@@ -87,7 +87,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     
     @IBAction func addPetButton(_ sender: Any) {
         if(checkAllFields()){
-            createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: 80, longitude: 80, preferedPhoto: "picture")
+            createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: "80", longitude: "80", preferedPhoto: "picture")
         }
         print(checkAllFields())
     }
@@ -135,7 +135,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
         return true
     }
     
-    func createAnimal(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String){
+    func createAnimal(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:String, longitude:String,preferedPhoto:String){
           self.showSpinner()
         let pet=Pet(idOwner: idOwner, type: type, name: name, sex: sex, age: age, animalDescription: animalDescription, breed: breed, latitude: latitude, longitude: longitude, preferedPhoto: preferedPhoto)
         

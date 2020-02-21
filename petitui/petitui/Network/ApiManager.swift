@@ -97,78 +97,12 @@ class ApiManager {
         }
         
     }
-    
-    static func getAnimalsAge(age: Int, completion: @escaping ([Pet]) -> ()){
-    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/age/\(age)")
-    AF.request(url!,
-               method: .get
-    )
-        .validate()
-        .responseJSON { response in
-            if(response.error == nil){
-                do{
-                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        if let pets = responseData.animals {
-                            completion(pets)
-                        }
-                    }
-                }catch{
-                    print(error)
-                }
-            }
-        }
-    }
-    static func getAnimalsBreed(breed: String, completion: @escaping ([Pet]) -> ()){
-    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/breed/\(breed)")
-    AF.request(url!,
-               method: .get
-    )
-        .validate()
-        .responseJSON { response in
-            if(response.error == nil){
-                do{
-                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        if let pets = responseData.animals {
-                            completion(pets)
-                        }
-                    }
-                }catch{
-                    print(error)
-                }
-            }
-        }
-    }
-    
-    static func getAnimalsDistance(latitude: Float, longitude: Float, distance: Int, completion: @escaping ([Pet]) -> ()){
-    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/distance/\(latitude)/\(longitude)/\(distance)/")
-    AF.request(url!,
-               method: .get
-    )
-        .validate()
-        .responseJSON { response in
-            if(response.error == nil){
-                do{
-                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        if let pets = responseData.animals {
-                            completion(pets)
-                        }
-                    }
-                }catch{
-                    print(error)
-                }
-            }
-        }
-    }
-    
+
     static func getAnimalsFilters(filterAnimalModel : FilterAnimalsModel, completion: @escaping ([Pet]) -> ()){
     let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/filtered")
     AF.request(url!,
                method: .get,
-               parameters:filterAnimalModel,
-               encoder: JSONParameterEncoder.default
+               parameters:filterAnimalModel
     )
         .validate()
         .responseJSON { response in
@@ -219,8 +153,8 @@ class ApiManager {
             multipartFormData.append(Data(String(pet.age).utf8), withName: "age")
             multipartFormData.append(Data(pet.animalDescription.utf8), withName: "description")
             multipartFormData.append(Data(pet.breed?.utf8 ?? "".utf8), withName: "breed")
-            multipartFormData.append(Data(String(pet.longitude).utf8), withName: "longitude")
-            multipartFormData.append(Data(String(pet.latitude).utf8), withName: "latitude")
+            multipartFormData.append(Data(pet.longitude.utf8), withName: "longitude")
+            multipartFormData.append(Data(pet.latitude.utf8), withName: "latitude")
             
             multipartFormData.append(data, withName: "picture",fileName: "picture", mimeType:  "image/png")
             //             multipartFormData.append(image, withName: "picture", fileName: "beagle", mimeType: "image/png")

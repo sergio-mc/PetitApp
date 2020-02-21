@@ -22,46 +22,24 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     @IBAction func dogFilterButton(_ sender: Any) {
-        dogFilter.layer.borderWidth = 2
-        catFilter.layer.borderWidth = 0
-        otherFilter.layer.borderWidth = 0
+        changeTypeButtonsBorder(dog:3)
+        filterAnimalsModel.type = "dog"
+        updateGridFilterd()
         
-        let dog: String = "dog"
-        filterAnimalsModel.type = dog
-        
-        ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
-            self.petsFeed=pets
-            print(self.petsFeed)
-            self.petsCollectionView.reloadData()
-        }
-       
         
     }
     @IBAction func catFilterButton(_ sender: Any) {
-        dogFilter.layer.borderWidth = 0
-        catFilter.layer.borderWidth = 2
-        otherFilter.layer.borderWidth = 0
+        changeTypeButtonsBorder(cat:3)
+        filterAnimalsModel.type = "cat"
+        updateGridFilterd()
         
-       let cat: String = "cat"
-       filterAnimalsModel.type = cat
-       ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
-           self.petsFeed=pets
-           self.petsCollectionView.reloadData()
-       }
     }
     
     @IBAction func otherFilterButton(_ sender: Any) {
-        dogFilter.layer.borderWidth = 0
-        catFilter.layer.borderWidth = 0
-        otherFilter.layer.borderWidth = 2
+        changeTypeButtonsBorder(other:3)
+        filterAnimalsModel.type = "other"
+        updateGridFilterd()
         
-        let other: String = "other"
-        filterAnimalsModel.type = other
-        ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel){pets in
-            self.petsFeed=pets
-            self.petsCollectionView.reloadData()
-        }
-    
     }
     
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
@@ -81,8 +59,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let currentValue: String = (sender as AnyObject).text
         filterText.text = "Breed: \(currentValue)"
         filterSelecter.setTitle("Breed: \(currentValue)", forSegmentAt: 0)
-        
-        
     }
     
     
@@ -91,8 +67,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let currentValue = Int(sender.value)
         filterText.text = "Distance: \(currentValue) km"
         filterSelecter.setTitle("Distance: \(currentValue) km", forSegmentAt: 1)
-        
-        
     }
     
     @IBAction func onChangeAgeSlider(_ sender: UISlider) {
@@ -102,11 +76,23 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         filterSelecter.setTitle("Age: \(currentValue)", forSegmentAt: 2)
     }
     
+    @IBAction func editingEndDistance(_ sender: UISlider) {
+        filterAnimalsModel.distance=Int(sender.value)
+        updateGridFilterd()
+    }
+    
+    @IBAction func editingEndAge(_ sender: UISlider) {
+        filterAnimalsModel.age=Int(sender.value)
+        updateGridFilterd()
+    }
+    
+    
     
     @IBAction func filterSwitch(controller sender: Any) {
+        setCollectionViewPosition()
         switch filterSelecter.selectedSegmentIndex {
         case 0:
-            setCollectionViewPosition()
+            
             filterSearchBar.isEnabled = true
             filterSearchBar.isHighlighted = true
             filterText.isHidden = true
@@ -115,7 +101,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = true
             break
         case 1:
-            setCollectionViewPosition()
             filterSearchBar.isHighlighted = false
             filterSearchBar.isEnabled = false
             filterText.text = "Distance: 0"
@@ -126,7 +111,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = true
             break
         case 2:
-            setCollectionViewPosition()
             filterSearchBar.isHighlighted = false
             filterSearchBar.isEnabled = false
             filterText.text = "Age: 0"
@@ -137,15 +121,14 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filterAgeSlider.isHidden = false
             break
         default:
-            setCollectionViewPosition()
             filterText.isHidden = false
             filterSearchBar.isHidden = false
             filterDistanceSlider.isHidden = false
             filterAgeSlider.isHidden = false
         }
     }
- 
-
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return petsFeed.count
@@ -174,16 +157,12 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.petsCollectionView.reloadData()
@@ -191,18 +170,9 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
         
-        dogFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
-        dogFilter.layer.borderWidth = 0
-        
-        catFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
-        catFilter.layer.borderWidth = 0
-        
-        otherFilter.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
-        otherFilter.layer.borderWidth = 0
-        
-        filterSelecter.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
-        
-        filterSelecter.layer.borderWidth = 1
+        setColorAndWidth(button: dogFilter)
+        setColorAndWidth(button: catFilter)
+        setColorAndWidth(button: otherFilter)
         
         UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
         
@@ -238,8 +208,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         filterDistanceSlider.isHidden = true
         filterAgeSlider.isHidden = true
         filterSelecter.selectedSegmentIndex -= 3;
-        
-        
         titleNewPets.frame.origin.y = 320
         petsCollectionView.frame.origin.y = 350
     }
@@ -257,20 +225,20 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-       if gesture.direction == .right {
-            print("Swipe Right")
-       }
-       else if gesture.direction == .left {
-            print("Swipe Left")
-       }
-       else if gesture.direction == .up {
-            print("Swipe Up")
-       }
-       else if gesture.direction == .down {
+        //        if gesture.direction == .right {
+        //            print("Swipe Right")
+        //        }
+        //        else if gesture.direction == .left {
+        //            print("Swipe Left")
+        //        }
+        //        else if gesture.direction == .up {
+        //            print("Swipe Up")
+        //        }
+        if gesture.direction == .down {
             // Recargar datos cuando sabemos que la base de datos esta actualizada
             self.viewDidLoad()
             self.viewWillAppear(true)
-       }
+        }
     }
     
     func setCollectionViewPosition()
@@ -279,15 +247,35 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         petsCollectionView.frame.origin.y = 430
     }
     
+    func updateGridFilterd() {
+        print(filterAnimalsModel)
+        ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel ){
+            filteredPets in
+            self.petsFeed=filteredPets
+            self.petsCollectionView.reloadData()
+        }
+        
+    }
+    
+    func changeTypeButtonsBorder(dog:CGFloat = 0,cat:CGFloat = 0,other:CGFloat = 0) {
+        dogFilter.layer.borderWidth = dog
+        catFilter.layer.borderWidth = cat
+        otherFilter.layer.borderWidth = other
+        
+    }
+    func setColorAndWidth(button:UIButton)  {
+        button.layer.borderWidth = 0
+        button.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor     }
+    
     
 }
 
 extension CALayer {
-
+    
     func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
+        
         let border = CALayer()
-
+        
         switch edge {
         case UIRectEdge.top:
             border.frame = CGRect(x: -50, y: -5, width: self.frame.width, height: thickness)
@@ -304,10 +292,10 @@ extension CALayer {
         default:
             break
         }
-
+        
         border.backgroundColor = UIColor.lightGray.cgColor
-
+        
         self.addSublayer(border)
     }
-
+    
 }
