@@ -101,22 +101,22 @@
 		7F0802A523C8CE34008A640A /* petitui */ = {
 			isa = PBXGroup;
 			children = (
+				7F0802A623C8CE34008A640A /* AppDelegate.swift */,
+				7F0802B223C8CE36008A640A /* Info.plist */,
 				CE4249BE23FF06C90022B6CD /* FavoritesAnimals */,
 				CE7E7EBD23F4481E00029694 /* CreateAnimal */,
 				B207D3F723DB4CDC001D788D /* AnimalFeed */,
-				7F0802A623C8CE34008A640A /* AppDelegate.swift */,
 				B2E80E6F23D75C39008D3C29 /* RegisterUser */,
 				B2E047FF23D898CD00CFD8D1 /* UserLogin */,
 				B2E0480023D8994900CFD8D1 /* UserRecover */,
 				B2E0480123D89AAC00CFD8D1 /* SharedModels */,
 				CE8342CD23DB4BF4008B15C5 /* DetailAnimalView */,
-				7F0802AA23C8CE34008A640A /* Main.storyboard */,
-				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
-				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
-				7F0802B223C8CE36008A640A /* Info.plist */,
 				B2D6599224009753003CD6A5 /* DataModels */,
 				B2D659932400980C003CD6A5 /* Network */,
 				B2D6599424009823003CD6A5 /* Helpers */,
+				7F0802AA23C8CE34008A640A /* Main.storyboard */,
+				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
+				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */,
 				CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */,
 			);
