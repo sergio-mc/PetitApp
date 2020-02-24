@@ -111,6 +111,7 @@
 				B2E0480023D8994900CFD8D1 /* UserRecover */,
 				B2E0480123D89AAC00CFD8D1 /* SharedModels */,
 				CE8342CD23DB4BF4008B15C5 /* DetailAnimalView */,
+				B2D697F72404580800A3D1C0 /* ChatController */,
 				B2D6599224009753003CD6A5 /* DataModels */,
 				B2D659932400980C003CD6A5 /* Network */,
 				B2D6599424009823003CD6A5 /* Helpers */,
@@ -175,6 +176,13 @@
 				CE9A54E023ECA65700C5427F /* TabBarViewController.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B2D697F72404580800A3D1C0 /* ChatController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatController;
 			sourceTree = "<group>";
 		};
 		B2E047FF23D898CD00CFD8D1 /* UserLogin */ = {
