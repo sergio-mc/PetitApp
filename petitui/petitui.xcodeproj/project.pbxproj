@@ -20,6 +20,9 @@
 		B21D9E5B23D62F7000F56ECA /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */; };
 		B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231145D23EDB147001E4831 /* ImagePickerManager.swift */; };
 		B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A0B3723EB1B15008DFF67 /* ApiManager.swift */; };
+		B2D697F9240458D700A3D1C0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697F8240458D700A3D1C0 /* ChatViewController.swift */; };
+		B2D697FB240458F500A3D1C0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697FA240458F500A3D1C0 /* Message.swift */; };
+		B2D697FD2404596E00A3D1C0 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */; };
 		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
 		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
 		B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E80E7023D77550008D3C29 /* UserModel.swift */; };
@@ -52,6 +55,9 @@
 		B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B231145D23EDB147001E4831 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = petitui/ImagePickerManager.swift; sourceTree = SOURCE_ROOT; };
 		B24A0B3723EB1B15008DFF67 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		B2D697F8240458D700A3D1C0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B2D697FA240458F500A3D1C0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		B2E80E7023D77550008D3C29 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				CE8342D023DB4EDB008B15C5 /* PetModel.swift */,
 				B2E80E7023D77550008D3C29 /* UserModel.swift */,
 				B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */,
+				B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -181,6 +188,8 @@
 		B2D697F72404580800A3D1C0 /* ChatController */ = {
 			isa = PBXGroup;
 			children = (
+				B2D697F8240458D700A3D1C0 /* ChatViewController.swift */,
+				B2D697FA240458F500A3D1C0 /* Message.swift */,
 			);
 			path = ChatController;
 			sourceTree = "<group>";
@@ -364,6 +373,7 @@
 				B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */,
 				B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */,
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
+				B2D697FD2404596E00A3D1C0 /* MessageResponse.swift in Sources */,
 				CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */,
 				B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */,
 				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,
@@ -375,10 +385,12 @@
 				3E31C5FB23FF088500516597 /* FilterAnimalsModel.swift in Sources */,
 				B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */,
 				CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */,
+				B2D697F9240458D700A3D1C0 /* ChatViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 				CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */,
 				B21D9E5B23D62F7000F56ECA /* RegisterModel.swift in Sources */,
 				CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */,
+				B2D697FB240458F500A3D1C0 /* Message.swift in Sources */,
 				CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */,
 				B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */,
 			);
