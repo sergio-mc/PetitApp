@@ -10,10 +10,10 @@ struct Pet: Codable {
     let animalDescription, preferedPhoto: String
     let breed: String?
     let idOwner, age : Int
-    let latitude, longitude :Double
+    let latitude, longitude :String
     let id: Int?
     
-    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String, id:Int) {
+    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:String, longitude:String,preferedPhoto:String, id:Int) {
         self.idOwner = idOwner
         self.name = name
         self.type = type
@@ -26,7 +26,7 @@ struct Pet: Codable {
         self.preferedPhoto = preferedPhoto
         self.id = id
     }
-    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String) {
+    init(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:String, longitude:String,preferedPhoto:String) {
            self.idOwner = idOwner
            self.name = name
            self.type = type

@@ -129,6 +129,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                     
                 }
             }else{
+                self.removeSpinner()
                 self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
             }
             

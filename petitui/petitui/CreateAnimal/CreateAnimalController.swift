@@ -8,13 +8,28 @@
 
 import UIKit
 import Alamofire
+import MBRadioCheckboxButton
 
-class CreateAnimalController: UIViewController {
+
+class CreateAnimalController: UIViewController, RadioButtonDelegate{
+    
+    func radioButtonDidSelect(_ button: RadioButton) {
+        genre = button.title(for: .normal)!
+        print("Select: ", button.title(for: .normal)!)
+        print(genre!)
+    }
+    
+    func radioButtonDidDeselect(_ button: RadioButton) {
+        print("Deselect: ",  button.title(for: .normal)!)
+    }
+    
     
     fileprivate var activityView : UIView?
     
     var typeValue : String = ""
     var imageToUpload: UIImage?
+    var groupContainer = RadioButtonContainer()
+    var genre: String?
     
     @IBOutlet weak var dogType: UIButton!
     @IBOutlet weak var catType: UIButton!
@@ -25,6 +40,12 @@ class CreateAnimalController: UIViewController {
     @IBOutlet weak var inputBreed: UITextField!
     @IBOutlet weak var inputAge: UITextField!
     @IBOutlet weak var inputDescription: UITextField!
+    
+    @IBOutlet weak var ViewGroup1: RadioButtonContainerView!
+    
+    @IBOutlet weak var radioButtonMale: RadioButton!
+    
+    @IBOutlet weak var radioButtonFemale: RadioButton!
     
     
     @IBAction func uploadPetImage(_ sender: Any) {
@@ -41,7 +62,7 @@ class CreateAnimalController: UIViewController {
         dogType.layer.borderWidth = 2
         catType.layer.borderWidth = 0
         otherType.layer.borderWidth = 0
-        typeValue = "dog"
+        typeValue = "Dog"
         print(typeValue)
         
     }
@@ -49,14 +70,14 @@ class CreateAnimalController: UIViewController {
         dogType.layer.borderWidth = 0
         catType.layer.borderWidth = 2
         otherType.layer.borderWidth = 0
-        typeValue = "cat"
+        typeValue = "Cat"
         print(typeValue)
     }
     @IBAction func othersTypeButton(_ sender: Any) {
         dogType.layer.borderWidth = 0
         catType.layer.borderWidth = 0
         otherType.layer.borderWidth = 2
-        typeValue = "other"
+        typeValue = "Other"
         print(typeValue)
     }
     
@@ -66,7 +87,7 @@ class CreateAnimalController: UIViewController {
     
     @IBAction func addPetButton(_ sender: Any) {
         if(checkAllFields()){
-            createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genreSelector.titleForSegment(at: genreSelector.selectedSegmentIndex) ?? "male", age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: 80, longitude: 80, preferedPhoto: "picture")
+            createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: "80", longitude: "80", preferedPhoto: "picture")
         }
         print(checkAllFields())
     }
@@ -86,7 +107,12 @@ class CreateAnimalController: UIViewController {
         
         otherType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         otherType.layer.borderWidth = 0
+        setupGroup()
+        
+        
     }
+    
+    
     
     func checkAllFields()->Bool {
         print("age",DataHelpers.isValidage(inputAge.text!))
@@ -109,7 +135,7 @@ class CreateAnimalController: UIViewController {
         return true
     }
     
-    func createAnimal(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:Double, longitude:Double,preferedPhoto:String){
+    func createAnimal(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:String, longitude:String,preferedPhoto:String){
           self.showSpinner()
         let pet=Pet(idOwner: idOwner, type: type, name: name, sex: sex, age: age, animalDescription: animalDescription, breed: breed, latitude: latitude, longitude: longitude, preferedPhoto: preferedPhoto)
         
@@ -163,6 +189,31 @@ class CreateAnimalController: UIViewController {
     func segueAnimalFeed()  {
         performSegue(withIdentifier: "animalFeedSegue", sender: nil)
     }
+    func setupGroup() {
+            
+        groupContainer.addButtons([radioButtonMale,radioButtonFemale])
+        groupContainer.delegate = self
+            groupContainer.selectedButton = radioButtonMale
+            
+            // Set cutsom color for each button
+            radioButtonMale.radioButtonColor = RadioButtonColor(active: radioButtonMale.tintColor, inactive: radioButtonMale.tintColor)
+            radioButtonMale.style = .circle
+            radioButtonFemale.radioButtonColor = RadioButtonColor(active: radioButtonFemale.tintColor
+                , inactive: radioButtonFemale.tintColor)
+        radioButtonFemale.style = .circle
+            
+            // Set up cirlce size here
+            radioButtonMale.radioCircle = RadioButtonCircleStyle.init(outerCircle: 25, innerCircle: 15, outerCircleBorder: 2, contentPadding: 25)
+            radioButtonFemale.radioCircle = RadioButtonCircleStyle.init(outerCircle: 25, innerCircle: 15, outerCircleBorder: 2, contentPadding: 25)
+            
+        
+        
+        }
+    
+    
+    
     
     
 }
+
+ 
