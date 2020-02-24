@@ -59,6 +59,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let currentValue: String = (sender as AnyObject).text
         filterText.text = "Breed: \(currentValue)"
         filterSelecter.setTitle("Breed: \(currentValue)", forSegmentAt: 0)
+        filterAnimalsModel.breed = currentValue
+        updateGridFilterd()
     }
     
     
