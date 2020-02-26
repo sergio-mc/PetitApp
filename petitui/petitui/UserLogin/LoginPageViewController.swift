@@ -80,6 +80,9 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         revealingSplashView.startAnimation(){
             print("Completed")
         }
+        
+        
+        
     }
     
     // This will notify us when something has changed on the textfield
@@ -165,6 +168,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         activityView?.removeFromSuperview()
         activityView = nil
     }
+    
     
     
 }

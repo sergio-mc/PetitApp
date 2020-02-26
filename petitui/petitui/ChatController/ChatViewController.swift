@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import MessageKit
 import InputBarAccessoryView
+import MessageKit
+
 class ChatViewController: MessagesViewController {
     
     var messages: [Message] = []
