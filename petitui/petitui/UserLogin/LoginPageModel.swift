@@ -13,7 +13,7 @@
 //    let userPassword:String = "";
 //    
 //    func loginUser(email:String,password:String)  {
-//        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/login")
+//        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/login")
 //        let user=User( email: email, password: password)
 //        AF.request(url!,
 //                   method: .post,

@@ -98,7 +98,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         dogType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         dogType.layer.borderWidth = 0
         

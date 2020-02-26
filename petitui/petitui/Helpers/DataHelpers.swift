@@ -57,13 +57,21 @@ class DataHelpers{
            return passPred.evaluate(with: age)
        }
     
-    //
+    
     static func isValidRepeatedPassword(_ repeatedPassword: String , _ userPassword : String) -> Bool {
         return userPassword == repeatedPassword
     }
     
-
-    
     
 }
-
+    extension UIViewController {
+        func hideKeyboardWhenTappedAround() {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+        
+        @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+    }

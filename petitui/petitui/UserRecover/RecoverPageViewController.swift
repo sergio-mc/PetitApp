@@ -46,6 +46,8 @@ class RecoverPageViewController: UIViewController,UITextFieldDelegate{
         userEmail.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     @objc func textFieldDidChange(_ textfield: UITextField) {

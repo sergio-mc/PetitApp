@@ -27,7 +27,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.hideKeyboardWhenTappedAround()
         usernameTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userEmailTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -103,7 +103,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
     }
     func createUser(email:String,password:String,userName:String)  {
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user")
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user")
         let user=User( email: email, password: password, userName: userName)
         
         AF.request(url!,

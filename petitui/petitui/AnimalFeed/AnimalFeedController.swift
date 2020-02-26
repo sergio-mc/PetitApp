@@ -164,7 +164,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.hideKeyboardWhenTappedAround()
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.petsCollectionView.reloadData()
