@@ -48,6 +48,7 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.favoritesCollectionView.reloadData()
