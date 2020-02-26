@@ -8,9 +8,9 @@
 
 
 import UIKit
+import CoreLocation
 
-
-class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var titleNewPets: UILabel!
     
     @IBOutlet weak var barItem: UITabBarItem!
@@ -40,7 +40,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         otherFilter.layer.borderWidth = 2
     }
     
-    
+    var locationManager: CLLocationManager?
     var petsFeed:[Pet] = []
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
@@ -175,7 +175,29 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         
         
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         
+        self.locationManager?.requestAlwaysAuthorization()
+        self.locationManager?.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+            if status == CLAuthorizationStatus.notDetermined{
+                 locationManager?.requestAlwaysAuthorization()
+                
+                print("Location enabled!!!!!!!!")
+            }
+            if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted{
+                let alert = UIAlertController(title: "Location service disabled", message: "Please enable location services in Settings", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+            }else{
+                print("LocationServices disenabled")
+                }
+            locationManager?.startUpdatingLocation()
+            }
+                
     }
     
     override func viewDidLayoutSubviews() {
