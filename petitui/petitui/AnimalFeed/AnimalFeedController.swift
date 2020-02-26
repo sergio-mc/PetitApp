@@ -151,8 +151,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             cell.petImage.image = UIImage(data: data)
         }
         
-        cell.cellUIView.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
-        cell.cellUIView.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
+        cell.layer.borderWidth = 0.5
         cell.petName.layer.addBorder(edge: UIRectEdge.top, color: UIColor.red, thickness: 0.5)
         cell.layer.cornerRadius = 20
         cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
@@ -280,7 +280,7 @@ extension CALayer {
         
         switch edge {
         case UIRectEdge.top:
-            border.frame = CGRect(x: -50, y: -5, width: self.frame.width, height: thickness)
+            border.frame = CGRect(x: 0, y: -5, width: self.frame.width, height: thickness)
             break
         case UIRectEdge.bottom:
             border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: UIScreen.main.bounds.width, height: thickness)

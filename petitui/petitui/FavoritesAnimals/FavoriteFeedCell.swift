@@ -11,7 +11,6 @@ import FaveButton
 
 class FavoriteFeedCell: UICollectionViewCell{
     
-    @IBOutlet weak var cellUIView: UIView!
     
     @IBOutlet weak var petImage: UIImageView!
     
