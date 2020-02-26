@@ -20,6 +20,9 @@
 		B21D9E5B23D62F7000F56ECA /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */; };
 		B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231145D23EDB147001E4831 /* ImagePickerManager.swift */; };
 		B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A0B3723EB1B15008DFF67 /* ApiManager.swift */; };
+		B2D697F9240458D700A3D1C0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697F8240458D700A3D1C0 /* ChatViewController.swift */; };
+		B2D697FB240458F500A3D1C0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697FA240458F500A3D1C0 /* Message.swift */; };
+		B2D697FD2404596E00A3D1C0 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */; };
 		B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */; };
 		B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */; };
 		B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E80E7023D77550008D3C29 /* UserModel.swift */; };
@@ -30,6 +33,8 @@
 		CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */; };
 		CE8342CF23DB4C63008B15C5 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */; };
 		CE8342D123DB4EDB008B15C5 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342D023DB4EDB008B15C5 /* PetModel.swift */; };
+		CE8977232405B0C9001AD2AD /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8977222405B0C9001AD2AD /* ChatListViewController.swift */; };
+		CE8977252405B33B001AD2AD /* ChatListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8977242405B33B001AD2AD /* ChatListViewCell.swift */; };
 		CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A54E023ECA65700C5427F /* TabBarViewController.swift */; };
 		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 		CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */; };
@@ -52,6 +57,9 @@
 		B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B231145D23EDB147001E4831 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePickerManager.swift; path = petitui/ImagePickerManager.swift; sourceTree = SOURCE_ROOT; };
 		B24A0B3723EB1B15008DFF67 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		B2D697F8240458D700A3D1C0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B2D697FA240458F500A3D1C0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		B2E047FD23D893AC00CFD8D1 /* DataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelpers.swift; sourceTree = "<group>"; };
 		B2E0480223D8C87000CFD8D1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		B2E80E7023D77550008D3C29 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -62,6 +70,8 @@
 		CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnimalController.swift; sourceTree = "<group>"; };
 		CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnimalViewController.swift; sourceTree = "<group>"; };
 		CE8342D023DB4EDB008B15C5 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		CE8977222405B0C9001AD2AD /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		CE8977242405B33B001AD2AD /* ChatListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewCell.swift; sourceTree = "<group>"; };
 		CE9A54E023ECA65700C5427F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +121,8 @@
 				B2E0480023D8994900CFD8D1 /* UserRecover */,
 				B2E0480123D89AAC00CFD8D1 /* SharedModels */,
 				CE8342CD23DB4BF4008B15C5 /* DetailAnimalView */,
+				B2D697F72404580800A3D1C0 /* ChatController */,
+				CE23DDCB2405A1CF009EF07D /* ChatListController */,
 				B2D6599224009753003CD6A5 /* DataModels */,
 				B2D659932400980C003CD6A5 /* Network */,
 				B2D6599424009823003CD6A5 /* Helpers */,
@@ -156,6 +168,7 @@
 				CE8342D023DB4EDB008B15C5 /* PetModel.swift */,
 				B2E80E7023D77550008D3C29 /* UserModel.swift */,
 				B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */,
+				B2D697FC2404596E00A3D1C0 /* MessageResponse.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -175,6 +188,15 @@
 				CE9A54E023ECA65700C5427F /* TabBarViewController.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B2D697F72404580800A3D1C0 /* ChatController */ = {
+			isa = PBXGroup;
+			children = (
+				B2D697F8240458D700A3D1C0 /* ChatViewController.swift */,
+				B2D697FA240458F500A3D1C0 /* Message.swift */,
+			);
+			path = ChatController;
 			sourceTree = "<group>";
 		};
 		B2E047FF23D898CD00CFD8D1 /* UserLogin */ = {
@@ -208,6 +230,15 @@
 				7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */,
 			);
 			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		CE23DDCB2405A1CF009EF07D /* ChatListController */ = {
+			isa = PBXGroup;
+			children = (
+				CE8977222405B0C9001AD2AD /* ChatListViewController.swift */,
+				CE8977242405B33B001AD2AD /* ChatListViewCell.swift */,
+			);
+			path = ChatListController;
 			sourceTree = "<group>";
 		};
 		CE4249BE23FF06C90022B6CD /* FavoritesAnimals */ = {
@@ -307,7 +338,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6D6A42DF1F53D0F0CEEAF455 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -356,21 +387,26 @@
 				B2E047FE23D893AC00CFD8D1 /* DataHelpers.swift in Sources */,
 				B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */,
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
+				B2D697FD2404596E00A3D1C0 /* MessageResponse.swift in Sources */,
+				CE8977232405B0C9001AD2AD /* ChatListViewController.swift in Sources */,
 				CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */,
 				B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */,
 				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,
 				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
 				CE8342D123DB4EDB008B15C5 /* PetModel.swift in Sources */,
+				CE8977252405B33B001AD2AD /* ChatListViewCell.swift in Sources */,
 				B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */,
 				CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */,
 				CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */,
 				3E31C5FB23FF088500516597 /* FilterAnimalsModel.swift in Sources */,
 				B231145E23EDB147001E4831 /* ImagePickerManager.swift in Sources */,
 				CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */,
+				B2D697F9240458D700A3D1C0 /* ChatViewController.swift in Sources */,
 				7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */,
 				CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */,
 				B21D9E5B23D62F7000F56ECA /* RegisterModel.swift in Sources */,
 				CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */,
+				B2D697FB240458F500A3D1C0 /* Message.swift in Sources */,
 				CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */,
 				B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */,
 			);

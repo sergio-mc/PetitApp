@@ -184,5 +184,25 @@ class ApiManager {
         }
         
     }
+    static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
+            let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/mesages/\(id)")
+            AF.request(url!, method: .get)
+                .validate()
+                .responseJSON { response in
+                    if(response.error == nil){
+                        do{
+                             let responseData:MessageResponse = try JSONDecoder().decode(MessageResponse.self, from: response.data!)
+                            if(responseData.code==200) {
+                                if let messages = responseData.messages {
+                                    completion(messages)
+                                }
+                            }
+                        }catch{
+                            print(error)
+                        }
+                    }
+            }
+        }
+    
     
 }
