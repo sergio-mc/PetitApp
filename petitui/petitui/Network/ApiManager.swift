@@ -260,6 +260,62 @@ class ApiManager {
                 }
         }
     }
+    static func getFavoritesByUser( id:Int, completion: @escaping ([Pet]) -> ()){
+         let url = URL(string:"http://0.0.0.0:8000/api/favorites")
+         AF.request(url!,
+                    method: .get,
+                    parameters: ["id_user" : id]
+             )
+             .validate()
+             .responseJSON { response in
+                 if(response.error == nil){
+                     do{
+                         let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                         if(responseData.code==200) {
+                             if let pets = responseData.animals {
+                                 completion(pets)
+                             }
+                         }
+                     }catch{
+                         print(error)
+                     }
+                 }
+         }
+     }
+     
+    /* static func createFavorite(favoriteModel: FavoriteModel ,data:Data, completion: @escaping (Bool) -> ()){
+         
+         let url = "http://127.0.0.1:8000/petit-api/public/api/add/favorite"
+         AF.upload(multipartFormData: { multipartFormData in
+             multipartFormData.append(Data(String(favoriteModel.idUser).utf8), withName: "id_user")
+             multipartFormData.append(Data(String(favoriteModel.idAnimal).utf8), withName: "id_animal")
+             
+         }, to: url)
+             .response{ response in
+                 print(response)
+             }
+             .uploadProgress(queue: .main, closure: { progress in
+                 //Current upload progress of file
+                 print("Upload Progress: \(progress.fractionCompleted)")
+             })
+             .responseJSON { response in
+                 if(response.error == nil){
+                     do{
+                         let responseData:AnimalResponse = try JSONDecoder().decode(AnimalResponse.self, from: response.data!)
+                         if(responseData.code==200) {
+                             if let favorite = responseData.animal {
+                                 completion(true)
+                             }
+                         }
+                     }catch{
+                         completion(false)
+                     }
+                 }
+                 
+                 
+         }
+         
+     }*/
     
     
 }

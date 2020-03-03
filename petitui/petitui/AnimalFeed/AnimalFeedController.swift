@@ -8,9 +8,9 @@
 
 
 import UIKit
+import CoreLocation
 
-
-class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AnimalFeedController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate      {
     @IBOutlet weak var titleNewPets: UILabel!
     
     @IBOutlet weak var barItem: UITabBarItem!
@@ -44,6 +44,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
+    var locationManager: CLLocationManager?
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
     @IBOutlet weak var filterDistanceSlider: UISlider!
@@ -169,6 +170,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             self.petsFeed=pets
             self.petsCollectionView.reloadData()
         }
+        
+        
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
         
@@ -182,10 +185,28 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
         
-        
-        
-        
-        
+        //        location
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager?.requestAlwaysAuthorization()
+        self.locationManager?.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+            if status == CLAuthorizationStatus.notDetermined{
+                locationManager?.requestAlwaysAuthorization()
+                
+                print("Location enabled!!!!!!!!")
+            }
+            if status == CLAuthorizationStatus.denied || status == CLAuthorizationStatus.restricted{
+                let alert = UIAlertController(title: "Location service disabled", message: "Please enable location services in Settings", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+            }else{
+                print("LocationServices disenabled")
+            }
+            locationManager?.startUpdatingLocation()
+        }
         
         
     }

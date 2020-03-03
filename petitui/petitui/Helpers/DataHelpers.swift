@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 //Displays an alert with a message depending on the string passed through parameters
 class DataHelpers{
     
@@ -62,7 +63,78 @@ class DataHelpers{
         return userPassword == repeatedPassword
     }
     
+    static func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+          guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+          print("COORDINATES = \(locValue.latitude) \(locValue.longitude)")
+          
+          
+          
+          convertLatLongToAddress(latitude: locValue.latitude, longitude: locValue.longitude)
+      }
+      
+      
+     static func convertLatLongToAddress(latitude:Double,longitude:Double){
 
+          let geoCoder = CLGeocoder()
+          let location = CLLocation(latitude: latitude, longitude: longitude)
+          geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+
+              // Place details
+              var placeMark: CLPlacemark!
+              placeMark = placemarks?[0]
+
+             
+              // Location name
+              let locationName = placeMark.location
+          
+              // Street address
+              let street = placeMark.thoroughfare
+              // Postal code
+              
+              let postalCode = placeMark.postalCode
+              
+              // City
+              let city = placeMark.subAdministrativeArea
+              // Zip code
+              let zip = placeMark.isoCountryCode
+              // Country
+              let country = placeMark.country
+         
+              var address1 = String(street!) + ", " + String(city!)
+              
+              var address2 = ", " + String(postalCode!) + ", " + String(zip!)
+              
+              var address = address1 + address2
+              
+              print(address)
+              
+              self.getLatLongFromAddress(address: address)
+          })
+
+      }
+      
+     static func getLatLongFromAddress(address : String) {
+    
+          
+          let geocoder = CLGeocoder()
+
+          geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+             if((error) != nil){
+                print("Error", error)
+             }
+             if let placemark = placemarks?.first {
+                let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+              
+             var latitude =  coordinates.latitude
+             var longitude = coordinates.longitude
+              
+              print("TRANSFORM", latitude)
+              print("TRANSFORM", longitude)
+               
+                }
+          })
+          
+      }
     
     
 }
