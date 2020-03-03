@@ -9,28 +9,41 @@
 import UIKit
 import InputBarAccessoryView
 import MessageKit
+import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController {
     
     var messages: [Message] = []
-    
-    var member2: Member!
     var member: Member!
+    var member2: Member!
+    var loggedUser:User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            let user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            member = Member(name: user.userName!, image: UIImage.init(imageLiteralResourceName: "cat"), id: user.id!)
+            
+        }
+        catch  {
+            
+        }
         
-        member2 = Member(name: "ads", color: .blue)
-        member = Member(name: "bluemoon", color: .blue)
+        
+        member2 = Member(name: "bluemoon",  image: UIImage.init(imageLiteralResourceName: "cat"), id: 2)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
         getAllMessage()
+        
     }
+    
     func getAllMessage() {
         ApiManager.getChatMessages(id: 1){
             chatMessages in
+//            chatMessages.filter()
             for messages in chatMessages {
                 let newMessage = Message(
                     member: self.member2,
@@ -97,8 +110,8 @@ extension ChatViewController: MessagesDisplayDelegate {
         in messagesCollectionView: MessagesCollectionView) {
         
         let message = messages[indexPath.section]
-        let color = message.member.color
-        avatarView.backgroundColor = color
+        avatarView.backgroundColor = UIColor.black
+        avatarView.image = message.member.image
     }
 }
 extension ChatViewController: InputBarAccessoryViewDelegate {
@@ -111,6 +124,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             messageId: UUID().uuidString)
         print(text)
         messages.append(newMessage)
+        
         inputBar.inputTextView.text = ""
         messagesCollectionView.reloadData()
         messagesCollectionView.scrollToBottom(animated: true)

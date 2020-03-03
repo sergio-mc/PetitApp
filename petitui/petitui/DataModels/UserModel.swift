@@ -40,6 +40,19 @@ struct User: Codable {
            self.id = nil
           
        }
+    
+    init(email:String,userName:String,id:Int, token:String) {
+             
+             self.email=email
+             self.password=nil
+             self.userName=userName
+             self.token = token
+             self.latitude=nil
+            self.longitude=nil
+             self.picture = nil
+             self.id = id
+            
+         }
     init(email:String,password:String,userName:String?, latitude: Double, longitude: Double, picture: String, id: Int) {
            
            self.email=email

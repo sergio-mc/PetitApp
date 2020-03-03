@@ -42,7 +42,19 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                     self.removeSpinner()
                     print(response)
                     if(response.code==200) {
-                        self.segueLogin()
+                        if let user = response.user {
+                             do {
+                                let defaults = UserDefaults.standard
+                                let jsonEncoder = JSONEncoder()
+                                let jsonData = try jsonEncoder.encode(user)
+                                defaults.set(jsonData, forKey: "user")
+                            } catch  {
+                                print(error)
+                            }
+                            self.segueLogin()
+                        }
+                        
+                        
                     }else{
                         self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
                     }
@@ -101,7 +113,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-   
+    
     
     func segueLogin()  {
         performSegue(withIdentifier: "loginSegue", sender: nil)
