@@ -34,30 +34,21 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             return;
             
         } else {
-           
+            self.showSpinner()
             if(DataHelpers.isValidEmail(userEmail!) && DataHelpers.isValidPassword(userPassword!)){
-                
-                loginUser(email: userEmail!, password: userPassword!)
+                ApiManager.loginUser(email: userEmail!, password: userPassword!)
                 {
-                    (isWorking) in
-                    
-                    if(isWorking) {
-                        
+                    (response) in
+                    self.removeSpinner()
+                    print(response)
+                    if(response.code==200) {
                         self.segueLogin()
-                        
-                    
+                    }else{
+                        self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
                     }
-                    
-                    
                 }
-                self.showSpinner()
-                
             }
-            
-            
         }
-        
-        
     }
     
     override func viewDidLoad() {
@@ -72,10 +63,10 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.view.backgroundColor = .clear
         
         let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "logoperrete")!,iconInitialSize: CGSize(width: 300, height: 300), backgroundColor: UIColor(red:174/255, green:225/255, blue:219/255, alpha:1.0))
-
+        
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
-
+        
         //Starts animation
         revealingSplashView.startAnimation(){
             print("Completed")
@@ -110,42 +101,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    func loginUser(email:String,password:String, completion: @escaping (Bool) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
-        let user=User( email: email, password: password)
-        
-        AF.request(url!,
-                   method: .post,
-                   parameters:user,
-                   encoder: JSONParameterEncoder.default
-            
-        ).response { response in
-            print(response);
-            if(response.error == nil){
-                var isWorking = false
-                do{
-                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        isWorking = true
-                        completion(isWorking)
-                            
-                    }else{
-                        self.removeSpinner()
-                        self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
-                        completion(isWorking)
-                        
-                    }
-                }catch{
-                    print(error)
-                }
-            }else{
-                self.removeSpinner()
-                self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
-            }
-            
-        }
-        
-    }
+   
     
     func segueLogin()  {
         performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -155,7 +111,6 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     {
         activityView = UIView(frame: self.view.bounds)
         activityView?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        
         let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         activityIndicator.center = activityView!.center
         activityIndicator.startAnimating()

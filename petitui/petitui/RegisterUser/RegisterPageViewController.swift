@@ -92,7 +92,17 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             if ( DataHelpers.isValidPassword(userPassword!) && DataHelpers.isValidEmail(userEmail!) && DataHelpers.isUsernameValid(userName!) && userAgeTF.isOn){
                 
                 //Validation of passwords
-                createUser(email: userEmail!,password: userPassword!,userName: userName!)
+                ApiManager.createUser(email: userEmail!,password: userPassword!,userName: userName!){
+                    (response) in
+                    self.removeSpinner()
+                    print(response)
+                    if(response.code==200) {
+                        self.segueLogin()
+                        
+                    }else{
+                        self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
+                    }
+                }
                 self.showSpinner()
                 
             } else {
@@ -102,40 +112,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-    func createUser(email:String,password:String,userName:String)  {
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user")
-        let user=User( email: email, password: password, userName: userName)
-        
-        AF.request(url!,
-                   method: .post,
-                   parameters:user,
-                   encoder: JSONParameterEncoder.default
-            
-        ).response { response in
-            if(response.error==nil){
-                do{
-                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        self.segueLogin()
-                        self.removeSpinner()
-                        
-                    }else{
-                        self.removeSpinner()
-                        self.present(DataHelpers.displayAlert(userMessage:responseData.errorMsg ?? "", alertType: 0), animated: true, completion: nil)
-                    }
-                    
-                }catch{
-                    print(error)
-                    
-                }
-            }else{
-                self.removeSpinner()
-                self.present(DataHelpers.displayAlert(userMessage: "Network error", alertType: 0), animated: true, completion: nil)
-            }
-            
-        }
-        
-    }
+    
     
     func segueLogin()  {
         performSegue(withIdentifier: "registerSegue", sender: nil)

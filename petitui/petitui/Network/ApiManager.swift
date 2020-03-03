@@ -14,18 +14,75 @@ import Alamofire
 class ApiManager {
     
     
-    
-    static  func doLogin(userEmail:String, userPassword:String)  {
-        let url = URL(string:"https://jsonplaceholder.typicode.com/posts")
-        
-        AF.request( url!, method: .post, parameters: ["email":userEmail,"password":userPassword],
-                    encoding: JSONEncoding.default, headers: ["Content-type": "application/json; charset=UTF-8"]).validate()
-            .responseJSON { response in
-                print(response)
+    static func loginUser(email:String,password:String, completion: @escaping (RegisterResponse) -> ()){
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
+        let user=User( email: email, password: password)
+        AF.request(url!,
+                   method: .post,
+                   parameters:user,
+                   encoder: JSONParameterEncoder.default
+            
+        ).response { response in
+            if(response.error == nil){
+                do{
+                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                    completion(responseData)
+                }catch{
+                    print(error)
+                    completion(RegisterResponse())
+                }
+            }else{
+                completion(RegisterResponse())
+            }
         }
     }
     
-    
+    static func createUser(email:String,password:String,userName:String, completion: @escaping (RegisterResponse) -> ()){
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user")
+        let user=User( email: email, password: password, userName: userName)
+        
+        AF.request(url!,
+                   method: .post,
+                   parameters:user,
+                   encoder: JSONParameterEncoder.default
+            
+        ).response {  response in
+            if(response.error == nil){
+                do{
+                    let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                    completion(responseData)
+                }catch{
+                    print(error)
+                    completion(RegisterResponse())
+                }
+            }else{
+                completion(RegisterResponse())
+            }
+        }
+        
+    }
+   static func sendEmail(email:String,completion: @escaping (Bool) -> ())  {
+          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/password/reset")
+          AF.request(url!,
+                     method: .post,
+                     parameters:["email": email],
+                     encoder: JSONParameterEncoder.default
+              
+          ).response {  response in
+              switch response.result {
+              case .success:
+                  do{
+                      let responseData: RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                      completion(responseData.code==200)
+                      
+                  }catch{
+                      completion(false)
+                  }
+              case .failure:
+                  completion(false)
+              }
+          }
+      }
     static func getData(){
         let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/users")
         AF.request(url!,
@@ -97,27 +154,27 @@ class ApiManager {
         }
         
     }
-
+    
     static func getAnimalsFilters(filterAnimalModel : FilterAnimalsModel, completion: @escaping ([Pet]) -> ()){
-    let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/filtered")
-    AF.request(url!,
-               method: .get,
-               parameters:filterAnimalModel
-    )
-        .validate()
-        .responseJSON { response in
-            if(response.error == nil){
-                do{
-                    let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
-                    if(responseData.code==200) {
-                        if let pets = responseData.animals {
-                            completion(pets)
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/animals/filtered")
+        AF.request(url!,
+                   method: .get,
+                   parameters:filterAnimalModel
+        )
+            .validate()
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let pets = responseData.animals {
+                                completion(pets)
+                            }
                         }
+                    }catch{
+                        print(error)
                     }
-                }catch{
-                    print(error)
                 }
-            }
         }
     }
     
@@ -176,7 +233,7 @@ class ApiManager {
                             }
                         }
                     }catch{
-                       completion(false)
+                        completion(false)
                     }
                 }
                 
@@ -185,24 +242,24 @@ class ApiManager {
         
     }
     static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
-            let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/mesages/\(id)")
-            AF.request(url!, method: .get)
-                .validate()
-                .responseJSON { response in
-                    if(response.error == nil){
-                        do{
-                             let responseData:MessageResponse = try JSONDecoder().decode(MessageResponse.self, from: response.data!)
-                            if(responseData.code==200) {
-                                if let messages = responseData.messages {
-                                    completion(messages)
-                                }
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/mesages/\(id)")
+        AF.request(url!, method: .get)
+            .validate()
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:MessageResponse = try JSONDecoder().decode(MessageResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let messages = responseData.messages {
+                                completion(messages)
                             }
-                        }catch{
-                            print(error)
                         }
+                    }catch{
+                        print(error)
                     }
-            }
+                }
         }
+    }
     
     
 }
