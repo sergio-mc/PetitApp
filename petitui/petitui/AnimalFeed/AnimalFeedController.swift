@@ -44,7 +44,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
-    var locationManager: CLLocationManager?
+   // var locationManager: CLLocationManager?
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
     @IBOutlet weak var filterDistanceSlider: UISlider!
@@ -165,7 +165,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+          
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.petsCollectionView.reloadData()
@@ -185,7 +185,18 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
         
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        (appDelegate.window!.rootViewController as? TabBarViewController)?.locations
+        print((appDelegate.window!.rootViewController as? TabBarViewController)?.locations)
+        if let locations = appDelegate.window!.rootViewController as? TabBarViewController{
+            print(locations)
+        }else{
+            print()
+        }
+        
         //        location
+        /*
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -207,10 +218,19 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             }
             locationManager?.startUpdatingLocation()
         }
-        
+        */
         
     }
-    
+    /*
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("COORDINATES = \(locValue.latitude) \(locValue.longitude)")
+        
+        
+        
+        DataHelpers.convertLatLongToAddress(latitude: locValue.latitude, longitude: locValue.longitude)
+    }
+    */
     override func viewDidLayoutSubviews() {
         if(filterSelecter.selectedSegmentIndex < 0){
             titleNewPets.frame.origin.y = 320
@@ -321,4 +341,8 @@ extension CALayer {
         self.addSublayer(border)
     }
     
+
+    
+    
 }
+

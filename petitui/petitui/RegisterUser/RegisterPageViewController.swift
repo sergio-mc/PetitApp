@@ -8,8 +8,9 @@ import UIKit
 import Foundation
 import SkyFloatingLabelTextField
 import Alamofire
+import CoreLocation
 
-class RegisterPageViewController: UIViewController, UITextFieldDelegate {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate{
     
     fileprivate var activityView : UIView?
     
@@ -22,8 +23,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
     @IBOutlet weak var userAgeTF: UISwitch!
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userConfirmPassword.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        
+
     }
     
     // This will notify us when something has changed on the textfield
@@ -145,5 +145,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         activityView?.removeFromSuperview()
         activityView = nil
     }
+    
+
     
 }
