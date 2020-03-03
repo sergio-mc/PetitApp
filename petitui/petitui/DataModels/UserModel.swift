@@ -28,6 +28,7 @@ struct User: Codable {
         self.id = nil
        
     }
+   
     init(email:String,password:String) {
            
            self.email=email
@@ -64,6 +65,10 @@ struct User: Codable {
            self.id = id
           
        }
+    init(latitude: Double, longitude: Double){
+        self.latitude=latitude
+        self.longitude=longitude
+    }
     
     enum CodingKeys: String, CodingKey {
         case id, email,password
