@@ -1,4 +1,4 @@
-framework module Pods_petitui {
+module Pods_petitui {
   umbrella header "Pods-petitui-umbrella.h"
 
   export *
