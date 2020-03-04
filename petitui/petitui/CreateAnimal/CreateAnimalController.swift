@@ -158,14 +158,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
             
           
         }
-        
-        
-        
-       
-      
-        
-        
-        
+   
     }
     
     func showSpinner()

@@ -166,15 +166,11 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         
         
-        ApiManager.getFeedAnimals(){pets in
-            self.petsFeed=pets
-            self.petsCollectionView.reloadData()
-        }
-        
         
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
         
+        print("coño")
         setColorAndWidth(button: dogFilter)
         setColorAndWidth(button: catFilter)
         setColorAndWidth(button: otherFilter)
@@ -290,8 +286,27 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         button.layer.borderWidth = 0
         button.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor     }
     
-    
+    func createFavorite(idUser:Int, idAnimal:Int){
+        
+        let favoriteModel=FavoriteModel(idUser: idUser, idAnimal: idAnimal)
+        
+        ApiManager.createFavorite(idUser: idUser, idAnimal: idAnimal)
+        {(response) in
+            print(response)
+            if(response.code==200) {
+            
+                self.present(DataHelpers.displayAlert(userMessage:"Exito ;)",  alertType: 1), animated: true, completion: nil)
+                
+            }else{
+                self.present(DataHelpers.displayAlert(userMessage:"Error creating favirute",  alertType: 0), animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
 }
+
+
 
 extension CALayer {
     
