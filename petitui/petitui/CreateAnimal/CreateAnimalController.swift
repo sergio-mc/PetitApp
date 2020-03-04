@@ -11,7 +11,7 @@ import Alamofire
 import MBRadioCheckboxButton
 
 
-class CreateAnimalController: UIViewController, RadioButtonDelegate{
+class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewDelegate{
     
     func radioButtonDidSelect(_ button: RadioButton) {
         genre = button.title(for: .normal)!
@@ -31,6 +31,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     var groupContainer = RadioButtonContainer()
     var genre: String?
     
+    
     @IBOutlet weak var dogType: UIButton!
     @IBOutlet weak var catType: UIButton!
     @IBOutlet weak var otherType: UIButton!
@@ -39,7 +40,12 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputBreed: UITextField!
     @IBOutlet weak var inputAge: UITextField!
-    @IBOutlet weak var inputDescription: UITextField!
+    @IBOutlet weak var inputDescription: UITextView!
+    
+    @IBOutlet var mainView: UIView!
+    
+    
+    
     
     @IBOutlet weak var ViewGroup1: RadioButtonContainerView!
     
@@ -82,9 +88,6 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     }
     
     
-    @IBOutlet weak var genreSelector: UISegmentedControl!
-    
-    
     @IBAction func addPetButton(_ sender: Any) {
         if(checkAllFields()){
             createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: "80", longitude: "80", preferedPhoto: "picture")
@@ -98,7 +101,7 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         dogType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         dogType.layer.borderWidth = 0
         
@@ -108,8 +111,10 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
         otherType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         otherType.layer.borderWidth = 0
         setupGroup()
+        descriptionBox()
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -131,25 +136,32 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
         if inputDescription.text?.isEmpty ?? true{
             self.present(DataHelpers.displayAlert(userMessage: "Add a short description for the pet", alertType: 0), animated: true, completion: nil)
             return false}
+        if inputDescription.text == "Add a description..."{
+        self.present(DataHelpers.displayAlert(userMessage: "Add a short description for the pet", alertType: 0), animated: true, completion: nil)
+        return false}
+        
+        
         
         return true
     }
     
     func createAnimal(idOwner:Int,type:String,name:String,sex:String,age:Int,animalDescription:String,breed:String, latitude:String, longitude:String,preferedPhoto:String){
           self.showSpinner()
+        
         let pet=Pet(idOwner: idOwner, type: type, name: name, sex: sex, age: age, animalDescription: animalDescription, breed: breed, latitude: latitude, longitude: longitude, preferedPhoto: preferedPhoto)
+        
         
         if let image = imageToUpload {
               ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){response
                       in
-                if(response){
+                if(response==true){
                 self.removeSpinner()
                 self.segueAnimalFeed()
                     self.present(DataHelpers.displayAlert(userMessage:"Animal created",  alertType: 1), animated: true, completion: nil)
                     
                 }else{
                     self.removeSpinner()
-                    self.present(DataHelpers.displayAlert(userMessage:"Error creating animal",  alertType: 0), animated: true, completion: nil)
+                    self.present(DataHelpers.displayAlert(userMessage:"Network error",  alertType: 0), animated: true, completion: nil)
                 }
                 
                 
@@ -158,14 +170,6 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
             
           
         }
-        
-        
-        
-       
-      
-        
-        
-        
     }
     
     func showSpinner()
@@ -210,6 +214,47 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate{
         
         }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Add a description..."
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func descriptionBox()
+    {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
+        inputDescription.attributedText = NSAttributedString(string: inputDescription.text, attributes: attributes)
+        inputDescription.font = UIFont.systemFont(ofSize: 18.0)
+        inputDescription.text = "Add a description..."
+        inputDescription.textColor = UIColor.lightGray
+        inputDescription.delegate = self
+        
+        inputDescription.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
+        inputDescription.layer.borderWidth = 0.75
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.mainView.frame.origin.y == 0 {
+                self.mainView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.mainView.frame.origin.y != 0 {
+            self.mainView.frame.origin.y = 0
+        }
+    }
     
     
     

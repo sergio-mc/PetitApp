@@ -85,8 +85,12 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         }
         
         
+        self.hideKeyboardWhenTappedAround()
         
     }
+    
+    
+    
     
     // This will notify us when something has changed on the textfield
     @objc func textFieldDidChange(_ textfield: UITextField) {

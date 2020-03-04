@@ -35,8 +35,8 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
             
         }
         
-        cell.cellUIView.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
-        cell.cellUIView.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
+        cell.layer.borderWidth = 0.5
         cell.petName.layer.addBorder(edge: UIRectEdge.top, color: UIColor.red, thickness: 0.5)
         cell.layer.cornerRadius = 20
         cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
@@ -48,6 +48,7 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         ApiManager.getFeedAnimals(){pets in
             self.petsFeed=pets
             self.favoritesCollectionView.reloadData()

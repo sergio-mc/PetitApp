@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2673AA56CAADE356DAF6FDBC /* Pods_petitui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */; };
 		3E31C5FB23FF088500516597 /* FilterAnimalsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E31C5FA23FF088500516597 /* FilterAnimalsModel.swift */; };
 		7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0802A623C8CE34008A640A /* AppDelegate.swift */; };
 		7F0802AC23C8CE34008A640A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AA23C8CE34008A640A /* Main.storyboard */; };
@@ -29,6 +28,7 @@
 		CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249BF23FF06FB0022B6CD /* FavoritesAnimalsViewController.swift */; };
 		CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */; };
 		CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CF5723E1E9FC002F2A10 /* AnimalFeedCell.swift */; };
+		CE594AEE240FFE7C0069CD90 /* Pods_petitui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */; };
 		CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75B29A23FFE6AB00340857 /* FavoriteFeedCell.swift */; };
 		CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */; };
 		CE8342CF23DB4C63008B15C5 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */; };
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2673AA56CAADE356DAF6FDBC /* Pods_petitui.framework in Frameworks */,
+				CE594AEE240FFE7C0069CD90 /* Pods_petitui.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

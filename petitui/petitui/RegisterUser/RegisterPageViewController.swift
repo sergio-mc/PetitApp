@@ -27,7 +27,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.hideKeyboardWhenTappedAround()
         usernameTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userEmailTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         userPasswordTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
