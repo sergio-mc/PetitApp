@@ -28,7 +28,6 @@
 		CE4249C023FF06FB0022B6CD /* FavoritesAnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249BF23FF06FB0022B6CD /* FavoritesAnimalsViewController.swift */; };
 		CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */; };
 		CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CF5723E1E9FC002F2A10 /* AnimalFeedCell.swift */; };
-		CE594AEE240FFE7C0069CD90 /* Pods_petitui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */; };
 		CE75B29B23FFE6AB00340857 /* FavoriteFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75B29A23FFE6AB00340857 /* FavoriteFeedCell.swift */; };
 		CE7E7EBF23F4484500029694 /* CreateAnimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E7EBE23F4484500029694 /* CreateAnimalController.swift */; };
 		CE8342CF23DB4C63008B15C5 /* DetailAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8342CE23DB4C63008B15C5 /* DetailAnimalViewController.swift */; };
@@ -38,11 +37,11 @@
 		CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A54E023ECA65700C5427F /* TabBarViewController.swift */; };
 		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 		CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */; };
+		E8C800D548B7E99E723234AE /* libPods-petitui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41590F17B8A35EA809B49FD /* libPods-petitui.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E31C5FA23FF088500516597 /* FilterAnimalsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAnimalsModel.swift; sourceTree = "<group>"; };
-		7A5E01D100176298EF883153 /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.debug.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0802A323C8CE34008A640A /* petitui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petitui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0802A623C8CE34008A640A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F0802AB23C8CE34008A640A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +50,7 @@
 		7F0802B223C8CE36008A640A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
+		A66D2776F26E266E51D14A8A /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
 		B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
 		B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeCellView.swift; sourceTree = "<group>"; };
 		B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
@@ -75,7 +74,8 @@
 		CE9A54E023ECA65700C5427F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
-		DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petitui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41590F17B8A35EA809B49FD /* libPods-petitui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-petitui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A7BDE15898A0C49497067D /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.debug.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE594AEE240FFE7C0069CD90 /* Pods_petitui.framework in Frameworks */,
+				E8C800D548B7E99E723234AE /* libPods-petitui.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 				7F0802A523C8CE34008A640A /* petitui */,
 				7F0802A423C8CE34008A640A /* Products */,
 				8EABF15A8AC8CCBB4353937F /* Pods */,
-				9F4EDFC6B220119044C4D5BC /* Frameworks */,
+				859D7F85402801E1D3418AE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,21 +135,21 @@
 			path = petitui;
 			sourceTree = "<group>";
 		};
+		859D7F85402801E1D3418AE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E41590F17B8A35EA809B49FD /* libPods-petitui.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8EABF15A8AC8CCBB4353937F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7A5E01D100176298EF883153 /* Pods-petitui.debug.xcconfig */,
-				AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */,
+				F3A7BDE15898A0C49497067D /* Pods-petitui.debug.xcconfig */,
+				A66D2776F26E266E51D14A8A /* Pods-petitui.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9F4EDFC6B220119044C4D5BC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DAB0856964D13E32AA4DE743 /* Pods_petitui.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B207D3F723DB4CDC001D788D /* AnimalFeed */ = {
@@ -274,11 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F0802B523C8CE36008A640A /* Build configuration list for PBXNativeTarget "petitui" */;
 			buildPhases = (
-				6D6A42DF1F53D0F0CEEAF455 /* [CP] Check Pods Manifest.lock */,
+				4AC3ADFCEB6F759290EE1CF7 /* [CP] Check Pods Manifest.lock */,
 				7F08029F23C8CE34008A640A /* Sources */,
 				7F0802A023C8CE34008A640A /* Frameworks */,
 				7F0802A123C8CE34008A640A /* Resources */,
-				A0D978D4F7A8D3BBC8277A62 /* [CP] Embed Pods Frameworks */,
+				EC25FF79176A301E2A3C4304 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,9 +336,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D6A42DF1F53D0F0CEEAF455 /* [CP] Check Pods Manifest.lock */ = {
+		4AC3ADFCEB6F759290EE1CF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -358,21 +358,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0D978D4F7A8D3BBC8277A62 /* [CP] Embed Pods Frameworks */ = {
+		EC25FF79176A301E2A3C4304 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -552,7 +552,7 @@
 		};
 		7F0802B623C8CE36008A640A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A5E01D100176298EF883153 /* Pods-petitui.debug.xcconfig */;
+			baseConfigurationReference = F3A7BDE15898A0C49497067D /* Pods-petitui.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -573,7 +573,7 @@
 		};
 		7F0802B723C8CE36008A640A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD0D0E9887C0B1E3EE5F11C2 /* Pods-petitui.release.xcconfig */;
+			baseConfigurationReference = A66D2776F26E266E51D14A8A /* Pods-petitui.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";

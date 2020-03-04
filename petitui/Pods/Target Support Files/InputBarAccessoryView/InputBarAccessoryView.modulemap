@@ -1,4 +1,4 @@
-framework module InputBarAccessoryView {
+module InputBarAccessoryView {
   umbrella header "InputBarAccessoryView-umbrella.h"
 
   export *

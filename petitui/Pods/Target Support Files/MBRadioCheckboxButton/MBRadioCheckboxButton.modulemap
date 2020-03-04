@@ -1,4 +1,4 @@
-framework module MBRadioCheckboxButton {
+module MBRadioCheckboxButton {
   umbrella header "MBRadioCheckboxButton-umbrella.h"
 
   export *

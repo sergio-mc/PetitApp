@@ -18,7 +18,7 @@ public extension RevealingSplashView {
     /**
      Starts the animation depending on the type
      */
-    func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         switch animationType{
         case .twitter:
@@ -49,7 +49,7 @@ public extension RevealingSplashView {
     /**
      Plays the twitter animation
      */
-    func playTwitterAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playTwitterAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         
         if let imageView = self.imageView {
@@ -75,7 +75,7 @@ public extension RevealingSplashView {
     /**
      Plays the twitter animation
      */
-    func playSqueezeAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playSqueezeAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         
         if let imageView = self.imageView {
@@ -102,7 +102,7 @@ public extension RevealingSplashView {
      
      - parameter completion: when the animation completes
      */
-    func playRotateOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playRotateOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -135,7 +135,7 @@ public extension RevealingSplashView {
      
      - parameter completion: completion
      */
-    func playWoobleAnimation(_ completion: SplashAnimatableCompletion? = nil) {
+    public func playWoobleAnimation(_ completion: SplashAnimatableCompletion? = nil) {
         
         if let imageView = self.imageView{
             
@@ -172,7 +172,7 @@ public extension RevealingSplashView {
      
      - parameter completion: completion
      */
-    func playSwingAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playSwingAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -201,7 +201,7 @@ public extension RevealingSplashView {
      
      - parameter completion: completion
      */
-    func playPopAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playPopAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -228,7 +228,7 @@ public extension RevealingSplashView {
      
      - parameter completion: completion
      */
-    func playZoomOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playZoomOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView =  imageView
         {
@@ -280,7 +280,7 @@ public extension RevealingSplashView {
      
      - parameter completion: completion
      */
-    func playHeartBeatAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    public func playHeartBeatAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView {
             
@@ -312,7 +312,7 @@ public extension RevealingSplashView {
      
      This function will not stop the original completion block from getting called
      */
-    func finishHeartBeatAnimation()
+    public func finishHeartBeatAnimation()
     {
         self.heartAttack = true
     }
