@@ -115,7 +115,7 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         }
     }
     func loginUser(email:String,password:String, completion: @escaping (Bool) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user/login")
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/user/login")
         let user=User( email: email, password: password)
         
         AF.request(url!,

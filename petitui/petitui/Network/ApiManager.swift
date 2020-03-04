@@ -178,6 +178,8 @@ class ApiManager {
                     }catch{
                        completion(false)
                     }
+                }else{
+                    completion(false)
                 }
                 
                 

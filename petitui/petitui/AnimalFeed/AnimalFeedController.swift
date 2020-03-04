@@ -21,10 +21,13 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var otherFilter: UIButton!
     
     
+    
+    
     @IBAction func dogFilterButton(_ sender: Any) {
         changeTypeButtonsBorder(dog:3)
         filterAnimalsModel.type = "dog"
         updateGridFilterd()
+
         
         
     }
@@ -44,6 +47,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
+    
+    
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
     @IBOutlet weak var filterDistanceSlider: UISlider!
@@ -81,11 +86,13 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     @IBAction func editingEndDistance(_ sender: UISlider) {
         filterAnimalsModel.distance=Int(sender.value)
         updateGridFilterd()
+        
     }
     
     @IBAction func editingEndAge(_ sender: UISlider) {
         filterAnimalsModel.age=Int(sender.value)
         updateGridFilterd()
+        
     }
     
     
@@ -133,17 +140,31 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return petsFeed.count
+        if(petsFeed.isEmpty)
+        {
+            let defaultImage : UIImageView = {
+                        let iv = UIImageView()
+                        iv.image = UIImage(named:"beagle")
+                        iv.contentMode = .scaleAspectFill
+                        return iv
+                    }()
+                    self.petsCollectionView.backgroundView = defaultImage
+            return 0
+        }else{
+            self.petsCollectionView.backgroundView = nil
+            return petsFeed.count
+        }
+        
+        
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.petsCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! AnimalFeedCell
-        
-        
+                
         cell.petName.text = petsFeed[indexPath.row].name
         cell.petAge.text = "\(String(petsFeed[indexPath.row].age)) years"
         ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
@@ -157,6 +178,14 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         cell.layer.cornerRadius = 20
         cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         
+        // Set background from collectionview into an image
+//        let defaultImage : UIImageView = {
+//            let iv = UIImageView()
+//            iv.image = UIImage(named:"beagle")
+//            iv.contentMode = .scaleAspectFill
+//            return iv
+//        }()
+//        self.petsCollectionView.backgroundView = defaultImage
         return cell
     }
     
@@ -181,13 +210,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
-        
-        
-        
-        
-        
-        
-        
+     
     }
     
     override func viewDidLayoutSubviews() {
@@ -255,6 +278,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
             filteredPets in
             self.petsFeed=filteredPets
             self.petsCollectionView.reloadData()
+            self.petsCollectionView.setContentOffset(CGPoint.zero, animated: true)
         }
         
     }

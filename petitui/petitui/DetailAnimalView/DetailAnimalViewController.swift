@@ -26,6 +26,11 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var genrePet: UILabel!
     @IBOutlet weak var favoriteIcon: UIButton!
     
+    @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
+    
+    
     private var favorite: Bool = false
     
     @IBAction func isFavorite(_ sender: Any) {
@@ -52,6 +57,18 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        view1.layer.borderWidth = 0.5
+        view1.layer.borderColor = UIColor.gray.cgColor
+        view1.layer.cornerRadius = view1.frame.width / 4
+        view2.layer.borderWidth = 0.5
+        view2.layer.borderColor = UIColor.gray.cgColor
+        view2.layer.cornerRadius = view2.frame.width / 4
+        view3.layer.borderWidth = 0.5
+        view3.layer.borderColor = UIColor.gray.cgColor
+        view3.layer.cornerRadius = view3.frame.width / 4
+        
+        
     }
     
     func setValues(pet:Pet, image:UIImageView)
