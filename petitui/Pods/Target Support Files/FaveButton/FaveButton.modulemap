@@ -1,4 +1,4 @@
-module FaveButton {
+framework module FaveButton {
   umbrella header "FaveButton-umbrella.h"
 
   export *

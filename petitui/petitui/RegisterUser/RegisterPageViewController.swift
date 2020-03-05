@@ -21,6 +21,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
+    @IBOutlet weak var userAddress: SkyFloatingLabelTextFieldWithIcon!
+    
     @IBOutlet weak var userAgeTF: UISwitch!
     
     

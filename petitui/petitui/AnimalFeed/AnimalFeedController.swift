@@ -143,14 +143,16 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         {
             let defaultImage : UIImageView = {
                         let iv = UIImageView()
-                        iv.image = UIImage(named:"beagle")
-                        iv.contentMode = .scaleAspectFill
+                        iv.image = UIImage(named:"defaultCV")
+                        iv.contentMode = .center
                         return iv
                     }()
                     self.petsCollectionView.backgroundView = defaultImage
+            self.petsCollectionView.backgroundColor = nil
             return 0
         }else{
             self.petsCollectionView.backgroundView = nil
+            self.petsCollectionView.backgroundColor = UIColor(red:242/255, green:242/255, blue:242/255, alpha: 1)
             return petsFeed.count
         }
         
@@ -293,8 +295,8 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     func setCollectionViewPosition()
     {
-        titleNewPets.frame.origin.y = 400
-        petsCollectionView.frame.origin.y = 430
+        titleNewPets.frame.origin.y = 360
+        petsCollectionView.frame.origin.y = 390
     }
     
     func updateGridFilterd() {

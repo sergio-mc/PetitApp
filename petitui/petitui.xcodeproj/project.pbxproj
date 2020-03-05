@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E31C5FB23FF088500516597 /* FilterAnimalsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E31C5FA23FF088500516597 /* FilterAnimalsModel.swift */; };
+		6A611F00AB9070681C5C97CE /* Pods_petitui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98827F4A6243B2EAE6B96AA /* Pods_petitui.framework */; };
 		7F0802A723C8CE34008A640A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0802A623C8CE34008A640A /* AppDelegate.swift */; };
 		7F0802AC23C8CE34008A640A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AA23C8CE34008A640A /* Main.storyboard */; };
 		7F0802AE23C8CE36008A640A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0802AD23C8CE36008A640A /* Assets.xcassets */; };
@@ -37,7 +38,6 @@
 		CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A54E023ECA65700C5427F /* TabBarViewController.swift */; };
 		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 		CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */; };
-		E8C800D548B7E99E723234AE /* libPods-petitui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41590F17B8A35EA809B49FD /* libPods-petitui.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +74,7 @@
 		CE9A54E023ECA65700C5427F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
-		E41590F17B8A35EA809B49FD /* libPods-petitui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-petitui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98827F4A6243B2EAE6B96AA /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petitui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A7BDE15898A0C49497067D /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.debug.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C800D548B7E99E723234AE /* libPods-petitui.a in Frameworks */,
+				6A611F00AB9070681C5C97CE /* Pods_petitui.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 		859D7F85402801E1D3418AE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E41590F17B8A35EA809B49FD /* libPods-petitui.a */,
+				E98827F4A6243B2EAE6B96AA /* Pods_petitui.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 				7F08029F23C8CE34008A640A /* Sources */,
 				7F0802A023C8CE34008A640A /* Frameworks */,
 				7F0802A123C8CE34008A640A /* Resources */,
-				EC25FF79176A301E2A3C4304 /* [CP] Copy Pods Resources */,
+				D3BC301E188A6F12172AC4A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,21 +358,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC25FF79176A301E2A3C4304 /* [CP] Copy Pods Resources */ = {
+		D3BC301E188A6F12172AC4A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petitui/Pods-petitui-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
