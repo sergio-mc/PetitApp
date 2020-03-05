@@ -13,9 +13,11 @@ import Alamofire
 
 class ApiManager {
     
+    static var defaultURL = "http://0.0.0.0:8888/petit-api/"
+    
     
     static func loginUser(email:String,password:String, completion: @escaping (RegisterResponse) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user/login")
+        let url = URL(string:"\(defaultURL)public/api/user/login")
         let user=User( email: email, password: password)
         AF.request(url!,
                    method: .post,
@@ -38,7 +40,7 @@ class ApiManager {
     }
     
     static func createUser(email:String,password:String,userName:String, completion: @escaping (RegisterResponse) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user")
+        let url = URL(string:"\(defaultURL)public/api/user")
         let user=User( email: email, password: password, userName: userName)
         
         AF.request(url!,
@@ -62,7 +64,7 @@ class ApiManager {
         
     }
    static func sendEmail(email:String,completion: @escaping (Bool) -> ())  {
-          let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user/password/reset")
+          let url = URL(string:"\(defaultURL)public/api/user/password/reset")
           AF.request(url!,
                      method: .post,
                      parameters:["email": email],
@@ -84,7 +86,7 @@ class ApiManager {
           }
       }
     static func getData(){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user")
+        let url = URL(string:"\(defaultURL)public/api/user")
         AF.request(url!,
                    method: .get
         )
@@ -95,7 +97,7 @@ class ApiManager {
     }
     
     static func getImage(url:String, completion: @escaping (Data) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/storage/app/\(url)")
+        let url = URL(string:"\(defaultURL)storage/app/\(url)")
         DispatchQueue.global().async {
             do{
                 let data = try Data(contentsOf: url!)
@@ -112,7 +114,7 @@ class ApiManager {
     
     
     static func getFeedAnimals( completion: @escaping ([Pet]) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/animals")
+        let url = URL(string:"\(defaultURL)public/api/animals")
         AF.request(url!,
                    method: .get
         )
@@ -133,7 +135,7 @@ class ApiManager {
         }
     }
     static func getAnimalsType(type: String, completion: @escaping ([Pet]) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/animals/type/\(type)")
+        let url = URL(string:"\(defaultURL)public/api/animals/type/\(type)")
         AF.request(url!,
                    method: .get
         )
@@ -156,7 +158,7 @@ class ApiManager {
     }
     
     static func getAnimalsFilters(filterAnimalModel : FilterAnimalsModel, completion: @escaping ([Pet]) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/animals/filtered")
+        let url = URL(string:"\(defaultURL)public/api/animals/filtered")
         AF.request(url!,
                    method: .get,
                    parameters:filterAnimalModel
@@ -179,7 +181,7 @@ class ApiManager {
     }
     
     static func getUser(id:Int ,completion: @escaping (User) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/user/one/\(id)")
+        let url = URL(string:"\(defaultURL)public/api/user/one/\(id)")
         AF.request(url!, method: .get)
             .validate()
             .responseJSON { response in
@@ -201,7 +203,7 @@ class ApiManager {
     
     static func createAnimal(pet:Pet,data:Data, completion: @escaping (Bool) -> ()){
         
-        let url = "http://0.0.0.0:8888/petit-api/petit-api/public/api/animal"
+        let url = "\(defaultURL)public/api/animal"
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(Data(String(pet.idOwner).utf8), withName: "id_owner")
             multipartFormData.append(Data(pet.name.utf8), withName: "name")
@@ -244,7 +246,7 @@ class ApiManager {
         
     }
     static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/petit-api/public/api/chat/mesages/\(id)")
+        let url = URL(string:"\(defaultURL)public/api/chat/mesages/\(id)")
         AF.request(url!, method: .get)
             .validate()
             .responseJSON { response in
@@ -263,7 +265,7 @@ class ApiManager {
         }
     }
     static func getFavoritesByUser( id:Int, completion: @escaping ([Pet]) -> ()){
-         let url = URL(string:"http://0.0.0.0:8000/petit-api/petit-api/public/api/favorites/\(id)")
+         let url = URL(string:"\(defaultURL)public/api/favorites/\(id)")
          AF.request(url!,
                     method: .get
                     )
@@ -286,8 +288,8 @@ class ApiManager {
     
     static func createFavorite(idUser:Int,idAnimal:Int, completion: @escaping (FavoriteResponse) -> ()){
         
-        let url = "http://0.0.0.0:8888/petit-api/petit-api/public/api/add/favorite"
-        let favoriteModel=FavoriteModel(idUser: 1, idAnimal: 1)
+        let url = "\(defaultURL)public/api/add/favorite"
+        let favoriteModel=FavoriteModel(idUser: idUser, idAnimal: idAnimal)
         AF.request(url,
                    method: .post,
                    parameters:favoriteModel,
@@ -297,7 +299,33 @@ class ApiManager {
                 if(response.error == nil){
                     do{
                         let responseData:FavoriteResponse = try JSONDecoder().decode(FavoriteResponse.self, from: response.data!)
-                        print("JODER",responseData)
+                        
+                        completion(responseData)
+                    }catch{
+                        print(error)
+                        completion(FavoriteResponse())
+                    }
+                }else{
+                    completion(FavoriteResponse())
+                }
+        
+    }
+    
+    }
+    
+    static func removeFavorite(idUser:Int,idAnimal:Int, completion: @escaping (FavoriteResponse) -> ()){
+        
+        let url = "\(defaultURL)public/api/add/favorite"
+        let favoriteModel=FavoriteModel(idUser: idUser, idAnimal: idAnimal)
+        AF.request(url,
+                   method: .post,
+                   parameters:favoriteModel,
+                   encoder: JSONParameterEncoder.default
+            
+            ).response { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:FavoriteResponse = try JSONDecoder().decode(FavoriteResponse.self, from: response.data!)
                         completion(responseData)
                     }catch{
                         print(error)

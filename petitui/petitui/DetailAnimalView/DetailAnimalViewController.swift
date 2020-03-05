@@ -13,7 +13,9 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     public var detailPet:Pet?
     public var detailImage:UIImageView?
+    public var detailPetID:Int?
     var imagePicker = UIImagePickerController()
+    var user: User?
     
     @IBOutlet weak var picturePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -34,17 +36,15 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     private var favorite: Bool = false
     
     @IBAction func isFavorite(_ sender: Any) {
-        //        if(favorite)
-        //        {
-        //            favorite = false
-        //            favoriteIcon.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
-        //            print("Eliminar animal como favorito")
-        //        }else if (!favorite)
-        //        {
-        //            favorite = true
-        //            favoriteIcon.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
-        //            print("Setear animal a favorito")
-        //        }
+        
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+        }
+        catch  {
+            
+        }
+        createFavorite(idUser: user!.id!, idAnimal: detailPetID!)
         
     }
     
@@ -110,16 +110,28 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     /*@IBAction func addphoto(_ sender: UIButton) {
-
-               ImagePickerManager().pickImage(self){ image in
-                 print(image)
-                let pet=Pet(idOwner: 1, type: "kira", name: "nala", sex: "no", age: 1, animalDescription: "catitapelada", breed: "spinix", latitude: 333.333, longitude: 5444.444, preferedPhoto: "catofota")
-                
-                ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){pet in print(pet)}
-             }
-         }*/
-
-       
+     
+     ImagePickerManager().pickImage(self){ image in
+     print(image)
+     let pet=Pet(idOwner: 1, type: "kira", name: "nala", sex: "no", age: 1, animalDescription: "catitapelada", breed: "spinix", latitude: 333.333, longitude: 5444.444, preferedPhoto: "catofota")
+     
+     ApiManager.createAnimal(pet: pet, data: image.jpegData(compressionQuality: 0.2)!){pet in print(pet)}
+     }
+     }*/
     
+    
+    func createFavorite(idUser:Int, idAnimal:Int){
+        
+        ApiManager.createFavorite(idUser: idUser, idAnimal: idAnimal)
+        {(response) in
+            print(response)
+            if(response.code==200) {   
+            }else{
+                self.present(DataHelpers.displayAlert(userMessage:"Error creating favorite",  alertType: 0), animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
     
 }
