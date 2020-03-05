@@ -21,10 +21,19 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var userAddress: SkyFloatingLabelTextFieldWithIcon!
-    
     @IBOutlet weak var userAgeTF: UISwitch!
     
+  
+    @IBAction func userAddress(_ sender: SkyFloatingLabelTextFieldWithIcon) {
+        //performSegue(withIdentifier: "toSearchLocation", sender: self)
+        if let searchViewController = (storyboard?.instantiateViewController(withIdentifier: "searchViewController") ){
+            present(searchViewController, animated: true, completion: nil)
+        }
+    }
+    
+    
+   public var latitude : Double?
+   public var longitude: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +46,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    
     
     // This will notify us when something has changed on the textfield
     @objc func textFieldDidChange(_ textfield: UITextField) {
@@ -93,8 +104,9 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
             if ( DataHelpers.isValidPassword(userPassword!) && DataHelpers.isValidEmail(userEmail!) && DataHelpers.isUsernameValid(userName!) && userAgeTF.isOn){
                 
+              
                 //Validation of passwords
-                ApiManager.createUser(email: userEmail!,password: userPassword!,userName: userName!){
+                ApiManager.createUser(email: userEmail!, password: userPassword!, userName: userName!, latitude: latitude!, longitude: longitude!){
                     (response) in
                     self.removeSpinner()
                     print(response)
