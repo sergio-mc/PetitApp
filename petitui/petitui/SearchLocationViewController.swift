@@ -9,17 +9,18 @@
 import UIKit
 import MapKit
 
+
+protocol MyDataSendingDelegateProtocol{
+    func sendDataToRegisterVC(latitude: Double, longitude: Double)
+}
+
 class SearchLocationViewController: UIViewController {
     
     var searchCompleter = MKLocalSearchCompleter()
     
     var searchResults = [MKLocalSearchCompletion]()
     
-    
-    
-    
-    
-    
+    var delegate : MyDataSendingDelegateProtocol? = nil
     
     @IBOutlet weak var searchResultsTablevIEW: UITableView!
     
@@ -30,41 +31,27 @@ class SearchLocationViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        
         searchCompleter.delegate = self
         
         searchResultsTablevIEW.delegate = self
         
     }
-    
-    
-    
 }
 
 
 
 extension SearchLocationViewController: UISearchBarDelegate {
-    
-    
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchCompleter.queryFragment = searchText
-        
     }
-    
-    
-    
-    
-    
-    
     
 }
 
 
 
 extension SearchLocationViewController: MKLocalSearchCompleterDelegate {
-    
     
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
@@ -119,21 +106,16 @@ extension SearchLocationViewController: UITableViewDataSource {
         
     }
     func dismissSearch(latitude : Double , longitude : Double){
-        if let presenter = presentingViewController as? RegisterPageViewController {
-            presenter.latitude = latitude
-            presenter.longitude = longitude
-            self.dismiss(animated: true, completion: nil)
+        if self.delegate != nil{
+            self.delegate?.sendDataToRegisterVC(latitude: latitude, longitude: longitude)
+            dismiss(animated: true, completion: nil)
         }
-        
     }
     
 }
 
 
-
 extension SearchLocationViewController: UITableViewDelegate {
-    
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -157,7 +139,6 @@ extension SearchLocationViewController: UITableViewDelegate {
             var longitude : Double = Double(coordinate!.longitude)
             
           //  convertLatLongToAddress(latitude: latitude, longitude: longitude)
-            
           self.dismissSearch(latitude: latitude, longitude: longitude)
         }
     }
@@ -178,33 +159,22 @@ func convertLatLongToAddress(latitude:Double,longitude:Double){
         
         placeMark = placemarks?[0]
         print("FIDI AUTOESCUELAS", placeMark)
-        
         // Location name
         let locationName = placeMark.location
-        
-        
-        
         // Street address
         let street = placeMark.thoroughfare
-        
         // Postal code
- 
         let postalCode = placeMark.postalCode
-        
         // City
         let city = placeMark.subAdministrativeArea
-    
         // Zip code
-        
         let zip = placeMark.isoCountryCode
         // Country
-        
         let country = placeMark.country
         var address1 = String(street ?? "") + ", " + String(city ?? "")
         var address2 = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
         var address = address1 + address2
         print(address)
-
         getLatLongFromAddress(address: address)
         
     })
@@ -233,13 +203,9 @@ func getLatLongFromAddress(address : String) {
             longitude = coordinates.longitude
             
             ApiManager.updateLatLongUser(id: 1, latitude: latitude!, longitude: longitude!){
-                
                 response in print("Response updated Latitude and Longitude",response)
-                
             }
-            
             print("TRANSFORM", latitude)
-            
             print("TRANSFORM", longitude)
   
         }

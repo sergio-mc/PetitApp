@@ -9,7 +9,14 @@ import Foundation
 import SkyFloatingLabelTextField
 import Alamofire
 
-class RegisterPageViewController: UIViewController, UITextFieldDelegate {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataSendingDelegateProtocol {
+    
+    
+    func sendDataToRegisterVC(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+    
     
     fileprivate var activityView : UIView?
     
@@ -23,18 +30,16 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userAgeTF: UISwitch!
     
-  
-    @IBAction func userAddress(_ sender: SkyFloatingLabelTextFieldWithIcon) {
-        //performSegue(withIdentifier: "toSearchLocation", sender: self)
-        if let searchViewController = (storyboard?.instantiateViewController(withIdentifier: "searchViewController") ){
-            present(searchViewController, animated: true, completion: nil)
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toSearchLocation"{
+                let searchVC : SearchLocationViewController = segue.destination as! SearchLocationViewController
+                searchVC.delegate = self
+            }
     }
-    
     
    public var latitude : Double?
    public var longitude: Double?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
