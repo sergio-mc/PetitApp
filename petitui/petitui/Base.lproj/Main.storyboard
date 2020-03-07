@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqd-C8-ZcR">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -299,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LkL-i9-6i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="-617"/>
+            <point key="canvasLocation" x="3582" y="847"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="yi8-uL-MNO">
@@ -1022,11 +1022,11 @@
             <objects>
                 <viewController id="2aO-zH-EiE" customClass="ChatListViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9O7-M5-99r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-jQ-zSX">
-                                <rect key="frame" x="10" y="110" width="355" height="557"/>
+                                <rect key="frame" x="10" y="66" width="355" height="581"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <color key="separatorColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -1097,7 +1097,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Chats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cp-8v-j3r">
-                                <rect key="frame" x="0.0" y="64" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1129,11 +1129,11 @@
             <objects>
                 <viewController id="wTc-2b-C3d" customClass="CreateAnimalController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlI-eE-0gR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-NL-LeU">
-                                <rect key="frame" x="0.0" y="54" width="375" height="564"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-J9-6Qk">
                                         <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
@@ -1182,7 +1182,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-69-XIe">
-                                        <rect key="frame" x="0.0" y="217" width="375" height="347"/>
+                                        <rect key="frame" x="0.0" y="217" width="375" height="371"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-QN-D91">
                                                 <rect key="frame" x="0.0" y="0.0" width="372" height="590"/>
@@ -1641,7 +1641,7 @@
             <objects>
                 <viewController id="n3R-8j-Sun" customClass="FavoritesAnimalsViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="roY-QI-kOB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-iV-n3I">
@@ -1720,16 +1720,16 @@
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="1583.7053571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="gA0-JR-FBv">
             <objects>
-                <viewController id="R0Y-zx-obw" sceneMemberID="viewController">
+                <viewController id="R0Y-zx-obw" customClass="ProfileViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sVL-8x-6ek">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-tg-Xsx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="564"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqD-KQ-Jej">
                                         <rect key="frame" x="87.5" y="10" width="200" height="200"/>
@@ -1777,8 +1777,8 @@
                                             <constraint firstAttribute="height" constant="200" id="inm-J7-egf"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sergio0106" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-F1-bzc">
-                                        <rect key="frame" x="110.5" y="242" width="154" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sergio0106" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-F1-bzc">
+                                        <rect key="frame" x="110.5" y="218" width="154" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="154" id="T1x-0D-gZx"/>
                                             <constraint firstAttribute="height" constant="50" id="c18-b4-Z9Q"/>
@@ -1787,8 +1787,8 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-hT-P2f">
-                                        <rect key="frame" x="10" y="294" width="355" height="260"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-hT-P2f">
+                                        <rect key="frame" x="10" y="268" width="355" height="310"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noa-Xo-G6a">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -1901,12 +1901,29 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-5m-oR1">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-5m-oR1">
                                                 <rect key="frame" x="0.0" y="210" width="355" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVc-Go-1dn">
+                                                        <rect key="frame" x="42" y="0.0" width="262" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="To Location"/>
+                                                        <connections>
+                                                            <segue destination="PhW-tI-R69" kind="presentation" identifier="toSearchLocation" id="F7l-jR-daB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Cy3-TV-dJE"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv4-kn-W51">
+                                                <rect key="frame" x="0.0" y="280" width="355" height="30"/>
+                                                <state key="normal" title="Save changes"/>
+                                                <connections>
+                                                    <action selector="saveChanges:" destination="R0Y-zx-obw" eventType="touchDown" id="7OC-0u-NQ9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1932,7 +1949,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pww-xW-IU1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="1583.7053571428571"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="1583.6581709145428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="skY-R8-nvN">
@@ -2116,11 +2133,11 @@
             <objects>
                 <viewController id="8um-Ny-Qbk" customClass="AnimalFeedController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wf0-MB-DEG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="leW-fV-Jat">
-                                <rect key="frame" x="10" y="94" width="355" height="308.5"/>
+                                <rect key="frame" x="10" y="50" width="355" height="308.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IxO-3a-cCu">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="125.5"/>
@@ -2347,7 +2364,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newest Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-7B-fdn">
-                                <rect key="frame" x="10" y="379" width="355" height="20.5"/>
+                                <rect key="frame" x="10" y="335" width="355" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.329999999999998" id="5Zd-PT-MlU"/>
                                     <constraint firstAttribute="width" constant="355" id="lVj-de-FMK"/>
@@ -2357,7 +2374,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-vq-Mmh">
-                                <rect key="frame" x="10" y="408" width="355" height="230"/>
+                                <rect key="frame" x="10" y="364" width="355" height="230"/>
                                 <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="9ZP-7y-A4W"/>
@@ -2498,7 +2515,8 @@
         <image name="takePhoto" width="450" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XJf-0H-hXY"/>
+        <segue reference="cIC-cu-vzg"/>
         <segue reference="zgS-aw-tlK"/>
+        <segue reference="F7l-jR-daB"/>
     </inferredMetricsTieBreakers>
 </document>
