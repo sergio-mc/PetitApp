@@ -306,6 +306,7 @@ class ApiManager {
                         completion(FavoriteResponse())
                     }
                 }else{
+                    print(response.error)
                     completion(FavoriteResponse())
                 }
         
