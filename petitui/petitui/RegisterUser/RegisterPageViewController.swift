@@ -78,6 +78,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataS
                     if(!DataHelpers.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
                         errorMessage = "Passwords doesn't match"
                     }
+     
                 default:
                     errorMessage = ""
                 }
@@ -97,7 +98,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataS
         let repeatedPassword = userConfirmPassword.text
         
         // Check for empty fields
-        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn)
+        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn || latitude == nil || longitude == nil)
         {
             // Alert message
             self.present(DataHelpers.displayAlert(userMessage: "All fields are required", alertType: 0), animated: true, completion: nil)

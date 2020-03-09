@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import MapKit
 
 class DetailAnimalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     public var detailPet:Pet?
     public var detailImage:UIImageView?
     var imagePicker = UIImagePickerController()
+    var user:User?
     
     @IBOutlet weak var picturePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -50,10 +51,23 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            
+        }
+        catch  {
+            
+        }
+        
+        
         if let pet = detailPet, let image = detailImage {
             setValues(pet: pet, image:image)
             setOwnerData(pet:pet) 
         }
+        
+        
         
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -73,16 +87,20 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     func setValues(pet:Pet, image:UIImageView)
     {
-        
-        
+ 
         namePet.text = pet.name
-        locationPet.text = "madrid"
+        
         racePet.text = String(pet.type)
         agePet.text = String(pet.age)
         descriptionPet.text = pet.animalDescription
         genrePet.text = pet.sex
         picturePet.image = image.image
         
+        let latitudePet : Double = Double(pet.latitude) as! Double
+        let longitudePet : Double = Double(pet.longitude) as! Double
+        convertLatLongToAddress(latitude: latitudePet, longitude: longitudePet)
+        
+      
     }
     
     func setOwnerData(pet:Pet)  {
@@ -105,6 +123,41 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         
+    }
+    
+    func convertLatLongToAddress(latitude:Double,longitude:Double){
+        
+        let geoCoder = CLGeocoder()
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            
+            var placeMark: CLPlacemark!
+            
+            placeMark = placemarks?[0]
+            print("FIDI AUTOESCUELAS", placeMark)
+            // Location name
+            let locationName = placeMark.location
+            // Street address
+            let street = placeMark.thoroughfare
+            // Postal code
+            let postalCode = placeMark.postalCode
+            // City
+            let city = placeMark.subAdministrativeArea
+            // Zip code
+            let zip = placeMark.isoCountryCode
+            // Country
+            let country = placeMark.country
+            var address1:String = String(street ?? "") + ", " + String(city ?? "")
+            var address2:String = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
+            var address:String = address1 + address2
+            print(address)
+           
+            self.locationPet.text = address
+        })
     }
     
     
