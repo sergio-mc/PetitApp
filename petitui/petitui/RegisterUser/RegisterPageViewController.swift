@@ -23,7 +23,14 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userAddress: SkyFloatingLabelTextFieldWithIcon!
     
+    @IBAction func userAddressButton(_ sender: Any) {
+        print("Hola")
+    }
+    
+    
     @IBOutlet weak var userAgeTF: UISwitch!
+    
+    
     
     
     override func viewDidLoad() {

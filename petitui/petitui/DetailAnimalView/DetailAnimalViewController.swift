@@ -16,6 +16,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     public var detailPetID:Int?
     var imagePicker = UIImagePickerController()
     var user: User?
+    var isFavorite: Favorite?
     
     @IBOutlet weak var picturePet: UIImageView!
     @IBOutlet weak var namePet: UILabel!
@@ -37,14 +38,20 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func isFavorite(_ sender: Any) {
         
-        let decoded  = UserDefaults.standard.object(forKey: "user")
-        do {
-            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
-        }
-        catch  {
+        if(favoriteIcon.isSelected == false)
+        {
+            removeFavorite(idUser: user!.id!, idAnimal: detailPetID!)
+            print("Favorite deleted")
+            
+        }else if(favoriteIcon.isSelected == true)
+        {
+            createFavorite(idUser: user!.id!, idAnimal: detailPetID!)
+            print("Favorite created")
             
         }
-        createFavorite(idUser: user!.id!, idAnimal: detailPetID!)
+
+        
+    
         
     }
     
@@ -54,6 +61,19 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             setValues(pet: pet, image:image)
             setOwnerData(pet:pet) 
         }
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+            do {
+                user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+                print("Soy Usuario: ", user!)
+                getFavoriteByUser(idUser: user!.id!, idAnimal: detailPetID!)
+                
+                
+            }
+            catch  {
+                
+            }
+        
+        
         
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -129,6 +149,40 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             }else{
                 self.present(DataHelpers.displayAlert(userMessage:"Error creating favorite",  alertType: 0), animated: true, completion: nil)
             }
+            
+        }
+        
+    }
+    func removeFavorite(idUser:Int, idAnimal:Int){
+        
+        ApiManager.removeFavorite(idUser: idUser, idAnimal: idAnimal)
+        {(response) in
+            print(response)
+            if(response.code==200) {
+                self.present(DataHelpers.displayAlert(userMessage:"EXITO ;)",  alertType: 1), animated: true, completion: nil)
+            }else{
+                self.present(DataHelpers.displayAlert(userMessage:"Error removing favorite",  alertType: 0), animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
+    
+    
+    func getFavoriteByUser(idUser:Int, idAnimal:Int)
+    {
+        let favoriteAnimalsModel = FavoriteAnimalsModel(id: nil, idUser: idUser, idAnimal: idAnimal)
+        ApiManager.getFavoriteByUser(favoriteAnimalModel: favoriteAnimalsModel){response in
+            self.isFavorite = response
+            print("Soy response",self.isFavorite)
+            print("Soy isFavorite:", self.isFavorite)
+            if(self.isFavorite != nil)
+            {
+                self.favoriteIcon.isSelected = true
+            }else{
+                self.favoriteIcon.isSelected = false
+            }
+            
             
         }
         
