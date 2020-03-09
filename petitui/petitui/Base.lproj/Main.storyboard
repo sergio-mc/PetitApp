@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -935,8 +935,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addphoto:" destination="uQh-aw-Iqj" eventType="touchUpInside" id="02F-i2-GKc"/>
-                                            <action selector="signUpButton:" destination="e0L-rp-dFy" eventType="touchUpInside" id="gUL-yo-Y8c"/>
+                                            <action selector="contactOwner:" destination="uQh-aw-Iqj" eventType="touchUpInside" id="fKG-2H-7RN"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sloth" translatesAutoresizingMaskIntoConstraints="NO" id="a3z-bS-eS1">
@@ -1099,11 +1098,11 @@
             <objects>
                 <viewController id="wTc-2b-C3d" customClass="CreateAnimalController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PlI-eE-0gR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ6-NL-LeU">
-                                <rect key="frame" x="0.0" y="10" width="375" height="608"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-J9-6Qk">
                                         <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
@@ -1152,7 +1151,7 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2y-69-XIe">
-                                        <rect key="frame" x="0.0" y="217" width="375" height="391"/>
+                                        <rect key="frame" x="0.0" y="217" width="375" height="371"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-QN-D91">
                                                 <rect key="frame" x="0.0" y="0.0" width="372" height="590"/>
@@ -1698,11 +1697,11 @@
             <objects>
                 <viewController id="R0Y-zx-obw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sVL-8x-6ek">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KuD-tg-Xsx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqD-KQ-Jej">
                                         <rect key="frame" x="87.5" y="10" width="200" height="200"/>
@@ -1751,7 +1750,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sergio0106" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-F1-bzc">
-                                        <rect key="frame" x="110.5" y="264" width="154" height="50"/>
+                                        <rect key="frame" x="110.5" y="254" width="154" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="154" id="T1x-0D-gZx"/>
                                             <constraint firstAttribute="height" constant="50" id="c18-b4-Z9Q"/>
@@ -1761,7 +1760,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-hT-P2f">
-                                        <rect key="frame" x="10" y="338" width="355" height="260"/>
+                                        <rect key="frame" x="10" y="318" width="355" height="260"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noa-Xo-G6a">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -2108,7 +2107,7 @@
             <objects>
                 <viewController id="8um-Ny-Qbk" customClass="AnimalFeedController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wf0-MB-DEG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="leW-fV-Jat">
@@ -2440,32 +2439,20 @@
         <!--Chat View Controller-->
         <scene sceneID="NtH-rO-GZ9">
             <objects>
-                <viewController id="ajw-RF-TR2" customClass="ChatViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" id="ajw-RF-TR2" customClass="ChatViewController" customModule="petitui" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0mH-bz-8ZZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Details" translatesAutoresizingMaskIntoConstraints="NO" id="JZK-gG-jQ1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="JZK-gG-jQ1" firstAttribute="top" secondItem="pe4-Bc-4Ay" secondAttribute="top" id="RF4-L4-Jq3"/>
-                            <constraint firstItem="pe4-Bc-4Ay" firstAttribute="bottom" secondItem="JZK-gG-jQ1" secondAttribute="bottom" id="lnA-A7-4iy"/>
-                            <constraint firstItem="JZK-gG-jQ1" firstAttribute="leading" secondItem="pe4-Bc-4Ay" secondAttribute="leading" id="yXU-1p-aHf"/>
-                            <constraint firstItem="pe4-Bc-4Ay" firstAttribute="trailing" secondItem="JZK-gG-jQ1" secondAttribute="trailing" id="ybG-X7-iQJ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pe4-Bc-4Ay"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7db-XE-GOU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="2248"/>
+            <point key="canvasLocation" x="743" y="2311"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Details" width="610" height="1318"/>
         <image name="addPet" width="32" height="32"/>
         <image name="addPetFill" width="32" height="32"/>
         <image name="backgroundimage" width="750" height="1334"/>
@@ -2486,8 +2473,8 @@
         <image name="messagesFill" width="24" height="24"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="petdetailbackground" width="1890" height="1417"/>
-        <image name="pin" width="512" height="512"/>
         <image name="pin" catalog="system" width="58" height="64"/>
+        <image name="pin" width="512" height="512"/>
         <image name="power" catalog="system" width="64" height="62"/>
         <image name="profile" width="24" height="24"/>
         <image name="profileFill" width="24" height="24"/>

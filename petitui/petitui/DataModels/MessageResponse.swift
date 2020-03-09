@@ -24,7 +24,7 @@ struct MessageResponse : Codable {
     
 }
 
-struct ChatMessage : Codable {
+struct ChatMessage : Codable, Equatable {
 
     var message:String
     var id:Int

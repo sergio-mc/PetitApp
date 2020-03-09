@@ -14,8 +14,10 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     public var detailPet:Pet?
     public var detailImage:UIImageView?
     public var detailPetID:Int?
+    var user:User?
+    var chat:Chat?
+    var member2:Member?
     var imagePicker = UIImagePickerController()
-    var user: User?
     var isFavorite: Favorite?
     
     @IBOutlet weak var picturePet: UIImageView!
@@ -107,16 +109,19 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     func setOwnerData(pet:Pet)  {
         ApiManager.getUser(id: pet.idOwner){
+            owner in
             
-            user in
-            
-            if let username = user.userName{
+            if let username = owner.userName{
+                
                 self.nameOwner.text = String(username)
-                if let pictureUrl = user.picture{
+                if let pictureUrl = owner.picture{
                     ApiManager.getImage(url: pictureUrl){
                         
-                        picture in
-                        self.pictureOwner.image = UIImage(data: picture)
+                        response in
+                        if let picture = response{
+                            self.pictureOwner.image = UIImage(data: picture)
+                        }
+                        
                     }
                 }
             }
@@ -125,6 +130,41 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
         
         
+    }
+    
+   
+    
+    
+    @IBAction func contactOwner(_ sender: UIButton) {
+        
+        if let userId = self.user?.id, let animalOwner = self.detailPet?.idOwner, let animalId = self.detailPet?.id{
+            if userId == animalOwner {
+                 self.present(DataHelpers.displayAlert(userMessage:"This is your pet", alertType: 0), animated: true, completion: nil)
+            }else{
+            ApiManager.createChat(userId: userId , animalOwner: animalOwner, animalId: animalId)
+            {
+                response in
+                if let chat = response.chat {
+                    self.chat=chat
+                    if let userName = self.nameOwner.text {
+                        self.member2 = Member(name: userName , image: self.pictureOwner.image ?? UIImage.init(imageLiteralResourceName: "cat"), id: chat.idOwner)
+                        self.showChat()
+                    }
+                } else{
+                    self.present(DataHelpers.displayAlert(userMessage:"Chat service unavailable", alertType: 0), animated: true, completion: nil)
+                }
+            }
+            
+        }
+        
+        }
+    }
+    
+    func showChat(){
+        let chatView:ChatViewController = ChatViewController()
+        chatView.chatId = chat?.id
+        chatView.member2=member2
+        self.present(chatView, animated: true, completion: nil)
     }
     
     

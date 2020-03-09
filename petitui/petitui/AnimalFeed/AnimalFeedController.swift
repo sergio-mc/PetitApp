@@ -170,8 +170,9 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         cell.petAge.text = "\(String(petsFeed[indexPath.row].age)) years"
         ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
             (data) in
-            cell.petImage.image = UIImage(data: data)
-        }
+            if let picture=data {
+            cell.petImage.image = UIImage(data: picture)
+            }}
         
         cell.layer.borderColor = UIColor(red:220/255, green:220/255, blue:220/255, alpha: 0.75).cgColor
         cell.layer.borderWidth = 0.5

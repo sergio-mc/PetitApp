@@ -96,7 +96,7 @@ class ApiManager {
         }
     }
     
-    static func getImage(url:String, completion: @escaping (Data) -> ()){
+    static func getImage(url:String, completion: @escaping (Data?) -> ()){
         let url = URL(string:"\(defaultURL)storage/app/\(url)")
         DispatchQueue.global().async {
             do{
@@ -106,7 +106,8 @@ class ApiManager {
                 }
             }
             catch{
-                print("error")
+                print("no image found")
+                 completion(nil)
             }
         }
         
@@ -245,25 +246,7 @@ class ApiManager {
         }
         
     }
-    static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
-        let url = URL(string:"\(defaultURL)public/api/chat/mesages/\(id)")
-        AF.request(url!, method: .get)
-            .validate()
-            .responseJSON { response in
-                if(response.error == nil){
-                    do{
-                        let responseData:MessageResponse = try JSONDecoder().decode(MessageResponse.self, from: response.data!)
-                        if(responseData.code==200) {
-                            if let messages = responseData.messages {
-                                completion(messages)
-                            }
-                        }
-                    }catch{
-                        print(error)
-                    }
-                }
-        }
-    }
+
     static func getFavoritesByUser( id:Int, completion: @escaping ([Pet]) -> ()){
          let url = URL(string:"\(defaultURL)public/api/favorites/\(id)")
          AF.request(url!,
@@ -355,7 +338,7 @@ class ApiManager {
                         if(responseData.code==200) {
                             print("mimimimimi")
                             if let favorite_user = responseData.favorite {
-                                print("david es un maricotriste")
+                                print("diana es gay")
                                 completion(favorite_user)
                                 
                             }
@@ -366,5 +349,92 @@ class ApiManager {
                 }
         }
     }
+    static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
+          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/mesages/\(id)")
+          AF.request(url!, method: .get)
+              .validate()
+              .responseJSON { response in
+                  if(response.error == nil){
+                      do{
+                          let responseData:MessageResponse = try JSONDecoder().decode(MessageResponse.self, from: response.data!)
+                          if(responseData.code==200) {
+                              if let messages = responseData.messages {
+                                  completion(messages)
+                              }
+                          }
+                      }catch{
+                          print(error)
+                      }
+                  }
+          }
+      }
+      static func getChats(id:Int ,completion: @escaping (ChatsResponse) -> ()){
+          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/user/\(id)")
+          AF.request(url!, method: .get)
+              .validate()
+              .responseJSON { response in
+                  if(response.error == nil){
+                      do{
+                          let responseData:ChatsResponse = try JSONDecoder().decode(ChatsResponse.self, from: response.data!)
+                          completion(responseData)
+                          
+                          
+                      }catch{
+                          print(error)
+                          completion(ChatsResponse())
+                      }
+                  }else{
+                      completion(ChatsResponse())
+                  }
+          }
+      }
+      
+    static func createChat(userId:Int,animalOwner:Int,animalId:Int, completion: @escaping (ChatResponse) -> ()){
+        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/create")
+        
+        let chat=Chat(id: 0, idOwner: animalOwner, idAdopter: userId, idAnimal: animalId)
+        AF.request(url!,
+                   method: .post,
+                   parameters:chat,
+                   encoder: JSONParameterEncoder.default
+            
+        ).response {  response in
+            if(response.error == nil){
+                do{
+                    print(response.data!)
+                    let responseData:ChatResponse = try JSONDecoder().decode(ChatResponse.self, from: response.data!)
+                    completion(responseData)
+                }catch{
+                    print(error)
+                    completion(ChatResponse())
+                }
+            }else{
+                completion(ChatResponse())
+            }
+        }
+        
+    }
+    
+    static func addMessage(message:MessageData, completion: @escaping (MessageDataResponse) -> ()){
+          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/add/message")
+          AF.request(url!,
+                     method: .post,
+                     parameters:message,
+                     encoder: JSONParameterEncoder.default
+              
+          ).response { response in
+              if(response.error == nil){
+                  do{
+                      let responseData:MessageDataResponse = try JSONDecoder().decode(MessageDataResponse.self, from: response.data!)
+                      completion(responseData)
+                  }catch{
+                      print(error)
+                      completion(MessageDataResponse())
+                  }
+              }else{
+                  completion(MessageDataResponse())
+              }
+          }
+      }
 }
 

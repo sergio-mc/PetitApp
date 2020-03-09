@@ -10,14 +10,16 @@ import UIKit
 import InputBarAccessoryView
 import MessageKit
 import InputBarAccessoryView
-
+//TODO implementar crear mensaje y reaload
 class ChatViewController: MessagesViewController {
     
     var messages: [Message] = []
     var member: Member!
-    var member2: Member!
+    public var member2: Member!
     var loggedUser:User?
-    
+    public var chatId:Int?
+    var timer: Timer?
+    var allChatMessages:[ChatMessage]=[]
     override func viewDidLoad() {
         super.viewDidLoad()
         let decoded  = UserDefaults.standard.object(forKey: "user")
@@ -30,33 +32,49 @@ class ChatViewController: MessagesViewController {
             
         }
         
-        
-        member2 = Member(name: "bluemoon",  image: UIImage.init(imageLiteralResourceName: "cat"), id: 2)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         getAllMessage()
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getAllMessage), userInfo: nil, repeats: true)
         
     }
     
-    func getAllMessage() {
-        ApiManager.getChatMessages(id: 1){
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        timer?.invalidate()
+    }
+    
+    @objc func getAllMessage() {
+        ApiManager.getChatMessages(id: chatId ?? 0){
             chatMessages in
-//            chatMessages.filter()
-            for messages in chatMessages {
-                let newMessage = Message(
-                    member: self.member2,
-                    text: messages.message,
-                    messageId: UUID().uuidString)
-                self.messages.append(newMessage)
+            if !self.allChatMessages.elementsEqual(chatMessages){
+                self.messages = []
+                for message in chatMessages {
+                               let newMessage = Message(
+                                member: self.getMember(id:message.owner),
+                                   text: message.message,
+                                   messageId: UUID().uuidString)
+                               self.messages.append(newMessage)
+                           }
+                           self.messagesCollectionView.reloadData()
             }
-            self.messagesCollectionView.reloadData()
+           
         }
         
     }
     
+  func  getMember(id:Int) ->Member{
+    return member.id == id ? member : member2
+    
 }
+    
+
+}
+
 extension ChatViewController: MessagesDataSource {
     func numberOfSections(
         in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -122,12 +140,17 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             member: member,
             text: text,
             messageId: UUID().uuidString)
-        print(text)
-        messages.append(newMessage)
         
-        inputBar.inputTextView.text = ""
-        messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToBottom(animated: true)
+        ApiManager.addMessage(message:MessageData(chatId: chatId ?? 0, idOwner: member.id, message: text )){
+            response in
+            if response.code==200{
+                self.messages.append(newMessage)
+                inputBar.inputTextView.text = ""
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
+        
     }
 }
 

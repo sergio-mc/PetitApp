@@ -14,7 +14,7 @@ struct User: Codable {
     var id: Int?
     var email, userName, password,picture: String?
     var adminUser, active: Int?
-    var latitude, longitude: Double?
+    var latitude, longitude: String?
     var token: String?
     
     init(email:String,password:String,userName:String?) {
@@ -53,7 +53,7 @@ struct User: Codable {
              self.id = id
             
          }
-    init(email:String,password:String,userName:String?, latitude: Double, longitude: Double, picture: String, id: Int) {
+    init(email:String,password:String,userName:String?, latitude: String, longitude: String, picture: String, id: Int) {
            
            self.email=email
            self.password=password
