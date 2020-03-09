@@ -40,11 +40,17 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         let decoded  = UserDefaults.standard.object(forKey: "user")
         do {
             user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            getFavoriteByUser(idUser: user!.id!, idAnimal: detailPetID!)
+                  
+                createFavorite(idUser: user!.id!, idAnimal: detailPetID!)
         }
         catch  {
             
         }
-        createFavorite(idUser: user!.id!, idAnimal: detailPetID!)
+      
+        
+        
+        
         
     }
     
@@ -129,6 +135,32 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             }else{
                 self.present(DataHelpers.displayAlert(userMessage:"Error creating favorite",  alertType: 0), animated: true, completion: nil)
             }
+            
+        }
+        
+    }
+    func removeFavorite(idUser:Int, idAnimal:Int){
+        
+        ApiManager.removeFavorite(idUser: idUser, idAnimal: idAnimal)
+        {(response) in
+            print(response)
+            if(response.code==200) {
+                self.present(DataHelpers.displayAlert(userMessage:"EXITO ;)",  alertType: 0), animated: true, completion: nil)
+            }else{
+                self.present(DataHelpers.displayAlert(userMessage:"Error removing favorite",  alertType: 0), animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
+    
+    var favoritesFeed:[Favorite] = []
+    
+    func getFavoriteByUser(idUser:Int, idAnimal:Int)
+    {
+        let favoriteAnimalsModel = FavoriteAnimalsModel(id: nil, idUser: idUser, idAnimal: idAnimal)
+        ApiManager.getFavoriteByUser(favoriteAnimalModel: favoriteAnimalsModel){response in
+            print("JODERRRRRRRRRRR")
             
         }
         

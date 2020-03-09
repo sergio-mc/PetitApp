@@ -289,7 +289,7 @@ class ApiManager {
     static func createFavorite(idUser:Int,idAnimal:Int, completion: @escaping (FavoriteResponse) -> ()){
         
         let url = "\(defaultURL)public/api/add/favorite"
-        let favoriteModel=FavoriteModel(idUser: idUser, idAnimal: idAnimal)
+        let favoriteModel=Favorite(idUser: idUser, idAnimal: idAnimal)
         AF.request(url,
                    method: .post,
                    parameters:favoriteModel,
@@ -315,10 +315,10 @@ class ApiManager {
     
     static func removeFavorite(idUser:Int,idAnimal:Int, completion: @escaping (FavoriteResponse) -> ()){
         
-        let url = "\(defaultURL)public/api/add/favorite"
-        let favoriteModel=FavoriteModel(idUser: idUser, idAnimal: idAnimal)
+        let url = "\(defaultURL)public/api/delete/favorite"
+        let favoriteModel=Favorite(idUser: idUser, idAnimal: idAnimal)
         AF.request(url,
-                   method: .post,
+                   method: .delete,
                    parameters:favoriteModel,
                    encoder: JSONParameterEncoder.default
             
@@ -338,4 +338,32 @@ class ApiManager {
     }
     
     }
+    static func getFavoriteByUser( favoriteAnimalModel : FavoriteAnimalsModel, completion: @escaping (Favorite) -> ()){
+        let url = URL(string:"\(defaultURL)public/api/favorites")
+        AF.request(url!,
+                   method: .get,
+                   parameters: favoriteAnimalModel
+                   )
+            .validate()
+            .responseJSON { response in
+                print(response.error)
+                if(response.error == nil){
+                    do{
+                        let responseData:FavoritesResponse = try JSONDecoder().decode(FavoritesResponse.self, from: response.data!)
+                        print(responseData)
+                        if(responseData.code==200) {
+                            print("mimimimimi")
+                            if let favorite_user = responseData.favorite {
+                                print("david es un maricotriste")
+                                completion(favorite_user)
+                                
+                            }
+                        }
+                    }catch{
+                        print("ERRORASO", error)
+                    }
+                }
+        }
+    }
 }
+
