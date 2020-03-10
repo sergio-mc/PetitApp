@@ -49,9 +49,9 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             print("Favorite created")
             
         }
-
         
-    
+        
+        
         
     }
     
@@ -62,16 +62,16 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             setOwnerData(pet:pet) 
         }
         let decoded  = UserDefaults.standard.object(forKey: "user")
-            do {
-                user = try JSONDecoder().decode(User.self, from: decoded as! Data)
-                print("Soy Usuario: ", user!)
-                getFavoriteByUser(idUser: user!.id!, idAnimal: detailPetID!)
-                
-                
-            }
-            catch  {
-                
-            }
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            
+            getFavoriteByUser(idUser: user!.id!, idAnimal: detailPetID!)
+            
+            
+        }
+        catch  {
+            
+        }
         
         
         
@@ -188,4 +188,6 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
+    
 }
+

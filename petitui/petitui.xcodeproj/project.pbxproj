@@ -40,6 +40,9 @@
 		CE9A54E123ECA65700C5427F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A54E023ECA65700C5427F /* TabBarViewController.swift */; };
 		CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */; };
 		CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */; };
+		CEE4505A2416E35A004BF0A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE450592416E35A004BF0A0 /* ProfileViewController.swift */; };
+		CEE4505D2416E749004BF0A0 /* UserPetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4505C2416E749004BF0A0 /* UserPetsCollectionViewCell.swift */; };
+		CEE4505F2416E7E6004BF0A0 /* UserPetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4505E2416E7E6004BF0A0 /* UserPetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		CE9A54E023ECA65700C5427F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC2048923D60C9B004853C4 /* RecoverPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPageViewController.swift; sourceTree = "<group>"; };
 		CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		CEE450592416E35A004BF0A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEE4505C2416E749004BF0A0 /* UserPetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE4505E2416E7E6004BF0A0 /* UserPetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPetsViewController.swift; sourceTree = "<group>"; };
 		E98827F4A6243B2EAE6B96AA /* Pods_petitui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petitui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A7BDE15898A0C49497067D /* Pods-petitui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.debug.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +133,7 @@
 				CE8342CD23DB4BF4008B15C5 /* DetailAnimalView */,
 				B2D697F72404580800A3D1C0 /* ChatController */,
 				CE23DDCB2405A1CF009EF07D /* ChatListController */,
+				CEE450582416E319004BF0A0 /* ProfileController */,
 				B2D6599224009753003CD6A5 /* DataModels */,
 				B2D659932400980C003CD6A5 /* Network */,
 				B2D6599424009823003CD6A5 /* Helpers */,
@@ -273,6 +280,16 @@
 			path = DetailAnimalView;
 			sourceTree = "<group>";
 		};
+		CEE450582416E319004BF0A0 /* ProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE450592416E35A004BF0A0 /* ProfileViewController.swift */,
+				CEE4505E2416E7E6004BF0A0 /* UserPetsViewController.swift */,
+				CEE4505C2416E749004BF0A0 /* UserPetsCollectionViewCell.swift */,
+			);
+			path = ProfileController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,9 +417,12 @@
 				CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */,
 				B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */,
 				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,
+				CEE4505A2416E35A004BF0A0 /* ProfileViewController.swift in Sources */,
 				CEC2048A23D60C9B004853C4 /* RecoverPageViewController.swift in Sources */,
+				CEE4505D2416E749004BF0A0 /* UserPetsCollectionViewCell.swift in Sources */,
 				CE8342D123DB4EDB008B15C5 /* PetModel.swift in Sources */,
 				CE8977252405B33B001AD2AD /* ChatListViewCell.swift in Sources */,
+				CEE4505F2416E7E6004BF0A0 /* UserPetsViewController.swift in Sources */,
 				B24A0B3823EB1B15008DFF67 /* ApiManager.swift in Sources */,
 				CE4249C223FF11EA0022B6CD /* LaunchViewController.swift in Sources */,
 				CECFACA223F30E3500FEEB89 /* LoaderViewController.swift in Sources */,
