@@ -59,6 +59,8 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                         self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
                     }
                 }
+            }else{
+                self.removeSpinner()
             }
         }
     }

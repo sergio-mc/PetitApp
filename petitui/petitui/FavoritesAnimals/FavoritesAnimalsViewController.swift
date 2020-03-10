@@ -12,6 +12,7 @@ import FaveButton
 class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate  {
     
     var petsFeed:[Pet] = []
+    var user: User?
     
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
@@ -48,24 +49,44 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+        }
+        catch  {
+            
+        }
+        self.getUserFavorites(idUser: user!.id!)
+        self.favoritesCollectionView.reloadData()
+        
         self.hideKeyboardWhenTappedAround()
         ApiManager.getFeedAnimals(){pets in
-            self.petsFeed=pets
+//            self.petsFeed=pets
             self.favoritesCollectionView.reloadData()
             
             self.favoritesCollectionView.dataSource = self
             self.favoritesCollectionView.delegate = self
         }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getUserFavorites(idUser: user!.id!)
+        self.favoritesCollectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let item = (sender as? FavoriteFeedCell)
         let indexPath = self.favoritesCollectionView.indexPath(for: item!)
         let cell = favoritesCollectionView.cellForItem(at: indexPath!) as? FavoriteFeedCell
-        let selectedPed=petsFeed[indexPath?.row ?? 0]
+        let selectedPet=petsFeed[indexPath?.row ?? 0]
         let detailPetView = segue.destination as! DetailAnimalViewController
-        detailPetView.detailPet = selectedPed
-        detailPetView.detailImage=cell?.petImage
+        let selectedPetID=petsFeed[indexPath?.row ?? 0].id
+        detailPetView.detailPet = selectedPet
+        detailPetView.detailImage = cell?.petImage
+        detailPetView.detailPetID = selectedPetID
         
     }
     
@@ -82,5 +103,18 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
             alpha: CGFloat(1.0)
         )
     }
+    
+    func getUserFavorites(idUser:Int){
+        
+        ApiManager.getFavoritesByUser(id: idUser)
+        {(response) in
+            self.petsFeed = response
+            self.favoritesCollectionView.reloadData()
+        }
+        
+    }
+    
+    
+    
 
 }
