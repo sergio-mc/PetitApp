@@ -46,9 +46,11 @@ class UserPetsViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.petName.text = petsFeed[indexPath.row].name
         cell.petAge.text = "\(String(petsFeed[indexPath.row].age)) years"
         ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
-            (data) in
-
-            cell.petImage.image = UIImage(data: data)
+            response in
+            if let picture = response{
+                cell.petImage.image = UIImage(data: picture)
+            }
+            
             
             }
             

@@ -30,8 +30,11 @@ class ProfileViewController: UIViewController{
             if let userPicture = user?.picture{
                 ApiManager.getImage(url: userPicture){
                     
-                    picture in
-                    self.userImage.image = UIImage(data: picture)
+                    response in
+                    if let picture = response{
+                        self.userImage.image = UIImage(data: picture)
+                    }
+                    
                     
                 }
             }
