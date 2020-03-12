@@ -22,6 +22,7 @@ class FavoriteFeedCell: UICollectionViewCell{
     
     @IBAction func petIsFavorite(_ sender: Any) {
         
+        
     }
     
 }

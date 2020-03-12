@@ -285,11 +285,11 @@ class ApiManager {
                         
                         completion(responseData)
                     }catch{
-                        print(error)
+                       
                         completion(FavoriteResponse())
                     }
                 }else{
-                    print(response.error)
+                   
                     completion(FavoriteResponse())
                 }
         
@@ -330,27 +330,27 @@ class ApiManager {
                    )
             .validate()
             .responseJSON { response in
-                print(response.error)
+                
                 if(response.error == nil){
                     do{
                         let responseData:FavoritesResponse = try JSONDecoder().decode(FavoritesResponse.self, from: response.data!)
-                        print(responseData)
+                        
                         if(responseData.code==200) {
-                            print("mimimimimi")
+                            
                             if let favorite_user = responseData.favorite {
-                                print("diana es gay")
+                                
                                 completion(favorite_user)
                                 
                             }
                         }
                     }catch{
-                        print("ERRORASO", error)
+                        
                     }
                 }
         }
     }
     static func getChatMessages(id:Int ,completion: @escaping ([ChatMessage]) -> ()){
-          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/mesages/\(id)")
+          let url = URL(string:"\(defaultURL)public/api/chat/mesages/\(id)")
           AF.request(url!, method: .get)
               .validate()
               .responseJSON { response in
@@ -369,7 +369,7 @@ class ApiManager {
           }
       }
       static func getChats(id:Int ,completion: @escaping (ChatsResponse) -> ()){
-          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/user/\(id)")
+          let url = URL(string:"\(defaultURL)public/api/chat/user/\(id)")
           AF.request(url!, method: .get)
               .validate()
               .responseJSON { response in
@@ -390,7 +390,7 @@ class ApiManager {
       }
       
     static func createChat(userId:Int,animalOwner:Int,animalId:Int, completion: @escaping (ChatResponse) -> ()){
-        let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/create")
+        let url = URL(string:"\(defaultURL)public/api/chat/create")
         
         let chat=Chat(id: 0, idOwner: animalOwner, idAdopter: userId, idAnimal: animalId)
         AF.request(url!,
@@ -416,7 +416,7 @@ class ApiManager {
     }
     
     static func addMessage(message:MessageData, completion: @escaping (MessageDataResponse) -> ()){
-          let url = URL(string:"http://0.0.0.0:8888/petit-api/public/api/chat/add/message")
+          let url = URL(string:"\(defaultURL)public/api/chat/add/message")
           AF.request(url!,
                      method: .post,
                      parameters:message,
