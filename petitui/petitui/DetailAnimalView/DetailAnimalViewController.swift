@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 
 class DetailAnimalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -59,6 +59,10 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        
+        
         if let pet = detailPet, let image = detailImage {
             setValues(pet: pet, image:image)
             setOwnerData(pet:pet) 
@@ -95,16 +99,20 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     func setValues(pet:Pet, image:UIImageView)
     {
-        
-        
+ 
         namePet.text = pet.name
-        locationPet.text = "madrid"
+        
         racePet.text = String(pet.type)
         agePet.text = String(pet.age)
         descriptionPet.text = pet.animalDescription
         genrePet.text = pet.sex
         picturePet.image = image.image
         
+        let latitudePet : Double = Double(pet.latitude) as! Double
+        let longitudePet : Double = Double(pet.longitude) as! Double
+        convertLatLongToAddress(latitude: latitudePet, longitude: longitudePet)
+        
+      
     }
     
     func setOwnerData(pet:Pet)  {
@@ -132,7 +140,36 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
-   
+    func convertLatLongToAddress(latitude:Double,longitude:Double){
+        
+        let geoCoder = CLGeocoder()
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            
+            var placeMark: CLPlacemark!
+            
+            placeMark = placemarks?[0]
+            // Street address
+            let street = placeMark.thoroughfare
+            // Postal code
+            let postalCode = placeMark.postalCode
+            // City
+            let city = placeMark.subAdministrativeArea
+            // Zip code
+            let zip = placeMark.isoCountryCode
+            // Country
+            let address1:String = String(street ?? "") + ", " + String(city ?? "")
+            let address2:String = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
+            let address:String = address1 + address2
+            print(address)
+           
+            self.locationPet.text = address
+        })
+    }
     
     
     @IBAction func contactOwner(_ sender: UIButton) {
@@ -214,8 +251,6 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         let favoriteAnimalsModel = FavoriteAnimalsModel(id: nil, idUser: idUser, idAnimal: idAnimal)
         ApiManager.getFavoriteByUser(favoriteAnimalModel: favoriteAnimalsModel){response in
             self.isFavorite = response
-            print("Soy response",self.isFavorite)
-            print("Soy isFavorite:", self.isFavorite)
             if(self.isFavorite != nil)
             {
                 self.favoriteIcon.isSelected = true

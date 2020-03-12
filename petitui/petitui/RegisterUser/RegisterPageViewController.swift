@@ -8,8 +8,17 @@ import UIKit
 import Foundation
 import SkyFloatingLabelTextField
 import Alamofire
+import CoreLocation
 
-class RegisterPageViewController: UIViewController, UITextFieldDelegate {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataSendingDelegateProtocol {
+    
+    
+    func sendDataToRegisterVC(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+        convertLatLongToAddress(latitude: latitude, longitude: longitude)
+    }
+    
     
     fileprivate var activityView : UIView?
     
@@ -21,17 +30,25 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userConfirmPassword: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var userAddress: SkyFloatingLabelTextFieldWithIcon!
+    @IBOutlet var addressText: SkyFloatingLabelTextFieldWithIcon!
     
-    @IBAction func userAddressButton(_ sender: Any) {
-        print("Hola")
-    }
     
     
     @IBOutlet weak var userAgeTF: UISwitch!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "locationSegue"{
+            let searchVC : SearchLocationViewController = segue.destination as! SearchLocationViewController
+            searchVC.delegate = self
+        }
+    }
     
-    
+    @IBAction func locationTouch(_ sender: Any) {
+
+        performSegue(withIdentifier: "locationSegue", sender: self)
+    }
+    public var latitude : Double?
+    public var longitude: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +61,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         
         
     }
+    
+    
     
     // This will notify us when something has changed on the textfield
     @objc func textFieldDidChange(_ textfield: UITextField) {
@@ -69,6 +88,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
                     if(!DataHelpers.isValidRepeatedPassword(text, userPasswordTF.text ?? "" )) {
                         errorMessage = "Passwords doesn't match"
                     }
+                    
                 default:
                     errorMessage = ""
                 }
@@ -88,7 +108,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         let repeatedPassword = userConfirmPassword.text
         
         // Check for empty fields
-        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn)
+        if(userEmail!.isEmpty || userPassword!.isEmpty || userName!.isEmpty || repeatedPassword!.isEmpty || !userAgeTF.isOn || latitude == nil || longitude == nil)
         {
             // Alert message
             self.present(DataHelpers.displayAlert(userMessage: "All fields are required", alertType: 0), animated: true, completion: nil)
@@ -96,38 +116,42 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             return;
             
         } else {
-            
-            //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
-            if ( DataHelpers.isValidPassword(userPassword!) && DataHelpers.isValidEmail(userEmail!) && DataHelpers.isUsernameValid(userName!) && userAgeTF.isOn){
+            if let lat = latitude, let long = longitude {
                 
-                //Validation of passwords
-                ApiManager.createUser(email: userEmail!,password: userPassword!,userName: userName!){
-                    (response) in
-                    self.removeSpinner()
-                    print(response)
-                    if(response.code==200) {
-                        if let user = response.user {
-                            do {
-                                let defaults = UserDefaults.standard
-                                let jsonEncoder = JSONEncoder()
-                                let jsonData = try jsonEncoder.encode(user)
-                                defaults.set(jsonData, forKey: "user")
-                            } catch  {
-                                print(error)
+                //Validation of email and password, CAMBIAR ESTO A UN METODO QUE VALIDE TODO
+                if ( DataHelpers.isValidPassword(userPassword!) && DataHelpers.isValidEmail(userEmail!) && DataHelpers.isUsernameValid(userName!) && userAgeTF.isOn ){
+                    
+                    
+                    //Validation of passwords
+                    ApiManager.createUser(email: userEmail!, password: userPassword!, userName: userName!, latitude: String(lat), longitude: String(long)){
+                        (response) in
+                        self.removeSpinner()
+                        print(response)
+                        if(response.code==200) {
+                            if let user = response.user {
+                                do {
+                                    let defaults = UserDefaults.standard
+                                    let jsonEncoder = JSONEncoder()
+                                    let jsonData = try jsonEncoder.encode(user)
+                                    defaults.set(jsonData, forKey: "user")
+                                } catch  {
+                                    print(error)
+                                }
+                                self.segueLogin()
                             }
-                            self.segueLogin()
+                            
+                        }else{
+                            self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
                         }
-                        
-                    }else{
-                        self.present(DataHelpers.displayAlert(userMessage:response.errorMsg ?? "Network Error", alertType: 0), animated: true, completion: nil)
                     }
+                    self.showSpinner()
+                    
+                } else {
+                    
+                    self.present(DataHelpers.displayAlert(userMessage: "Woof! you need to fix that first", alertType: 0), animated: true, completion: nil)
                 }
-                self.showSpinner()
-                
-            } else {
-                
-                self.present(DataHelpers.displayAlert(userMessage: "Woof! you need to fix that first", alertType: 0), animated: true, completion: nil)
             }
+            
         }
         
     }
@@ -154,5 +178,36 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         activityView?.removeFromSuperview()
         activityView = nil
     }
+    
+    func convertLatLongToAddress(latitude:Double,longitude:Double){
+          
+          let geoCoder = CLGeocoder()
+          
+          let location = CLLocation(latitude: latitude, longitude: longitude)
+          
+          geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+              
+              // Place details
+              
+              var placeMark: CLPlacemark!
+              
+              placeMark = placemarks?[0]
+              // Street address
+              let street = placeMark.thoroughfare
+              // Postal code
+              let postalCode = placeMark.postalCode
+              // City
+              let city = placeMark.subAdministrativeArea
+              // Zip code
+              let zip = placeMark.isoCountryCode
+          
+              let address1:String = String(street ?? "") + ", " + String(city ?? "")
+              let address2:String = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
+              let address:String = address1 + address2
+              print(address)
+             
+            self.addressText.text = address
+          })
+      }
     
 }

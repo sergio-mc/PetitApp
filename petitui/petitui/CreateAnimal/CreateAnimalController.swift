@@ -11,7 +11,25 @@ import Alamofire
 import MBRadioCheckboxButton
 
 
-class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewDelegate{
+class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewDelegate, MyDataSendingDelegateProtocol {
+    
+    var user:User?
+    public var latitude : String?
+    public var longitude: String?
+    
+    func sendDataToRegisterVC(latitude: Double, longitude: Double) {
+        self.latitude = String(latitude)
+        self.longitude = String(longitude)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSearchLocation"{
+            let searchVC : SearchLocationViewController = segue.destination as! SearchLocationViewController
+            searchVC.delegate = self
+        }
+    }
+    
+    
     
     func radioButtonDidSelect(_ button: RadioButton) {
         genre = button.title(for: .normal)!
@@ -90,17 +108,33 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
     
     @IBAction func addPetButton(_ sender: Any) {
         if(checkAllFields()){
-            createAnimal(idOwner: 1, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: "80", longitude: "80", preferedPhoto: "picture")
+            if let idUser = user?.id{
+                
+                createAnimal(idOwner: idUser, type: typeValue, name: inputName.text!, sex: genre!, age: Int(inputAge.text!) ?? 0, animalDescription: inputDescription.text!, breed: inputBreed.text!, latitude: latitude ?? "", longitude: longitude ?? "", preferedPhoto: "picture")
+                
+                
+            }
+            
         }
         print(checkAllFields())
     }
     
     
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            
+        }
+        catch  {
+            
+        }
+        
         self.hideKeyboardWhenTappedAround()
         dogType.layer.borderColor = UIColor(red:163/255, green:209/255, blue:204/255, alpha: 1).cgColor
         dogType.layer.borderWidth = 0
@@ -124,6 +158,9 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
         if uploadImage.image == nil {
             self.present(DataHelpers.displayAlert(userMessage: "Animal picture missing", alertType: 0), animated: true, completion: nil)
             return false}
+        if latitude == nil && longitude == nil {
+            self.present(DataHelpers.displayAlert(userMessage: "Animal location missing", alertType: 0), animated: true, completion: nil)
+            return false}
         if typeValue.isEmpty{
             self.present(DataHelpers.displayAlert(userMessage: "Select an animal type", alertType: 0), animated: true, completion: nil)
             return false}
@@ -139,6 +176,8 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
         if inputDescription.text == "Add a description..."{
         self.present(DataHelpers.displayAlert(userMessage: "Add a short description for the pet", alertType: 0), animated: true, completion: nil)
         return false}
+        
+        
         
         
         

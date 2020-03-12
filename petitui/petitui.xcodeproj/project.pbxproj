@@ -16,6 +16,7 @@
 		7F0A5A102410043F000916B4 /* FavoriteAnimalsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A5A0F2410043F000916B4 /* FavoriteAnimalsModel.swift */; };
 		7F6CA52423C8DF22009ADC6F /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */; };
 		7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */; };
+		7FDB14F2241161280073B46A /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB14F1241161280073B46A /* SearchLocationViewController.swift */; };
 		B21A772D23DB73B400D71EB1 /* AnimalFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */; };
 		B21A772F23DB767900D71EB1 /* AnimalTypeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */; };
 		B21D9E5B23D62F7000F56ECA /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D9E5A23D62F7000F56ECA /* RegisterModel.swift */; };
@@ -57,6 +58,7 @@
 		7F0A5A0F2410043F000916B4 /* FavoriteAnimalsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalsModel.swift; sourceTree = "<group>"; };
 		7F6CA52323C8DF22009ADC6F /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		7FA36E1023CCF80400D118F3 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		7FDB14F1241161280073B46A /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		A66D2776F26E266E51D14A8A /* Pods-petitui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petitui.release.xcconfig"; path = "Target Support Files/Pods-petitui/Pods-petitui.release.xcconfig"; sourceTree = "<group>"; };
 		B21A772C23DB73B400D71EB1 /* AnimalFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFeedController.swift; sourceTree = "<group>"; };
 		B21A772E23DB767900D71EB1 /* AnimalTypeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeCellView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				7F0802AD23C8CE36008A640A /* Assets.xcassets */,
 				7F0802AF23C8CE36008A640A /* LaunchScreen.storyboard */,
 				CECFACA123F30E3500FEEB89 /* LoaderViewController.swift */,
+				7FDB14F1241161280073B46A /* SearchLocationViewController.swift */,
 				CE4249C123FF11EA0022B6CD /* LaunchViewController.swift */,
 			);
 			path = petitui;
@@ -418,6 +421,7 @@
 				7FA36E1123CCF80400D118F3 /* LoginPageViewController.swift in Sources */,
 				B2D697FD2404596E00A3D1C0 /* MessageResponse.swift in Sources */,
 				CE8977232405B0C9001AD2AD /* ChatListViewController.swift in Sources */,
+				7FDB14F2241161280073B46A /* SearchLocationViewController.swift in Sources */,
 				CE46CF5823E1E9FC002F2A10 /* AnimalFeedCell.swift in Sources */,
 				B2E80E7123D77550008D3C29 /* UserModel.swift in Sources */,
 				B2E0480323D8C87000CFD8D1 /* LoginPageModel.swift in Sources */,

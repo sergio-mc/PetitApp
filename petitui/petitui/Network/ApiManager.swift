@@ -39,9 +39,9 @@ class ApiManager {
         }
     }
     
-    static func createUser(email:String,password:String,userName:String, completion: @escaping (RegisterResponse) -> ()){
-        let url = URL(string:"\(defaultURL)public/api/user")
-        let user=User( email: email, password: password, userName: userName)
+    static func createUser(email:String,password:String,userName:String, latitude:String, longitude: String, completion: @escaping (RegisterResponse) -> ()){
+        let url =  URL(string:"\(defaultURL)public/api/user")
+        let user = User( email: email, password: password, userName: userName, latitude: latitude, longitude: longitude)
         
         AF.request(url!,
                    method: .post,
@@ -60,6 +60,29 @@ class ApiManager {
             }else{
                 completion(RegisterResponse())
             }
+        }
+        
+    }
+    static func updateLatLongUser(id:Int, latitude:Double, longitude:Double, completion: @escaping (RegisterResponse) -> ()){
+        let url = URL(string:"\(defaultURL)public/api/user/\(id)")
+      
+        AF.request(url!,
+                   method: .put,
+                   parameters:["latitude":latitude, "longitude" : longitude],
+                   encoder: JSONParameterEncoder.default
+            
+            ).response {  response in
+                if(response.error == nil){
+                    do{
+                        let responseData:RegisterResponse = try JSONDecoder().decode(RegisterResponse.self, from: response.data!)
+                        completion(responseData)
+                    }catch{
+                        print(error)
+                        completion(RegisterResponse())
+                    }
+                }else{
+                    completion(RegisterResponse())
+                }
         }
         
     }
