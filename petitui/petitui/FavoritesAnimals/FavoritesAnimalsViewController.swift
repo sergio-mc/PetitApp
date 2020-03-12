@@ -17,6 +17,7 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
     @IBOutlet weak var favoritesCollectionView: UICollectionView!
     
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return petsFeed.count
     }
@@ -42,6 +43,7 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
         cell.layer.cornerRadius = 20
         cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         cell.petFavorite.setSelected(selected: true, animated: false)
+        
         
         return cell
     }
@@ -91,10 +93,7 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
     }
     
     
-    func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
-        
-        
-    }
+    
     func color(_ rgbColor: Int) -> UIColor{
         return UIColor(
             red:   CGFloat((rgbColor & 0xFF0000) >> 16) / 255.0,

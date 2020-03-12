@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zen-l3-KlK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1670,6 +1670,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxk-Lt-eWd" customClass="FaveButton" customModule="FaveButton">
                                                     <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="favoritesFill"/>
                                                     <connections>
                                                         <action selector="petIsFavorite:" destination="ChC-LX-Bux" eventType="touchUpInside" id="ffw-DH-pKF"/>
@@ -1772,7 +1773,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sergio0106" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-F1-bzc">
-                                        <rect key="frame" x="110.5" y="210" width="154" height="50"/>
+                                        <rect key="frame" x="110.5" y="224" width="154" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="154" id="T1x-0D-gZx"/>
                                             <constraint firstAttribute="height" constant="50" id="c18-b4-Z9Q"/>
@@ -1782,7 +1783,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-hT-P2f">
-                                        <rect key="frame" x="10" y="280" width="355" height="274"/>
+                                        <rect key="frame" x="10" y="294" width="355" height="260"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noa-Xo-G6a">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -2560,6 +2561,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8N-xd-JFp">
                                                     <rect key="frame" x="125" y="4" width="21" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="xmark.octagon" catalog="system"/>
                                                     <connections>
@@ -2628,8 +2630,8 @@
         <image name="messagesFill" width="24" height="24"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="petdetailbackground" width="1890" height="1417"/>
-        <image name="pin" catalog="system" width="58" height="64"/>
         <image name="pin" width="512" height="512"/>
+        <image name="pin" catalog="system" width="58" height="64"/>
         <image name="power" catalog="system" width="64" height="62"/>
         <image name="profile" width="24" height="24"/>
         <image name="profileFill" width="24" height="24"/>
@@ -2640,6 +2642,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XJf-0H-hXY"/>
+        <segue reference="9Lr-5d-UUE"/>
         <segue reference="zgS-aw-tlK"/>
         <segue reference="23F-w0-e6a"/>
     </inferredMetricsTieBreakers>
