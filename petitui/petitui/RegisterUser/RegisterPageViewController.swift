@@ -41,10 +41,11 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataS
             let searchVC : SearchLocationViewController = segue.destination as! SearchLocationViewController
             searchVC.delegate = self
         }
+        
     }
     
     @IBAction func locationTouch(_ sender: Any) {
-
+        
         performSegue(withIdentifier: "locationSegue", sender: self)
     }
     public var latitude : Double?
@@ -180,34 +181,35 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate, MyDataS
     }
     
     func convertLatLongToAddress(latitude:Double,longitude:Double){
-          
-          let geoCoder = CLGeocoder()
-          
-          let location = CLLocation(latitude: latitude, longitude: longitude)
-          
-          geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-              
-              // Place details
-              
-              var placeMark: CLPlacemark!
-              
-              placeMark = placemarks?[0]
-              // Street address
-              let street = placeMark.thoroughfare
-              // Postal code
-              let postalCode = placeMark.postalCode
-              // City
-              let city = placeMark.subAdministrativeArea
-              // Zip code
-              let zip = placeMark.isoCountryCode
-          
-              let address1:String = String(street ?? "") + ", " + String(city ?? "")
-              let address2:String = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
-              let address:String = address1 + address2
-              print(address)
-             
+        
+        let geoCoder = CLGeocoder()
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            
+            var placeMark: CLPlacemark!
+            var adressArray=[String]()
+            placeMark = placemarks?[0]
+            // Street address
+            adressArray.append(String(placeMark.thoroughfare ?? ""))
+            
+            adressArray.append(String(placeMark.subAdministrativeArea ?? ""))
+            
+            adressArray.append(String( placeMark.administrativeArea ?? ""))
+            
+            adressArray.append(String( placeMark.country ?? ""))
+            var address=""
+            for item in adressArray {
+                if( item != ""){
+                    address = address + " " + item + ","
+                }
+            }
+            
             self.addressText.text = address
-          })
-      }
+        })
+    }
     
 }

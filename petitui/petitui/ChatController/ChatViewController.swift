@@ -25,7 +25,12 @@ class ChatViewController: MessagesViewController {
         let decoded  = UserDefaults.standard.object(forKey: "user")
         do {
             let user = try JSONDecoder().decode(User.self, from: decoded as! Data)
-            member = Member(name: user.userName!, image: UIImage.init(imageLiteralResourceName: "cat"), id: user.id!)
+            let decodedImage  = UserDefaults.standard.object(forKey: "picture") as? Data
+            var image:UIImage=UIImage.init(imageLiteralResourceName: "cat")
+            if let userImage = decodedImage {
+                image=UIImage(data: userImage) ?? UIImage.init(imageLiteralResourceName: "cat")
+            }
+            member = Member(name: user.userName!, image: image, id: user.id!)
             
         }
         catch  {

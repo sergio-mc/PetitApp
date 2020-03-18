@@ -60,7 +60,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
         
         
         if let pet = detailPet, let image = detailImage {
@@ -99,7 +99,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
     
     func setValues(pet:Pet, image:UIImageView)
     {
- 
+        
         namePet.text = pet.name
         
         racePet.text = String(pet.type)
@@ -112,7 +112,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         let longitudePet : Double = Double(pet.longitude) as! Double
         convertLatLongToAddress(latitude: latitudePet, longitude: longitudePet)
         
-      
+        
     }
     
     func setOwnerData(pet:Pet)  {
@@ -151,22 +151,24 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             // Place details
             
             var placeMark: CLPlacemark!
-            
+            var adressArray=[String]()
             placeMark = placemarks?[0]
             // Street address
-            let street = placeMark.thoroughfare
-            // Postal code
-            let postalCode = placeMark.postalCode
-            // City
-            let city = placeMark.subAdministrativeArea
-            // Zip code
-            let zip = placeMark.isoCountryCode
-            // Country
-            let address1:String = String(street ?? "") + ", " + String(city ?? "")
-            let address2:String = ", " + String(postalCode ?? "") + ", " + String(zip ?? "")
-            let address:String = address1 + address2
-            print(address)
-           
+            adressArray.append(String(placeMark.thoroughfare ?? ""))
+            
+            adressArray.append(String(placeMark.subAdministrativeArea ?? ""))
+            
+            adressArray.append(String( placeMark.administrativeArea ?? ""))
+            
+            adressArray.append(String( placeMark.country ?? ""))
+            var address=""
+            for item in adressArray {
+                if( item != ""){
+                    address = address + " " + item + ","
+                }
+            }
+            
+            
             self.locationPet.text = address
         })
     }
@@ -176,24 +178,24 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         
         if let userId = self.user?.id, let animalOwner = self.detailPet?.idOwner, let animalId = self.detailPet?.id{
             if userId == animalOwner {
-                 self.present(DataHelpers.displayAlert(userMessage:"This is your pet", alertType: 0), animated: true, completion: nil)
+                self.present(DataHelpers.displayAlert(userMessage:"This is your pet", alertType: 0), animated: true, completion: nil)
             }else{
-            ApiManager.createChat(userId: userId , animalOwner: animalOwner, animalId: animalId)
-            {
-                response in
-                if let chat = response.chat {
-                    self.chat=chat
-                    if let userName = self.nameOwner.text {
-                        self.member2 = Member(name: userName , image: self.pictureOwner.image ?? UIImage.init(imageLiteralResourceName: "cat"), id: chat.idOwner)
-                        self.showChat()
+                ApiManager.createChat(userId: userId , animalOwner: animalOwner, animalId: animalId)
+                {
+                    response in
+                    if let chat = response.chat {
+                        self.chat=chat
+                        if let userName = self.nameOwner.text {
+                            self.member2 = Member(name: userName , image: self.pictureOwner.image ?? UIImage.init(imageLiteralResourceName: "cat"), id: chat.idOwner)
+                            self.showChat()
+                        }
+                    } else{
+                        self.present(DataHelpers.displayAlert(userMessage:"Chat service unavailable", alertType: 0), animated: true, completion: nil)
                     }
-                } else{
-                    self.present(DataHelpers.displayAlert(userMessage:"Chat service unavailable", alertType: 0), animated: true, completion: nil)
                 }
+                
             }
             
-        }
-        
         }
     }
     
@@ -235,9 +237,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         ApiManager.removeFavorite(idUser: idUser, idAnimal: idAnimal)
         {(response) in
             print(response)
-            if(response.code==200) {
-                self.present(DataHelpers.displayAlert(userMessage:"EXITO ;)",  alertType: 1), animated: true, completion: nil)
-            }else{
+            if(response.code!==200) {
                 self.present(DataHelpers.displayAlert(userMessage:"Error removing favorite",  alertType: 0), animated: true, completion: nil)
             }
             

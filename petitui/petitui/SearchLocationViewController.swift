@@ -166,8 +166,7 @@ func getLatLongFromAddress(address : String) {
             ApiManager.updateLatLongUser(id: 1, latitude: latitude!, longitude: longitude!){
                 response in print("Response updated Latitude and Longitude",response)
             }
-            print("TRANSFORM", latitude)
-            print("TRANSFORM", longitude)
+           
   
         }
     })

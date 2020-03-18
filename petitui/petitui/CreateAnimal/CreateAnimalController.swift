@@ -121,8 +121,6 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
     
     
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -176,11 +174,6 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
         if inputDescription.text == "Add a description..."{
         self.present(DataHelpers.displayAlert(userMessage: "Add a short description for the pet", alertType: 0), animated: true, completion: nil)
         return false}
-        
-        
-        
-        
-        
         return true
     }
     
@@ -196,18 +189,12 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
                 if(response==true){
                 self.removeSpinner()
                 self.segueAnimalFeed()
-                    self.present(DataHelpers.displayAlert(userMessage:"Animal created",  alertType: 1), animated: true, completion: nil)
-                    
                 }else{
                     self.removeSpinner()
                     self.present(DataHelpers.displayAlert(userMessage:"Network error",  alertType: 0), animated: true, completion: nil)
                 }
-                
-                
-                
         }
             
-          
         }
     }
     

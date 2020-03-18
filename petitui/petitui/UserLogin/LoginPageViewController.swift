@@ -43,11 +43,25 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                     print(response)
                     if(response.code==200) {
                         if let user = response.user {
-                             do {
+                            do {
+                                
+                                
                                 let defaults = UserDefaults.standard
                                 let jsonEncoder = JSONEncoder()
                                 let jsonData = try jsonEncoder.encode(user)
                                 defaults.set(jsonData, forKey: "user")
+                                if let userPicture = user.picture{
+                                    ApiManager.getImage(url: userPicture){
+                                        response in
+                                        if let picture = response{
+                                           
+                                            defaults.set(picture, forKey: "picture")
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
                             } catch  {
                                 print(error)
                             }
