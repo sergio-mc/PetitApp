@@ -237,7 +237,7 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
         ApiManager.removeFavorite(idUser: idUser, idAnimal: idAnimal)
         {(response) in
             print(response)
-            if(response.code!==200) {
+            if(response.code != 200) {
                 self.present(DataHelpers.displayAlert(userMessage:"Error removing favorite",  alertType: 0), animated: true, completion: nil)
             }
             
