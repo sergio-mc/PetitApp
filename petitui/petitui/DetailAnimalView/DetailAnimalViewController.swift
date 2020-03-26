@@ -162,13 +162,21 @@ class DetailAnimalViewController: UIViewController, UIImagePickerControllerDeleg
             
             adressArray.append(String( placeMark.country ?? ""))
             var address=""
-            for item in adressArray {
-                if( item != ""){
-                    address = address + " " + item + ","
-                }
+//            for item in adressArray {
+//                if( item != ""){
+//                    address = address + " " + item + ","
+//                }
+//            }
+            
+            for (index, item) in adressArray.enumerated() {
+              print("Item \(index): \(item)")
+                if(index == 0){ address += item }
+                if(index == 1){ address += " (\(item)/" }
+                if(index == 2){ address += "\(item))"}
+                
             }
             
-            
+            print("ESTO ES ADDRESSSSSSS:",address)
             self.locationPet.text = address
         })
     }

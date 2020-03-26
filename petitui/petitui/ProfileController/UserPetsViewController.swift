@@ -11,7 +11,7 @@ import UIKit
 class UserPetsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var petsFeed:[Pet] = []
-    
+    var user: User?
     
     @IBOutlet weak var userPetsCollection: UICollectionView!
     
@@ -67,12 +67,51 @@ class UserPetsViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ApiManager.getFeedAnimals(){pets in
-            self.petsFeed=pets
-            self.userPetsCollection.reloadData()
+        
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+        }
+        catch  {
             
-            self.userPetsCollection.dataSource = self
-            self.userPetsCollection.delegate = self
+        }
+        self.getUserAnimals(idUser: user!.id!)
+        self.userPetsCollection.reloadData()
+        
+        ApiManager.getFeedAnimals(){pets in
+        //            self.petsFeed=pets
+                    self.userPetsCollection.reloadData()
+                    
+                    self.userPetsCollection.dataSource = self
+                    self.userPetsCollection.delegate = self
+                }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getUserAnimals(idUser: user!.id!)
+        self.userPetsCollection.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let item = (sender as? UserPetsCollectionViewCell)
+        let indexPath = self.userPetsCollection.indexPath(for: item!)
+        let cell = userPetsCollection.cellForItem(at: indexPath!) as? UserPetsCollectionViewCell
+        let selectedPet=petsFeed[indexPath?.row ?? 0]
+        let detailPetView = segue.destination as! DetailAnimalViewController
+        let selectedPetID=petsFeed[indexPath?.row ?? 0].id
+        detailPetView.detailPet = selectedPet
+        detailPetView.detailImage = cell?.petImage
+        detailPetView.detailPetID = selectedPetID
+        
+    }
+    
+    func getUserAnimals(idUser:Int){
+        
+        ApiManager.getOwnAnimalsByUser(id: idUser)
+        {(response) in
+            self.petsFeed = response
+            self.userPetsCollection.reloadData()
         }
         
     }

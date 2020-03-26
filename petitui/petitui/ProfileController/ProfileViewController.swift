@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sergio. All rights reserved.
 //
 import UIKit
+import CoreLocation
 
 class ProfileViewController: UIViewController, MyDataSendingDelegateProtocol{
     
@@ -24,6 +25,17 @@ class ProfileViewController: UIViewController, MyDataSendingDelegateProtocol{
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userLocation: UILabel!
+    
+    @IBOutlet weak var inputNewEmail: UITextField!
+    
+    @IBAction func emailButton(_ sender: Any) {
+        if(inputNewEmail.isHidden)
+        {
+            inputNewEmail.isHidden = false
+        }else{
+            inputNewEmail.isHidden = true
+        }
+    }
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,7 +58,14 @@ class ProfileViewController: UIViewController, MyDataSendingDelegateProtocol{
             
             self.userName.text = user?.userName
             self.userEmail.text = user?.email
-            self.userLocation.text = "Location"
+            let userLat = (user?.latitude as! NSString).doubleValue
+            let userLon = (user?.longitude as! NSString).doubleValue
+            if(userLat != nil && userLon != nil){convertLatLongToAddress(latitude: userLat, longitude: userLon)}
+            else{
+                self.userLocation.text = "Location"
+            }
+            
+            
         }
         catch  {
             
@@ -78,6 +97,39 @@ class ProfileViewController: UIViewController, MyDataSendingDelegateProtocol{
     
     func segueUserPets()  {
         performSegue(withIdentifier: "userPets", sender: nil)
+    }
+    
+    func convertLatLongToAddress(latitude:Double,longitude:Double){
+        
+        let geoCoder = CLGeocoder()
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            
+            var placeMark: CLPlacemark!
+            var adressArray=[String]()
+            placeMark = placemarks?[0]
+            // Street address
+            adressArray.append(String(placeMark.thoroughfare ?? ""))
+            
+            adressArray.append(String( placeMark.administrativeArea ?? ""))
+            
+            adressArray.append(String( placeMark.country ?? ""))
+            var address=""
+            
+            for (index, item) in adressArray.enumerated() {
+              print("Item \(index): \(item)")
+                if(index == 0){ address += item }
+                if(index == 1){ address += " ( \(item)/" }
+                if(index == 2){ address += "\(item) )"}
+                
+            }
+            
+            self.userLocation.text = address
+        })
     }
 }
 

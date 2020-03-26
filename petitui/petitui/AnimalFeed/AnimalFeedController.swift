@@ -45,6 +45,31 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
+    @IBAction func refreshButton(_ sender: Any) {
+        self.viewDidLoad()
+        self.viewWillAppear(true)
+        updateGridFilterd()
+    }
+    @IBAction func resetFilters(_ sender: Any) {
+        filterSelecter.setTitle("Breed", forSegmentAt: 0)
+        filterSelecter.setTitle("Distance", forSegmentAt: 1)
+        filterSelecter.setTitle("Age", forSegmentAt: 2)
+        filterText.text = ""
+        filterSearchBar.text = ""
+        filterDistanceSlider.value = 0
+        filterAgeSlider.value = 0
+        filterAnimalsModel.type = nil
+        filterAnimalsModel.breed = nil
+        filterAnimalsModel.age = nil
+        filterAnimalsModel.distance = nil
+        self.viewDidLoad()
+        self.viewWillAppear(true)
+        updateGridFilterd()
+        
+        
+    }
+    
+    
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
     @IBOutlet weak var filterText: UILabel!
@@ -206,7 +231,6 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         self.petsCollectionView.dataSource = self
         self.petsCollectionView.delegate = self
         
-        print("coño")
         setColorAndWidth(button: dogFilter)
         setColorAndWidth(button: catFilter)
         setColorAndWidth(button: otherFilter)
@@ -282,7 +306,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func updateGridFilterd() {
-        print(filterAnimalsModel)
+        
         ApiManager.getAnimalsFilters(filterAnimalModel: filterAnimalsModel ){
             filteredPets in
             self.petsFeed=filteredPets
