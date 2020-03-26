@@ -58,6 +58,10 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         filterSearchBar.text = ""
         filterDistanceSlider.value = 0
         filterAgeSlider.value = 0
+        filterAnimalsModel.type = nil
+        filterAnimalsModel.breed = nil
+        filterAnimalsModel.age = nil
+        filterAnimalsModel.distance = nil
         self.viewDidLoad()
         self.viewWillAppear(true)
         updateGridFilterd()

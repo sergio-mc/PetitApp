@@ -79,6 +79,11 @@ class FavoritesAnimalsViewController: UIViewController,UICollectionViewDataSourc
         self.favoritesCollectionView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.getUserFavorites(idUser: user!.id!)
+        self.favoritesCollectionView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let item = (sender as? FavoriteFeedCell)
         let indexPath = self.favoritesCollectionView.indexPath(for: item!)

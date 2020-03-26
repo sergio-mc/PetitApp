@@ -281,10 +281,6 @@ class CreateAnimalController: UIViewController, RadioButtonDelegate, UITextViewD
             self.mainView.frame.origin.y = 0
         }
     }
-    
-    
-    
-    
 }
 
  

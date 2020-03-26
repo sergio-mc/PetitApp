@@ -459,5 +459,28 @@ class ApiManager {
               }
           }
       }
+    
+    static func getOwnAnimalsByUser( id:Int, completion: @escaping ([Pet]) -> ()){
+        let url = URL(string:"\(defaultURL)public/api/animal/user/\(id)")
+        AF.request(url!,
+                   method: .get
+                   )
+            .validate()
+            .responseJSON { response in
+                if(response.error == nil){
+                    do{
+                        let responseData:AnimalsResponse = try JSONDecoder().decode(AnimalsResponse.self, from: response.data!)
+                        if(responseData.code==200) {
+                            if let pets = responseData.animals {
+                                completion(pets)
+                            }
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+        }
+    }
+    
 }
 

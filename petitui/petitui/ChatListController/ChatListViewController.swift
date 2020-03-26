@@ -44,6 +44,7 @@ class ChatListViewController: UIViewController,UITableViewDataSource, UITableVie
             }
         }
         
+        
         cell.userName.text = chatsUsers[indexPath.row].userName
         cell.lastMessage.text = chatsUsers[indexPath.row].email //cambiar a prmier mensaje
         cell.backgroundColor = UIColor.white
