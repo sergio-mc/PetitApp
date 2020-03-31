@@ -10,7 +10,7 @@ import Foundation
 
 struct FilterAnimalsModel: Codable {
     var type, breed: String?
-    var latitude, longitude: Double?
+    var latitude, longitude: String?
     var age, distance: Int?
   
     

@@ -27,7 +27,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         changeTypeButtonsBorder(dog:3)
         filterAnimalsModel.type = "dog"
         updateGridFilterd()
-
+        
         
         
     }
@@ -72,6 +72,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
     
     var filterAnimalsModel : FilterAnimalsModel = FilterAnimalsModel()
     var petsFeed:[Pet] = []
+    var user: User?
     @IBOutlet weak var filterText: UILabel!
     @IBOutlet weak var filterSearchBar: UITextField!
     @IBOutlet weak var filterDistanceSlider: UISlider!
@@ -165,12 +166,12 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         if(petsFeed.isEmpty)
         {
             let defaultImage : UIImageView = {
-                        let iv = UIImageView()
-                        iv.image = UIImage(named:"defaultCV")
-                        iv.contentMode = .center
-                        return iv
-                    }()
-                    self.petsCollectionView.backgroundView = defaultImage
+                let iv = UIImageView()
+                iv.image = UIImage(named:"defaultCV")
+                iv.contentMode = .center
+                return iv
+            }()
+            self.petsCollectionView.backgroundView = defaultImage
             self.petsCollectionView.backgroundColor = nil
             return 0
         }else{
@@ -181,21 +182,21 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         
         
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.petsCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! AnimalFeedCell
-                
+        
         cell.petName.text = petsFeed[indexPath.row].name
         cell.petAge.text = "\(String(petsFeed[indexPath.row].age)) years"
         cell.petImage.image = UIImage.init(imageLiteralResourceName: "sloth")
         ApiManager.getImage(url:petsFeed[indexPath.row].preferedPhoto){
             (data) in
             if let picture=data {
-            cell.petImage.image = UIImage(data: picture)
+                cell.petImage.image = UIImage(data: picture)
             }
             
             
@@ -208,19 +209,28 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         
         // Set background from collectionview into an image
-//        let defaultImage : UIImageView = {
-//            let iv = UIImageView()
-//            iv.image = UIImage(named:"beagle")
-//            iv.contentMode = .scaleAspectFill
-//            return iv
-//        }()
-//        self.petsCollectionView.backgroundView = defaultImage
+        //        let defaultImage : UIImageView = {
+        //            let iv = UIImageView()
+        //            iv.image = UIImage(named:"beagle")
+        //            iv.contentMode = .scaleAspectFill
+        //            return iv
+        //        }()
+        //        self.petsCollectionView.backgroundView = defaultImage
         return cell
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let decoded  = UserDefaults.standard.object(forKey: "user")
+        do {
+            user = try JSONDecoder().decode(User.self, from: decoded as! Data)
+            filterAnimalsModel.longitude = user?.longitude
+            filterAnimalsModel.latitude = user?.latitude
+
+            }catch  {
+                
+            }
         
         self.hideKeyboardWhenTappedAround()
         ApiManager.getFeedAnimals(){pets in
@@ -240,7 +250,7 @@ class AnimalFeedController: UIViewController, UICollectionViewDataSource, UIColl
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
-     
+        
     }
     
     override func viewDidLayoutSubviews() {
