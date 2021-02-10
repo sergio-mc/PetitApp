@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.0.2)
+  - FaveButton (3.2.1)
+  - InputBarAccessoryView (4.2.2)
+  - MBRadioCheckboxButton (2.0)
+  - MessageKit (3.0.0):
+    - InputBarAccessoryView (~> 4.2.2)
+  - RevealingSplashView (0.6.0)
+  - SkyFloatingLabelTextField (3.8.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - FaveButton
+  - MBRadioCheckboxButton
+  - MessageKit
+  - RevealingSplashView
+  - SkyFloatingLabelTextField
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FaveButton
+    - InputBarAccessoryView
+    - MBRadioCheckboxButton
+    - MessageKit
+    - RevealingSplashView
+    - SkyFloatingLabelTextField
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
+  InputBarAccessoryView: 2b937602598e2fab3149f37f51dd7ad795653812
+  MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
+  MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+
+PODFILE CHECKSUM: b3a50b31b695fa146101fc2377bff5e28899a031
+
+COCOAPODS: 1.8.4
